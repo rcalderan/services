@@ -8,3 +8,11 @@ D:\Services_repo\Services\Services\obj\Debug\Services.Properties.Resources.resou
 D:\Services_repo\Services\Services\obj\Debug\Services.csproj.GenerateResource.Cache
 D:\Services_repo\Services\Services\obj\Debug\Services.exe
 D:\Services_repo\Services\Services\obj\Debug\Services.pdb
+H:\services_repo\Services\Services\bin\Debug\Services.exe.config
+H:\services_repo\Services\Services\obj\Debug\Services.exe
+H:\services_repo\Services\Services\obj\Debug\Services.pdb
+H:\services_repo\Services\Services\bin\Debug\Services.exe
+H:\services_repo\Services\Services\bin\Debug\Services.pdb
+H:\services_repo\Services\Services\obj\Debug\Services.Principal.resources
+H:\services_repo\Services\Services\obj\Debug\Services.Properties.Resources.resources
+H:\services_repo\Services\Services\obj\Debug\Services.csproj.GenerateResource.Cache

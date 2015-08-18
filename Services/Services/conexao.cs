@@ -308,7 +308,6 @@ namespace Services
 
                     connection.Open();
                     command.CommandText = string.Concat(queries);
-                    int aux=0;
                     using (var reader = command.ExecuteReader())
                     {
                         do
