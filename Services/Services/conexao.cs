@@ -96,22 +96,18 @@ namespace Services
                 }
                 else
                 {
-                    string[] aux = Arquivos.getDataFromArq();
-                    if (aux.Length == 3)
-                    {
-                        _setServer(aux[0]);
-                        _setUser(aux[1]);
-                        _setPassword(aux[2]);
-                        _setDatabase("noivabd");
-                        _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
-                    }
+                    _setServer("192.168.0.10");
+                    _setUser("root");
+                    _setPassword("33722363");
+                    _setDatabase("project14");
+                    _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
                 }
                 if (checkStrings() == "")
                     setLastLoadState(true);
                 else
                     setLastLoadState(false);
             }
-            catch (Exception ex)
+            catch
             {
                 setLastLoadState(false);
             }
@@ -382,12 +378,13 @@ namespace Services
                 //comando.Parameters.Add()
                 comando.ExecuteNonQuery();
                 this.conexao.Close();
-                Arquivos arc = new Arquivos();
+                return "";
+                /*Arquivos arc = new Arquivos();
                 string log = arc.criaLog(query, "comandoMysql");
                 if (log != "")
                     return "Erro de Log: " + log;
                 else
-                    return "";
+                    return "";*/
             }
             catch (Exception es)
             {
@@ -395,341 +392,30 @@ namespace Services
                 return es.Message;
             }
         }
-        /*
-        public static Dictionary<string, string> getDataFromReg()
-        { //host, user, pass
-            try
+    }
+    class DataBaseCheck
+    {
+        private string dataBaseName = "project14";
+
+        private string table_Service;
+
+        public DataBaseCheck()
+        {
+            Conexao con = new Conexao();
+            if (con.getLastLoadState())
             {
-                Dictionary<string, string> result = new Dictionary<string, string>();
-                string aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem", "nm", null);
-                if (aux != null)
-                {
-                    string decr = Arquivos.Decrypt(aux, true);
-                    string[] s = decr.Split(' ');
-                    result.Add("confHostTb", s[0]);
-                    result.Add("confUserTb", s[1]);
-                    result.Add("confPassTb", s[2]);
-                }
-                else
-                {
-                    string[] s = { "localhost", "", "" };
-                    string valor = Arquivos.Encrypt(s[0] + " " + s[1] + " " + s[2], true);
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem", "nm", valor, RegistryValueKind.String);
-                    result.Add("confHostTb", s[0]);
-                    result.Add("confUserTb", s[1]);
-                    result.Add("confPassTb", s[2]);
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confAoFecharCh", null);
-                if (aux != null)
-                {
-                    result.Add("confAoFecharCh", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confAoFecharCh", "1", RegistryValueKind.String);
-                    result.Add("confAoFecharCh", "1");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confAoAbrirCh", null);
-                if (aux != null)
-                {
-                    result.Add("confAoAbrirCh", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confAoAbrirCh", "0", RegistryValueKind.String);
-                    result.Add("confAoAbrirCh", "0");
-                }
-
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confFantasiaTb", null);
-                if (aux != null)
-                {
-                    result.Add("confFantasiaTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confFantasiaTb", "Nome Fantasia da Empresa", RegistryValueKind.String);
-                    result.Add("confFantasiaTb", "Nome Fantasia da Empresa");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEmpresaTb", null);
-                if (aux != null)
-                {
-                    result.Add("confEmpresaTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEmpresaTb", "", RegistryValueKind.String);
-                    result.Add("confEmpresaTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCnpjTb", null);
-                if (aux != null)
-                {
-                    result.Add("confCnpjTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCnpjTb", "", RegistryValueKind.String);
-                    result.Add("confCnpjTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEnderTb", null);
-                if (aux != null)
-                {
-                    result.Add("confEnderTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEnderTb", "", RegistryValueKind.String);
-                    result.Add("confEnderTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confNumeroTb", null);
-                if (aux != null)
-                {
-                    result.Add("confNumeroTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confNumeroTb", "", RegistryValueKind.String);
-                    result.Add("confNumeroTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCepTb", null);
-                if (aux != null)
-                {
-                    result.Add("confCepTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCepTb", "", RegistryValueKind.String);
-                    result.Add("confCepTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBairroTb", null);
-                if (aux != null)
-                {
-                    result.Add("confBairroTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBairroTb", "", RegistryValueKind.String);
-                    result.Add("confBairroTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCidadeTb", null);
-                if (aux != null)
-                {
-                    result.Add("confCidadeTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confCidadeTb", "", RegistryValueKind.String);
-                    result.Add("confCidadeTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confUfTb", null);
-                if (aux != null)
-                {
-                    result.Add("confUfTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confUfTb", "", RegistryValueKind.String);
-                    result.Add("confUfTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confTel1Tb", null);
-                if (aux != null)
-                {
-                    result.Add("confTel1Tb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confTel1Tb", "", RegistryValueKind.String);
-                    result.Add("confTel1Tb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confTel2Tb", null);
-                if (aux != null)
-                {
-                    result.Add("confTel2Tb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confTel2Tb", "", RegistryValueKind.String);
-                    result.Add("confTel2Tb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEmailTb", null);
-                if (aux != null)
-                {
-                    result.Add("confEmailTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEmailTb", "", RegistryValueKind.String);
-                    result.Add("confEmailTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confSiteTb", null);
-                if (aux != null)
-                {
-                    result.Add("confSiteTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confSiteTb", "", RegistryValueKind.String);
-                    result.Add("confSiteTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEstadualTb", null);
-                if (aux != null)
-                {
-                    result.Add("confEstadualTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confEstadualTb", "", RegistryValueKind.String);
-                    result.Add("confEstadualTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confMunicipalTb", null);
-                if (aux != null)
-                {
-                    result.Add("confMunicipalTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confMunicipalTb", "", RegistryValueKind.String);
-                    result.Add("confMunicipalTb", "");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBkpCh", null);
-                if (aux != null)
-                {
-                    result.Add("confBkpCh", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBkpCh", "0", RegistryValueKind.String);
-                    result.Add("confBkpCh", "0");
-                }
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBkpPathTb", null);
-                if (aux != null)
-                {
-                    result.Add("confBkpPathTb", aux);
-                }
-                else
-                {
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confBkpPathTb", @"c:\backup", RegistryValueKind.String);
-                    result.Add("confBkpPathTb", @"c:\backup");
-                }
-                string padrao;
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confDesistenciaTb", null);
-                if (aux != null)
-                {
-                    result.Add("confDesistenciaTb", aux);
-                }
-                else
-                {
-                    padrao = @"                                          T E R M O   DE   D E S I S T Ê N C I A"
-                        + @"\\\Eu, <nome>, prorador(a) do CPF <cpf> e do RG <rg>, declaro que"
-                        + @"\estou DESISTINDO do aluguel de:"
-                        + @"\<desc1>" + @"\" + @"\<desc2>" + @"\<desc3>" + @"\<desc4>" + @"\<desc5>" + @"\<desc6>"
-                        + @"\<desc7>" + @"\<desc8>" + @"\<desc9>" + @"\<desc10>" + @"\<desc11>" + @"\<desc12>" + @"\<desc13>"
-                        + @"\\descriminado(s) no contrato numero <contrato>, que foi assinado no dia <hoje> e seria usado"
-                        + @"\no dia <usa>."
-                        + @"\Declaro ainda estar ciente que os valores pagos não serão devolvidos a mim e nem transferidos"
-                        + @"\a outra pessoa ou outro aluguel."
-                        + @"\\\\<Cidade>,  <agora>"
-                        + @"\                                                                               _____________________________________"
-                        + @"\                                      <nome>";
-                    /*padrao = @"LEIA COM ATENÇÃO:\MARIA HELENA DE CARVALHO CONFECÇÕES-ME  acima identificada, e a seguir denominada LOCADORA, e de outro lado "
-                        + @"\o Cliente acima identificado, e a seguir denominado LOCATÁRIO, celebram o presente contrato de locação mediante as seguintes"
-                        + @"\Cláusulas e Comdições:\Cláusula 1a - O objeto do presente contrato é a Locação de artigos do vestuário, acima especificado."
-                        + @"\Cláusula 2a - As datas, para retirada das mercadorias, bem como da sua utilização e devolução encontram-se acima especificadas."
-                        + @"\Cláusula 3a - A LOCADORA não se responsabilizará pelas mercadorias que não forem retiradas até a data de uso estabelecida "
-                        + @"\                       neste contrato.\Cláusula 4a - A mercadoria alugada veverá ser devolvida até as 18:00 (Dezoito) horas da data estabelecida neste contrato, completa,"
-                        + @"\                       tal como foi retirada.\Parágrafo Primeiro: Caso as mercadorias não sejam devolvidas na data prevista neste contrato sofrerão um acréscimo de R$ 10,00"
-                        + @"\                       (Dez Reais) por dia útil de atraso, se esta condicão perdurar por 07 (sete) dias será cobrado uma nova taxa de"
-                        + @"\                       Locação da mesma de acordo com o valor pago pelo LOCATÁRIO.\Parágrafo Segundo: Caso as mercadorias sejam devolvidas com manchas de gordura, graxa, tinta ou qualquer outro produto que as"
-                        + @"\                       danifique, será cobrado uma taxa de R$ 30,00 (Trinta Reais).\Cláusula 5a - Em caso de troca das mercadorias objeto do presente contrato será cobrado taxa de R$ 20,00 referente"
-                        + @"\                       aos Serviços Executados.\Parágrafo Único: Não é permitido a troca das Mercadorias, após 05 (cinco) dias corridos da data de locação."
-                        + @"\Cláusula 6a - Em caso de desistência por parte do LOCATÁRIO, o valor pago a título de Locação não será devolvido nem transferido"
-                        + @"\                       a outras pessoas.\Cláusula 7a - As mercadorias, objeto da referida locação não poderão ser emprestadas ou tranferidas a outras pessoas.\Cláusula 8a - O LOCATÁRIO se compromete a ressarcir a LOCADORA pelo valor de tabela de Mercado, vigente na data do evento,"
-                        + @"\                       pelo extravio ou dano nas mercadorias objeto deste contrato, bem como seu uso indevido.\Cláusula 9a - A LOCADORA se compromete a entregar a Mercadoria lavada e passada, com os devidos ajustes solicitados pelo"
-                        + @"\                       LOCATÁRIO e em perfeito estado de conservação e uso, de acordo como foi requirido durante a prova na data deste contrato.\Cláusula 10a - Caso seja constatada alguma denificação na Mercadoria locada no momento da retirada pelo LOCATÁRIO, a"
-                        + @"\                       LOCADORA se compromete  a efetuar a substituição, ou a troca, independente do seu preço de locação, ou  a devida\                       devolução do valor pago, tudo conforme a disponibilidade do produto ou conveniência da LOCADORA."
-                        + @"\Cláusula 11a - E por estarem juntos e acordados, firma o presente contrato, ficando eleito o Fórum desta Comarca para dirimir\                       quaisquer dúvidas que possam surgir.";
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confDesistenciaTb", padrao, RegistryValueKind.String);
-                    result.Add("confDesistenciaTb", padrao);
-                }
-
-                aux = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confClausulasTb", null);
-                if (aux != null)
-                {
-                    result.Add("confClausulasTb", aux);
-                }
-                else
-                {
-                    padrao = @"                                                                                <Nome Fantasia>                                                                                      N.  <contrato>"
-                        + @"\<linha>"
-                        + @"\<Nome da Empresa>. CNPJ: <CNPJ>, Inscrição Estadual: <Inscrição Estadual>"
-                    + @"\e Instrição Municipal: <Inscrição Municipal>, Empresa especializada em Aluguéis de Noivas, Trajes a Rigor e"
-                    + @"\Artigos do vestuário em geral. Telefone: <Telefone1> ou <Telefone2>, E-Mail: <email>"
-                    + @"\Acesse: <Site>"
-                    + @"\\Cliente: <ccli> - <nome>"
-                    + @"\CPF: <cpf>"
-                    + @"\Endereço: <endereco>, Bairro: <bairro>"
-                    + @"\Cidade: <cidade>/<uf>    Telefone: (<ddd1>)<fone1> ou (<ddd2>)<fone2>"
-                    + @"\<linha>"
-                    + @"\RETIRADA: <retirada>                                             USA DIA: <usa>                                                      Devolução: <devolucao>"
-                    + @"\<linha>"
-                    + @"\Codigo                                                           Descrição                                                                                                   Valor"
-                    + @"\<descreve1>" + @"\<descreve2>" + @"\<descreve3>" + @"\<descreve4>" + @"\<descreve5>" + @"\<descreve6>"
-                    + @"\<descreve7>" + @"\<descreve8>" + @"\<descreve9>" + @"\<descreve10>" + @"\<descreve11>" + @"\<descreve12>" + @"\<descreve13>"
-                    + @"\<linha>"
-                    + @"\                                                                                                                                                                          Total R$ <total>,00"
-                    + @"\<linha>" + @"\FORMAS DE PAGAMENTO" + @"\VALOR R$                                                                Vencimento                                                                             Carimbo"
-                    + @"\<pagamentos0>" + @"\<pagamentos1>" + @"\<pagamentos2>" + @"\<pagamentos3>" + @"\<pagamentos4>" + @"\<pagamentos5>"
-                    + @"\<pagamentos6>" + @"\<pagamentos7>" + @"\<pagamentos8>" + @"\<pagamentos9>"
-                    + @"\<linha>"
-                    + @"\\LEIA COM ATENÇÃO:"
-                    + @"\MARIA HELENA DE CARVALHO CONFECÇÕES-ME  acima identificada, e a seguir denominada LOCADORA, e de outro lado "
-                    + @"\o Cliente <nome> (acima identificado), e a seguir denominado LOCATÁRIO,"
-                    + @"\celebram o presente contrato de locação mediante as seguintes Cláusulas e Comdições:"
-                    + @"\Cláusula 1a - O objeto do presente contrato é a Locação de artigos do vestuário, acima especificado."
-                    + @"\Cláusula 2a - As datas, para retirada das mercadorias, bem como da sua utilização e devolução encontram-se acima especificadas."
-                    + @"\Cláusula 3a - A LOCADORA não se responsabilizará pelas mercadorias que não forem retiradas até a data de uso estabelecida "
-                    + @"\neste contrato."
-                    + @"\Cláusula 4a - A mercadoria alugada veverá ser devolvida até as 18:00 (Dezoito) horas da data estabelecida neste contrato, completa,"
-                    + @"\                       tal como foi retirada."
-                    + @"\Parágrafo Primeiro: Caso as mercadorias não sejam devolvidas na data prevista neste contrato sofrerão um acréscimo de R$ 10,00"
-                    + @"\                       (Dez Reais) por dia útil de atraso, se esta condicão perdurar por 07 (sete) dias será cobrado uma nova taxa de"
-                    + @"\                       Locação da mesma de acordo com o valor pago pelo LOCATÁRIO."
-                    + @"\Parágrafo Segundo: Caso as mercadorias sejam devolvidas com manchas de gordura, graxa, tinta ou qualquer outro produto que as"
-                    + @"\                       danifique, será cobrado uma taxa de R$ 30,00 (Trinta Reais)."
-                    + @"\Cláusula 5a - Em caso de troca das mercadorias objeto do presente contrato será cobrado taxa de R$ 20,00 referente"
-                    + @"\                       aos Serviços Executados."
-                    + @"\Parágrafo Único: Não é permitido a troca das Mercadorias, após 05 (cinco) dias corridos da data de locação."
-                    + @"\Cláusula 6a - Em caso de desistência por parte do LOCATÁRIO, o valor pago a título de Locação não será devolvido nem transferido"
-                    + @"\                       a outras pessoas."
-                    + @"\Cláusula 7a - As mercadorias, objeto da referida locação não poderão ser emprestadas ou tranferidas a outras pessoas."
-                    + @"\Cláusula 8a - O LOCATÁRIO se compromete a ressarcir a LOCADORA pelo valor de tabela de Mercado, vigente na data do evento,"
-                    + @"\                       pelo extravio ou dano nas mercadorias objeto deste contrato, bem como seu uso indevido."
-                    + @"\Cláusula 9a - A LOCADORA se compromete a entregar a Mercadoria lavada e passada, com os devidos ajustes solicitados pelo"
-                    + @"\                      LOCATÁRIO e em perfeito estado de conservação de acordo como foi requirido durante a prova na data deste contrato."
-                    + @"\Cláusula 10a - Caso seja constatada alguma denificação na Mercadoria locada no momento da retirada pelo LOCATÁRIO, a"
-                    + @"\                       LOCADORA se compromete  a efetuar a substituição, ou a troca, independente do seu preço de locação, ou  a devida"
-                    + @"\                       devolução do valor pago, tudo conforme a disponibilidade do produto ou conveniência da LOCADORA."
-                    + @"\Cláusula 11a - E por estarem juntos e acordados, firma o presente contrato, ficando eleito o Fórum desta Comarca para dirimir"
-                    + @"\                       quaisquer dúvidas que possam surgir."
-                    + @"\<linha>"
-                    + @"\<Cidade>, <hoje>"
-                    + @"\"
-                    + @"\                                                                                                         ______________________________________"
-                    + @"\                                                                                                         <nome>"
-                    + @"\"
-                    + @"\É OBRIGATÓRIO APRESENTAR ESTE CONTRATO NA RETIRADA!";
-                    Registry.SetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\nmsystem\settings", "confClausulasTb", padrao, RegistryValueKind.String);
-                    result.Add("confClausulasTb", padrao);
-                }
-                return result;
+                table_Service = "CREATE TABLE `" + dataBaseName + "`.`service` (" +
+            "`id` INT NOT NULL," +
+            "`type` TINYINT NULL," +
+            "`prioridade` TINYINT NULL," +
+            "`hoje` DATETIME NULL," +
+            "`prazo` DATETIME NULL," +
+            "`status` TINYINT NULL," +
+            "`conteudo` TEXT NULL," +
+            "`recebido` TINYINT NULL," +
+            "PRIMARY KEY (`id`))";
             }
-            catch (Exception e)
-            {
-                System.Windows.Forms.MessageBox.Show(e.Message);
-                return null;
-            }
-
         }
-        */
-        
+
     }
 }

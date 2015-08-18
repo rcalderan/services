@@ -1,1 +1,10 @@
 D:\Services\Services\bin\Debug\Services.exe.config
+D:\Services_repo\Services\Services\bin\Debug\Services.exe.config
+D:\Services_repo\Services\Services\bin\Debug\Services.exe
+D:\Services_repo\Services\Services\bin\Debug\Services.pdb
+D:\Services_repo\Services\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+D:\Services_repo\Services\Services\obj\Debug\Services.Principal.resources
+D:\Services_repo\Services\Services\obj\Debug\Services.Properties.Resources.resources
+D:\Services_repo\Services\Services\obj\Debug\Services.csproj.GenerateResource.Cache
+D:\Services_repo\Services\Services\obj\Debug\Services.exe
+D:\Services_repo\Services\Services\obj\Debug\Services.pdb

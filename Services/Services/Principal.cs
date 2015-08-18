@@ -17,6 +17,7 @@ namespace Services
         public Principal()
         {
             InitializeComponent();
+            DatabaseCheck();
         }
 
         private void DatabaseCheck()
@@ -42,7 +43,11 @@ namespace Services
 
         private void habilitaControles(bool state)
         {
+            menuPrincipal.Enabled = state;
+            if (!state)
+            {//close all
 
+            }
         }
 
         private void conConectaBt_Click(object sender, EventArgs e)
@@ -56,7 +61,6 @@ namespace Services
             {
                 conexaoPn.Hide();
                 habilitaControles(true);
-                
             }
         }
     }
