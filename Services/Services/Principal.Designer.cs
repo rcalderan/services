@@ -43,32 +43,32 @@
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
             this.pessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.passarOrdemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passarOrdemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estatísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cad1Pn = new System.Windows.Forms.Panel();
-            this.cad1XLb = new System.Windows.Forms.Label();
             this.cad1TopPn = new System.Windows.Forms.Panel();
+            this.cad1XLb = new System.Windows.Forms.Label();
             this.setPn = new System.Windows.Forms.Panel();
             this.setTopPn = new System.Windows.Forms.Panel();
             this.setXLb = new System.Windows.Forms.Label();
             this.ordPn = new System.Windows.Forms.Panel();
             this.ordTopPn = new System.Windows.Forms.Panel();
             this.ordXLb = new System.Windows.Forms.Label();
-            this.estatísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuTrocaPn = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.usuXLb = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.usuUserTb = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.usuSenhaTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.usuUserTb = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.usuXLb = new System.Windows.Forms.Label();
             this.conPn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
@@ -94,11 +94,12 @@
             this.conPn.Controls.Add(this.conServTb);
             this.conPn.Controls.Add(this.label2);
             this.conPn.Controls.Add(this.panel1);
-            this.conPn.Location = new System.Drawing.Point(302, 136);
+            this.conPn.Location = new System.Drawing.Point(687, 277);
             this.conPn.Name = "conPn";
             this.conPn.Size = new System.Drawing.Size(194, 218);
             this.conPn.TabIndex = 0;
             this.conPn.Visible = false;
+            this.conPn.VisibleChanged += new System.EventHandler(this.conPn_VisibleChanged);
             // 
             // conConectaBt
             // 
@@ -243,24 +244,16 @@
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario (Troca)";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
-            // serviçosToolStripMenuItem
+            // cadastroToolStripMenuItem
             // 
-            this.serviçosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.passarOrdemToolStripMenuItem});
-            this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.serviçosToolStripMenuItem.Text = "Serviços";
-            // 
-            // passarOrdemToolStripMenuItem
-            // 
-            this.passarOrdemToolStripMenuItem.Name = "passarOrdemToolStripMenuItem";
-            this.passarOrdemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.passarOrdemToolStripMenuItem.Text = "Passar Ordem";
-            this.passarOrdemToolStripMenuItem.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Visible = false;
             // 
             // setoresToolStripMenuItem
             // 
@@ -273,9 +266,30 @@
             // setoresToolStripMenuItem1
             // 
             this.setoresToolStripMenuItem1.Name = "setoresToolStripMenuItem1";
-            this.setoresToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.setoresToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
             this.setoresToolStripMenuItem1.Text = "Setores";
             this.setoresToolStripMenuItem1.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
+            // 
+            // serviçosToolStripMenuItem
+            // 
+            this.serviçosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.passarOrdemToolStripMenuItem});
+            this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.serviçosToolStripMenuItem.Text = "Serviços";
+            // 
+            // passarOrdemToolStripMenuItem
+            // 
+            this.passarOrdemToolStripMenuItem.Name = "passarOrdemToolStripMenuItem";
+            this.passarOrdemToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.passarOrdemToolStripMenuItem.Text = "Passar Ordem";
+            this.passarOrdemToolStripMenuItem.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
+            // 
+            // estatísticaToolStripMenuItem
+            // 
+            this.estatísticaToolStripMenuItem.Name = "estatísticaToolStripMenuItem";
+            this.estatísticaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.estatísticaToolStripMenuItem.Text = "Estatística";
             // 
             // sobreToolStripMenuItem
             // 
@@ -289,13 +303,13 @@
             // configuraçõesToolStripMenuItem
             // 
             this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // cad1Pn
@@ -306,6 +320,15 @@
             this.cad1Pn.Size = new System.Drawing.Size(792, 106);
             this.cad1Pn.TabIndex = 2;
             this.cad1Pn.Visible = false;
+            // 
+            // cad1TopPn
+            // 
+            this.cad1TopPn.Controls.Add(this.cad1XLb);
+            this.cad1TopPn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cad1TopPn.Location = new System.Drawing.Point(0, 0);
+            this.cad1TopPn.Name = "cad1TopPn";
+            this.cad1TopPn.Size = new System.Drawing.Size(792, 24);
+            this.cad1TopPn.TabIndex = 1;
             // 
             // cad1XLb
             // 
@@ -318,15 +341,6 @@
             this.cad1XLb.TabIndex = 0;
             this.cad1XLb.Text = "X";
             this.cad1XLb.Click += new System.EventHandler(this.pesXLb_Click);
-            // 
-            // cad1TopPn
-            // 
-            this.cad1TopPn.Controls.Add(this.cad1XLb);
-            this.cad1TopPn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cad1TopPn.Location = new System.Drawing.Point(0, 0);
-            this.cad1TopPn.Name = "cad1TopPn";
-            this.cad1TopPn.Size = new System.Drawing.Size(792, 24);
-            this.cad1TopPn.TabIndex = 1;
             // 
             // setPn
             // 
@@ -361,7 +375,7 @@
             // ordPn
             // 
             this.ordPn.Controls.Add(this.ordTopPn);
-            this.ordPn.Location = new System.Drawing.Point(0, 255);
+            this.ordPn.Location = new System.Drawing.Point(0, 351);
             this.ordPn.Name = "ordPn";
             this.ordPn.Size = new System.Drawing.Size(792, 109);
             this.ordPn.TabIndex = 2;
@@ -388,19 +402,6 @@
             this.ordXLb.Text = "X";
             this.ordXLb.Click += new System.EventHandler(this.ordXLb_Click);
             // 
-            // estatísticaToolStripMenuItem
-            // 
-            this.estatísticaToolStripMenuItem.Name = "estatísticaToolStripMenuItem";
-            this.estatísticaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.estatísticaToolStripMenuItem.Text = "Estatística";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            this.cadastroToolStripMenuItem.Visible = false;
-            // 
             // usuTrocaPn
             // 
             this.usuTrocaPn.BackColor = System.Drawing.Color.PowderBlue;
@@ -415,60 +416,6 @@
             this.usuTrocaPn.TabIndex = 2;
             this.usuTrocaPn.Visible = false;
             this.usuTrocaPn.VisibleChanged += new System.EventHandler(this.usuTrocaPn_VisibleChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.usuXLb);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(183, 24);
-            this.panel3.TabIndex = 1;
-            // 
-            // usuXLb
-            // 
-            this.usuXLb.AutoSize = true;
-            this.usuXLb.Dock = System.Windows.Forms.DockStyle.Right;
-            this.usuXLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuXLb.Location = new System.Drawing.Point(165, 0);
-            this.usuXLb.Name = "usuXLb";
-            this.usuXLb.Size = new System.Drawing.Size(18, 17);
-            this.usuXLb.TabIndex = 0;
-            this.usuXLb.Text = "X";
-            this.usuXLb.Click += new System.EventHandler(this.usuXLb_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Location = new System.Drawing.Point(0, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Usuario";
-            // 
-            // usuUserTb
-            // 
-            this.usuUserTb.Dock = System.Windows.Forms.DockStyle.Top;
-            this.usuUserTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuUserTb.Location = new System.Drawing.Point(0, 37);
-            this.usuUserTb.Name = "usuUserTb";
-            this.usuUserTb.Size = new System.Drawing.Size(183, 26);
-            this.usuUserTb.TabIndex = 1;
-            this.usuUserTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.usuUserTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuUserTb_KeyDown);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Trocar usuario";
             // 
             // usuSenhaTb
             // 
@@ -491,6 +438,60 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "Senha";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // usuUserTb
+            // 
+            this.usuUserTb.Dock = System.Windows.Forms.DockStyle.Top;
+            this.usuUserTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuUserTb.Location = new System.Drawing.Point(0, 37);
+            this.usuUserTb.Name = "usuUserTb";
+            this.usuUserTb.Size = new System.Drawing.Size(183, 26);
+            this.usuUserTb.TabIndex = 1;
+            this.usuUserTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usuUserTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuUserTb_KeyDown);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Location = new System.Drawing.Point(0, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Usuario";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.usuXLb);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(183, 24);
+            this.panel3.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Trocar usuario";
+            // 
+            // usuXLb
+            // 
+            this.usuXLb.AutoSize = true;
+            this.usuXLb.Dock = System.Windows.Forms.DockStyle.Right;
+            this.usuXLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuXLb.Location = new System.Drawing.Point(165, 0);
+            this.usuXLb.Name = "usuXLb";
+            this.usuXLb.Size = new System.Drawing.Size(18, 17);
+            this.usuXLb.TabIndex = 0;
+            this.usuXLb.Text = "X";
+            this.usuXLb.Click += new System.EventHandler(this.usuXLb_Click);
             // 
             // Principal
             // 

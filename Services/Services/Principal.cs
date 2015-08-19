@@ -7,13 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Services
 {
     public partial class Principal : Form
     {
+
         private Conexao conexao;
+        private SQLiteConnection sqliteCon;
         private Panel[] panels;
+
+        private bool noServerDatabase = true;
+
         public Principal()
         {
             InitializeComponent();
@@ -41,15 +47,40 @@ namespace Services
         {
             try
             {
-                conexao = new Conexao();
-                if (!conexao.getLastLoadState())
-                {
-                    habilitaControles(false);
-                    conPn.Show();
-                    conPn.BringToFront();
+                if (noServerDatabase)
+                {//usar sqlite
+                    sqliteCon = new SQLiteConnection(Conexao.sqliteConectString);
+                    sqliteCon.Open();
+                    string query = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
+                    SQLiteCommand cmd = new SQLiteCommand(query, sqliteCon);
+                    cmd.ExecuteNonQuery();
+                    query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)"; 
+                    cmd = new SQLiteCommand(query, sqliteCon);
+                    cmd.ExecuteNonQuery();
+                    System.Data.DataTable dt = new System.Data.DataTable();
+                    SQLiteDataAdapter adap = new SQLiteDataAdapter("Select * from service", sqliteCon);
+                    adap.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show(dt.Rows[0]["id"].ToString());
+                    }
+                    else
+                        MessageBox.Show("nada");
+                    sqliteCon.Close();
+                    habilitaControles(true);
                 }
                 else
-                    habilitaControles(true);
+                {
+                    conexao = new Conexao();
+                    if (!conexao.getLastLoadState())
+                    {
+                        habilitaControles(false);
+                        conPn.Show();
+                        conPn.BringToFront();
+                    }
+                    else
+                        habilitaControles(true);
+                }
             }
             catch(Exception e)
             {
@@ -141,6 +172,12 @@ namespace Services
             {
                 
             }
+        }
+
+        private void conPn_VisibleChanged(object sender, EventArgs e)
+        {
+            if (conPn.Visible)
+                conPn.Location = new Point(conPn.Parent.Width / 2 - conPn.Width / 2, conPn.Parent.Height / 2 - conPn.Height / 2);
         }
     }
 }

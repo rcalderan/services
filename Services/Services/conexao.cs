@@ -6,18 +6,25 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Security.Cryptography;
 using Microsoft.Win32;
+using System.Data.SQLite;
 
 namespace Services
 {
     class Conexao
     {
+        public static string sqliteConectString = @"Data Source=services;Version=3;";
+
+        private SQLiteConnection sqliteCon;
+        MySqlConnection conexao;
+
+        private bool 
+
         private string user;
         private string server;
         private string pass;
         private string dataBase;
         private string conectString;
         private bool sucessedOnLastLoad = false;
-        MySqlConnection conexao;
         
         public bool getLastLoadState()
         {
@@ -413,6 +420,10 @@ namespace Services
             "`conteudo` TEXT NULL," +
             "`recebido` TINYINT NULL," +
             "PRIMARY KEY (`id`))";
+
+                string sqlite_com = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
+                string query = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
+                query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)"; 
             }
         }
 
