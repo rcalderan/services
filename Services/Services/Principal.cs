@@ -49,25 +49,20 @@ namespace Services
             {
                 if (noServerDatabase)
                 {//usar sqlite
-                    sqliteCon = new SQLiteConnection(Conexao.sqliteConectString);
-                    sqliteCon.Open();
-                    string query = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
-                    SQLiteCommand cmd = new SQLiteCommand(query, sqliteCon);
-                    cmd.ExecuteNonQuery();
-                    query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)"; 
-                    cmd = new SQLiteCommand(query, sqliteCon);
-                    cmd.ExecuteNonQuery();
-                    System.Data.DataTable dt = new System.Data.DataTable();
-                    SQLiteDataAdapter adap = new SQLiteDataAdapter("Select * from service", sqliteCon);
-                    adap.Fill(dt);
-                    if (dt.Rows.Count > 0)
+                    conexao = new Conexao();
+                    if (conexao.getLastLoadState())
                     {
-                        MessageBox.Show(dt.Rows[0]["id"].ToString());
+                        if (conexao.Check())
+                            habilitaControles(true);
+                        else
+                            habilitaControles(false);
+
                     }
                     else
-                        MessageBox.Show("nada");
-                    sqliteCon.Close();
-                    habilitaControles(true);
+                    {
+                        habilitaControles(false);
+                        MessageBox.Show("nao foi possivel conectar ao banco de dados");
+                    }
                 }
                 else
                 {
@@ -84,7 +79,7 @@ namespace Services
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
                 habilitaControles(false);
                 conPn.Show();
             }

@@ -71,7 +71,7 @@ namespace Services
                     if (dt != null)
                         if (int.TryParse(dt.Rows[0]["id"].ToString(), out nextId))
                             nextId++;
-                    if ("" != con.comandoMysql("INSERT INTO service values("+nextId+","+type.ToString()+","+prioridade.ToString()+",'"+hoje.ToString("yyyy-MM-dd-HH-mm-ss")+"','"+prazo.ToString("yyyy-MM-dd-HH-mm-ss")+"',"+status.Id.ToString()+",'"+joined +"',0)"))
+                    if ("" != con.Comando("INSERT INTO service values("+nextId+","+type.ToString()+","+prioridade.ToString()+",'"+hoje.ToString("yyyy-MM-dd-HH-mm-ss")+"','"+prazo.ToString("yyyy-MM-dd-HH-mm-ss")+"',"+status.Id.ToString()+",'"+joined +"',0)"))
                         return null;
                     else
                     {
@@ -147,7 +147,7 @@ namespace Services
                         query += ",recebido=0";
                     query += " WHERE id=" + this.id.ToString();
 
-                    if ("" != conexao.comandoMysql(query))
+                    if ("" != conexao.Comando(query))
                         return false;
                     else
                         return true;
@@ -189,7 +189,7 @@ namespace Services
                             query += ",recebido=0";
                     query += " WHERE id=" + this.id.ToString();
 
-                    if ("" != conexao.comandoMysql(query))
+                    if ("" != conexao.Comando(query))
                         return false;
                     else
                         return true;

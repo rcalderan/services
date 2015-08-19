@@ -12,12 +12,12 @@ namespace Services
 {
     class Conexao
     {
-        public static string sqliteConectString = @"Data Source=services;Version=3;";
+        public string sqliteConectString = @"Data Source=services;Version=3;";
 
         private SQLiteConnection sqliteCon;
         MySqlConnection conexao;
 
-        private bool 
+        public static bool noServerDatabase = true;
 
         private string user;
         private string server;
@@ -90,29 +90,37 @@ namespace Services
         {
             try
             {
-                System.Security.Principal.WindowsPrincipal principal = new System.Security.Principal.WindowsPrincipal(System.Security.Principal.WindowsIdentity.GetCurrent());
-                if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))
+                if (noServerDatabase)
                 {
-                    Dictionary<string, string> data = Arquivos.getDataFromReg();
-
-                    _setServer(data["confHostTb"]);
-                    _setUser(data["confUserTb"]);
-                    _setPassword(data["confPassTb"]);
-                    _setDatabase("noivabd");
-                    _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
-                }
-                else
-                {
-                    _setServer("192.168.0.10");
-                    _setUser("root");
-                    _setPassword("33722363");
-                    _setDatabase("project14");
-                    _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
-                }
-                if (checkStrings() == "")
+                    sqliteCon = new SQLiteConnection(sqliteConectString);
                     setLastLoadState(true);
+                }
                 else
-                    setLastLoadState(false);
+                {
+                    System.Security.Principal.WindowsPrincipal principal = new System.Security.Principal.WindowsPrincipal(System.Security.Principal.WindowsIdentity.GetCurrent());
+                    if (principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator))
+                    {
+                        Dictionary<string, string> data = Arquivos.getDataFromReg();
+
+                        _setServer(data["confHostTb"]);
+                        _setUser(data["confUserTb"]);
+                        _setPassword(data["confPassTb"]);
+                        _setDatabase("noivabd");
+                        _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
+                    }
+                    else
+                    {
+                        _setServer("192.168.0.10");
+                        _setUser("root");
+                        _setPassword("33722363");
+                        _setDatabase("project14");
+                        _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
+                    }
+                    if (checkStrings() == "")
+                        setLastLoadState(true);
+                    else
+                        setLastLoadState(false);
+                }
             }
             catch
             {
@@ -124,30 +132,33 @@ namespace Services
         {
             try
             {
-                _setServer(Host);
-                _setUser(User);
-                _setPassword(Password);
-                _setDatabase("noivabd");
-                _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
-                string erro = checkStrings();
-                if (erro == "")
+                if (noServerDatabase)
                 {
-                    setLastLoadState(true);
-                    
+
                 }
                 else
                 {
-                    setLastLoadState(false);
-                System.Windows.Forms.MessageBox.Show(erro);
+                    _setServer(Host);
+                    _setUser(User);
+                    _setPassword(Password);
+                    _setDatabase("noivabd");
+                    _setConStr("server=" + this.server + ";user id=" + this.user + ";password=" + this.pass + ";database=" + this.dataBase);
+                    string erro = checkStrings();
+                    if (erro == "")
+                    {
+                        setLastLoadState(true);
+
+                    }
+                    else
+                    {
+                        setLastLoadState(false);
+                        System.Windows.Forms.MessageBox.Show(erro);
+                    }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 setLastLoadState(false);
-
-                System.Windows.Forms.MessageBox.Show("Catch: "+ ex.Message);
-                //System.Windows.Forms.MessageBox.Show("Erro no processo de conexão!:\n" + ex.Message + "\n\nContate o programador!");
-                //System.Windows.Forms.Application.Exit();
             }
         }
 
@@ -244,10 +255,20 @@ namespace Services
         {
             try
             {
-                MySqlConnection testaCon = new MySqlConnection(this.conectString);
-                testaCon.Open(); 
-                testaCon.Close();
-                return "";
+                if (noServerDatabase)
+                {
+                    sqliteCon = new SQLiteConnection(sqliteConectString);
+                    sqliteCon.Open();
+                    sqliteCon.Close();
+                    return "";
+                }
+                else
+                {
+                    MySqlConnection testaCon = new MySqlConnection(this.conectString);
+                    testaCon.Open();
+                    testaCon.Close();
+                    return "";
+                }
             }
             catch (Exception e)
             {
@@ -261,22 +282,35 @@ namespace Services
             {
                 string tableName = "",conMessErro =this.checkStrings();
                 if (conMessErro != "")
-                    System.Windows.Forms.MessageBox.Show(conMessErro);
+                    return null;
                 int index = query.IndexOf("FROM ");
                 if (index != -1)
                 {
                     tableName = query.Substring(index + 5, query.Length - 5 - index);
-                    tableName = tableName.Substring(0, tableName.IndexOf(" "));
+                    if (tableName.IndexOf(" ")!=-1)
+                        tableName = tableName.Substring(0, tableName.IndexOf(" "));
                 }
                 DataTable dt = new DataTable();
                 dt.TableName = tableName;
-                if (conexao==null)
-                    conexao = new MySqlConnection("server=" + server + ";user id=" + user + ";password=" + pass + ";database=" + dataBase);
-                conexao.Open();
-                //query = MySqlHelper.EscapeString(query);
-                MySqlDataAdapter mAdapter = new MySqlDataAdapter(query, conexao);
-                mAdapter.Fill(dt);
-                conexao.Close();
+
+                if (noServerDatabase)
+                {
+                    sqliteCon = new SQLiteConnection(sqliteConectString);
+                    sqliteCon.Open();
+                    SQLiteDataAdapter adap = new SQLiteDataAdapter(query, sqliteCon);
+                    adap.Fill(dt);
+                    sqliteCon.Close();
+                }
+                else
+                {
+                    if (conexao == null)
+                        conexao = new MySqlConnection("server=" + server + ";user id=" + user + ";password=" + pass + ";database=" + dataBase);
+                    conexao.Open();
+                    //query = MySqlHelper.EscapeString(query);
+                    MySqlDataAdapter mAdapter = new MySqlDataAdapter(query, conexao);
+                    mAdapter.Fill(dt);
+                    conexao.Close();
+                }
                 if (dt.Rows.Count == 0)
                     return null;
                 else
@@ -295,8 +329,9 @@ namespace Services
                     return dt;
                 }
             }
-            catch
+            catch(Exception er)
             {
+                System.Windows.Forms.MessageBox.Show(er.Message);
                 this.conexao.Close();
                 return null;
             }
@@ -371,20 +406,32 @@ namespace Services
                 return 1;
         }
 
-        public string comandoMysql(string query)
+        public string Comando(string query)
         {
             try
             {
-                this.checkStrings();
-                if (this.conexao == null)
-                    this.conexao = new MySqlConnection(this.conectString);
-                this.conexao.Open();
-                //query = MySqlHelper.EscapeString(query);
-                MySqlCommand comando = new MySqlCommand(query, conexao);
-                //comando.Parameters.Add()
-                comando.ExecuteNonQuery();
-                this.conexao.Close();
-                return "";
+                if (noServerDatabase)
+                {
+                    sqliteCon = new SQLiteConnection(sqliteConectString);
+                    sqliteCon.Open();
+                    SQLiteCommand cmd = new SQLiteCommand(query, sqliteCon);
+                    cmd.ExecuteNonQuery();
+                    sqliteCon.Close();
+                    return "";
+                }
+                else
+                {
+                    this.checkStrings();
+                    if (this.conexao == null)
+                        this.conexao = new MySqlConnection(this.conectString);
+                    this.conexao.Open();
+                    //query = MySqlHelper.EscapeString(query);
+                    MySqlCommand comando = new MySqlCommand(query, conexao);
+                    //comando.Parameters.Add()
+                    comando.ExecuteNonQuery();
+                    this.conexao.Close();
+                    return "";
+                }
                 /*Arquivos arc = new Arquivos();
                 string log = arc.criaLog(query, "comandoMysql");
                 if (log != "")
@@ -394,23 +441,94 @@ namespace Services
             }
             catch (Exception es)
             {
-                this.conexao.Close();
+                if (noServerDatabase)
+                    sqliteCon.Close();
+                else
+                    this.conexao.Close();
                 return es.Message;
+            }
+        }
+        public bool Check()
+        {
+            try
+            {
+                if (this.getLastLoadState())
+                {
+                    if (Conexao.noServerDatabase)
+                    {//sqlite
+                        string erro;
+                        DataTable dt = Query("SELECT name FROM sqlite_master WHERE type='table'");
+                        if (dt != null)
+                        {
+                            DataColumn[] key = { dt.Columns["name"] };
+                            dt.PrimaryKey = key;
+                            foreach (KeyValuePair<string, string> pair in DataBaseCheck.sqlite_tables)
+                            {
+                                if (!dt.Rows.Contains(pair.Key))
+                                {
+                                    erro = Comando(pair.Value);
+                                    if (erro != "")
+                                        System.Windows.Forms.MessageBox.Show(erro);
+                                }
+                            }
+                        }
+                        else
+                            foreach (KeyValuePair<string, string> pair in DataBaseCheck.sqlite_tables)
+                            {
+                                erro = Comando(pair.Value);
+                                if (erro != "")
+                                    System.Windows.Forms.MessageBox.Show(erro);
+                            }
+                    }
+                    else
+                    {//mysql
+
+                    }
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch
+            {
+                return false;
             }
         }
     }
     class DataBaseCheck
     {
-        private string dataBaseName = "project14";
+        private string dataBaseName;
 
-        private string table_Service;
+        public static Dictionary<string, string> sqlite_tables = new Dictionary<string, string>(){
+            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
+            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'permissao' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
+            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
+        };
+        /*
+         * user
+         * id
+         * permissao
+         * login 
+         * senha
+         * nome
+         * ultimoAcesso
+         * 
+         * setor
+         * id
+         * nome
+         * 
+         */
+        public static Dictionary<string, string> mysql_tables = new Dictionary<string, string>(){
+            {"service","CREATE TABLE `service` (`id` INT NOT NULL,`type` TINYINT NULL,`prioridade` TINYINT NULL,`hoje` DATETIME NULL,'prazo` DATETIME NULL,`status` TINYINT NULL,`conteudo` TEXT NULL,`recebido` TINYINT NULL, PRIMARY KEY (`id`))"},
+            {"user",""},
+            {"setor",""}
+        };
 
         public DataBaseCheck()
         {
-            Conexao con = new Conexao();
-            if (con.getLastLoadState())
-            {
-                table_Service = "CREATE TABLE `" + dataBaseName + "`.`service` (" +
+            
+                /*
+                string table_Service = "CREATE TABLE `" + dataBaseName + "`.`service` (" +
             "`id` INT NOT NULL," +
             "`type` TINYINT NULL," +
             "`prioridade` TINYINT NULL," +
@@ -423,9 +541,30 @@ namespace Services
 
                 string sqlite_com = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
                 string query = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
-                query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)"; 
-            }
+                query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)";
+                
+                 * sqliteCon = new SQLiteConnection(Conexao.sqliteConectString);
+                        sqliteCon.Open();
+                        string query = "CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)";
+                        SQLiteCommand cmd = new SQLiteCommand(query, sqliteCon);
+                        cmd.ExecuteNonQuery();
+                        query = "INSERT INTO service (id,type,prioridade,hoje,prazo,status,conteudo,resposta,recebido) VALUES(2,0,0,'2015-08-17','2015-09-02',0,'nada','nada tb',1)"; 
+                        cmd = new SQLiteCommand(query, sqliteCon);
+                        cmd.ExecuteNonQuery();
+                        System.Data.DataTable dt = new System.Data.DataTable();
+                        SQLiteDataAdapter adap = new SQLiteDataAdapter("Select * from service", sqliteCon);
+                        adap.Fill(dt);
+                        if (dt.Rows.Count > 0)
+                        {
+                            MessageBox.Show(dt.Rows[0]["id"].ToString());
+                        }
+                        else
+                            MessageBox.Show("nada");
+                        sqliteCon.Close();
+                 */
+            
         }
+        
 
     }
 }
