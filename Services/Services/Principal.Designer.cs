@@ -1,6 +1,6 @@
 ﻿namespace Services
 {
-    partial class Principal
+    partial class PrincipalForm
     {
         /// <summary>
         /// Required designer variable.
@@ -53,8 +53,29 @@
             this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cad1Pn = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cad1LocalizarPn = new System.Windows.Forms.Panel();
+            this.cad1LocalizarTb = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cad1LocXLb = new System.Windows.Forms.Label();
+            this.cad1PrivilegiosCb = new System.Windows.Forms.ComboBox();
+            this.cad1Pass2Tb = new System.Windows.Forms.TextBox();
+            this.cad1Pass1Tb = new System.Windows.Forms.TextBox();
+            this.cad1LoginTb = new System.Windows.Forms.TextBox();
+            this.cad1NomeTb = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cad1IdLb = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cad1LocalizarLb = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.cad1TopPn = new System.Windows.Forms.Panel();
+            this.cad1LpLb = new System.Windows.Forms.Label();
             this.cad1XLb = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.setPn = new System.Windows.Forms.Panel();
             this.setTopPn = new System.Windows.Forms.Panel();
             this.setXLb = new System.Windows.Forms.Label();
@@ -73,6 +94,7 @@
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
             this.cad1Pn.SuspendLayout();
+            this.cad1LocalizarPn.SuspendLayout();
             this.cad1TopPn.SuspendLayout();
             this.setPn.SuspendLayout();
             this.setTopPn.SuspendLayout();
@@ -314,33 +336,246 @@
             // 
             // cad1Pn
             // 
+            this.cad1Pn.Controls.Add(this.button2);
+            this.cad1Pn.Controls.Add(this.button1);
+            this.cad1Pn.Controls.Add(this.cad1LocalizarPn);
+            this.cad1Pn.Controls.Add(this.cad1PrivilegiosCb);
+            this.cad1Pn.Controls.Add(this.cad1Pass2Tb);
+            this.cad1Pn.Controls.Add(this.cad1Pass1Tb);
+            this.cad1Pn.Controls.Add(this.cad1LoginTb);
+            this.cad1Pn.Controls.Add(this.cad1NomeTb);
+            this.cad1Pn.Controls.Add(this.label16);
+            this.cad1Pn.Controls.Add(this.label10);
+            this.cad1Pn.Controls.Add(this.label14);
+            this.cad1Pn.Controls.Add(this.cad1IdLb);
+            this.cad1Pn.Controls.Add(this.label15);
+            this.cad1Pn.Controls.Add(this.label11);
+            this.cad1Pn.Controls.Add(this.cad1LocalizarLb);
+            this.cad1Pn.Controls.Add(this.label6);
             this.cad1Pn.Controls.Add(this.cad1TopPn);
             this.cad1Pn.Location = new System.Drawing.Point(0, 24);
             this.cad1Pn.Name = "cad1Pn";
-            this.cad1Pn.Size = new System.Drawing.Size(792, 106);
+            this.cad1Pn.Size = new System.Drawing.Size(585, 320);
             this.cad1Pn.TabIndex = 2;
             this.cad1Pn.Visible = false;
+            this.cad1Pn.VisibleChanged += new System.EventHandler(this.cad1Pn_VisibleChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(530, 284);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 30);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Excluir";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(402, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 61);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Salvar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cad1LocalizarPn
+            // 
+            this.cad1LocalizarPn.BackColor = System.Drawing.Color.Gray;
+            this.cad1LocalizarPn.Controls.Add(this.cad1LocalizarTb);
+            this.cad1LocalizarPn.Controls.Add(this.label12);
+            this.cad1LocalizarPn.Controls.Add(this.cad1LocXLb);
+            this.cad1LocalizarPn.Location = new System.Drawing.Point(157, 54);
+            this.cad1LocalizarPn.Name = "cad1LocalizarPn";
+            this.cad1LocalizarPn.Size = new System.Drawing.Size(404, 45);
+            this.cad1LocalizarPn.TabIndex = 5;
+            this.cad1LocalizarPn.VisibleChanged += new System.EventHandler(this.cad1LocalizarPn_VisibleChanged);
+            // 
+            // cad1LocalizarTb
+            // 
+            this.cad1LocalizarTb.Location = new System.Drawing.Point(3, 16);
+            this.cad1LocalizarTb.Name = "cad1LocalizarTb";
+            this.cad1LocalizarTb.Size = new System.Drawing.Size(395, 20);
+            this.cad1LocalizarTb.TabIndex = 3;
+            this.cad1LocalizarTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cad1LocalizarTb_KeyDown);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 13);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Localizar";
+            // 
+            // cad1LocXLb
+            // 
+            this.cad1LocXLb.AutoSize = true;
+            this.cad1LocXLb.Location = new System.Drawing.Point(384, 0);
+            this.cad1LocXLb.Name = "cad1LocXLb";
+            this.cad1LocXLb.Size = new System.Drawing.Size(14, 13);
+            this.cad1LocXLb.TabIndex = 2;
+            this.cad1LocXLb.Text = "X";
+            this.cad1LocXLb.Click += new System.EventHandler(this.cad1LocXLb_Click);
+            // 
+            // cad1PrivilegiosCb
+            // 
+            this.cad1PrivilegiosCb.FormattingEnabled = true;
+            this.cad1PrivilegiosCb.Location = new System.Drawing.Point(402, 169);
+            this.cad1PrivilegiosCb.Name = "cad1PrivilegiosCb";
+            this.cad1PrivilegiosCb.Size = new System.Drawing.Size(121, 21);
+            this.cad1PrivilegiosCb.TabIndex = 4;
+            // 
+            // cad1Pass2Tb
+            // 
+            this.cad1Pass2Tb.Location = new System.Drawing.Point(61, 254);
+            this.cad1Pass2Tb.MaxLength = 45;
+            this.cad1Pass2Tb.Name = "cad1Pass2Tb";
+            this.cad1Pass2Tb.PasswordChar = '*';
+            this.cad1Pass2Tb.Size = new System.Drawing.Size(279, 20);
+            this.cad1Pass2Tb.TabIndex = 3;
+            // 
+            // cad1Pass1Tb
+            // 
+            this.cad1Pass1Tb.Location = new System.Drawing.Point(61, 213);
+            this.cad1Pass1Tb.MaxLength = 45;
+            this.cad1Pass1Tb.Name = "cad1Pass1Tb";
+            this.cad1Pass1Tb.PasswordChar = '*';
+            this.cad1Pass1Tb.Size = new System.Drawing.Size(279, 20);
+            this.cad1Pass1Tb.TabIndex = 3;
+            // 
+            // cad1LoginTb
+            // 
+            this.cad1LoginTb.Location = new System.Drawing.Point(61, 169);
+            this.cad1LoginTb.MaxLength = 45;
+            this.cad1LoginTb.Name = "cad1LoginTb";
+            this.cad1LoginTb.Size = new System.Drawing.Size(279, 20);
+            this.cad1LoginTb.TabIndex = 3;
+            // 
+            // cad1NomeTb
+            // 
+            this.cad1NomeTb.Location = new System.Drawing.Point(61, 113);
+            this.cad1NomeTb.MaxLength = 60;
+            this.cad1NomeTb.Name = "cad1NomeTb";
+            this.cad1NomeTb.Size = new System.Drawing.Size(462, 20);
+            this.cad1NomeTb.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(58, 238);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Senha (Repetir)";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(58, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(16, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Id";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(58, 197);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Senha";
+            // 
+            // cad1IdLb
+            // 
+            this.cad1IdLb.AutoSize = true;
+            this.cad1IdLb.Location = new System.Drawing.Point(80, 64);
+            this.cad1IdLb.Name = "cad1IdLb";
+            this.cad1IdLb.Size = new System.Drawing.Size(15, 13);
+            this.cad1IdLb.TabIndex = 2;
+            this.cad1IdLb.Text = "id";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(399, 153);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Privilégios";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(58, 153);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Login";
+            // 
+            // cad1LocalizarLb
+            // 
+            this.cad1LocalizarLb.AutoSize = true;
+            this.cad1LocalizarLb.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cad1LocalizarLb.Location = new System.Drawing.Point(474, 97);
+            this.cad1LocalizarLb.Name = "cad1LocalizarLb";
+            this.cad1LocalizarLb.Size = new System.Drawing.Size(49, 13);
+            this.cad1LocalizarLb.TabIndex = 2;
+            this.cad1LocalizarLb.Text = "Localizar";
+            this.cad1LocalizarLb.Click += new System.EventHandler(this.cad1LocalizarLb_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(58, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Nome";
             // 
             // cad1TopPn
             // 
+            this.cad1TopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.cad1TopPn.Controls.Add(this.cad1LpLb);
             this.cad1TopPn.Controls.Add(this.cad1XLb);
+            this.cad1TopPn.Controls.Add(this.label13);
             this.cad1TopPn.Dock = System.Windows.Forms.DockStyle.Top;
             this.cad1TopPn.Location = new System.Drawing.Point(0, 0);
             this.cad1TopPn.Name = "cad1TopPn";
-            this.cad1TopPn.Size = new System.Drawing.Size(792, 24);
+            this.cad1TopPn.Size = new System.Drawing.Size(585, 24);
             this.cad1TopPn.TabIndex = 1;
+            // 
+            // cad1LpLb
+            // 
+            this.cad1LpLb.AutoSize = true;
+            this.cad1LpLb.Location = new System.Drawing.Point(542, 3);
+            this.cad1LpLb.Name = "cad1LpLb";
+            this.cad1LpLb.Size = new System.Drawing.Size(19, 13);
+            this.cad1LpLb.TabIndex = 3;
+            this.cad1LpLb.Text = "Lp";
+            this.cad1LpLb.Click += new System.EventHandler(this.cad1LpLb_Click);
             // 
             // cad1XLb
             // 
             this.cad1XLb.AutoSize = true;
             this.cad1XLb.Dock = System.Windows.Forms.DockStyle.Right;
             this.cad1XLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cad1XLb.Location = new System.Drawing.Point(774, 0);
+            this.cad1XLb.Location = new System.Drawing.Point(567, 0);
             this.cad1XLb.Name = "cad1XLb";
             this.cad1XLb.Size = new System.Drawing.Size(18, 17);
             this.cad1XLb.TabIndex = 0;
             this.cad1XLb.Text = "X";
             this.cad1XLb.Click += new System.EventHandler(this.pesXLb_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(5, 2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(155, 20);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Cadastro de Usuario";
             // 
             // setPn
             // 
@@ -419,10 +654,10 @@
             // 
             // usuSenhaTb
             // 
-            this.usuSenhaTb.Dock = System.Windows.Forms.DockStyle.Top;
             this.usuSenhaTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuSenhaTb.Location = new System.Drawing.Point(0, 76);
+            this.usuSenhaTb.Location = new System.Drawing.Point(0, 81);
             this.usuSenhaTb.Name = "usuSenhaTb";
+            this.usuSenhaTb.PasswordChar = '*';
             this.usuSenhaTb.Size = new System.Drawing.Size(183, 26);
             this.usuSenhaTb.TabIndex = 2;
             this.usuSenhaTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -431,8 +666,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Location = new System.Drawing.Point(0, 63);
+            this.label9.Location = new System.Drawing.Point(0, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 4;
@@ -441,9 +675,8 @@
             // 
             // usuUserTb
             // 
-            this.usuUserTb.Dock = System.Windows.Forms.DockStyle.Top;
             this.usuUserTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuUserTb.Location = new System.Drawing.Point(0, 37);
+            this.usuUserTb.Location = new System.Drawing.Point(0, 42);
             this.usuUserTb.Name = "usuUserTb";
             this.usuUserTb.Size = new System.Drawing.Size(183, 26);
             this.usuUserTb.TabIndex = 1;
@@ -453,8 +686,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Location = new System.Drawing.Point(0, 24);
+            this.label7.Location = new System.Drawing.Point(0, 29);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 2;
@@ -462,6 +694,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.usuXLb);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -477,9 +710,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.Size = new System.Drawing.Size(48, 20);
             this.label8.TabIndex = 1;
-            this.label8.Text = "Trocar usuario";
+            this.label8.Text = "Login";
             // 
             // usuXLb
             // 
@@ -493,7 +726,7 @@
             this.usuXLb.Text = "X";
             this.usuXLb.Click += new System.EventHandler(this.usuXLb_Click);
             // 
-            // Principal
+            // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -505,7 +738,7 @@
             this.Controls.Add(this.conPn);
             this.Controls.Add(this.menuPrincipal);
             this.MainMenuStrip = this.menuPrincipal;
-            this.Name = "Principal";
+            this.Name = "PrincipalForm";
             this.Text = "Services";
             this.conPn.ResumeLayout(false);
             this.conPn.PerformLayout();
@@ -513,6 +746,9 @@
             this.menuPrincipal.ResumeLayout(false);
             this.menuPrincipal.PerformLayout();
             this.cad1Pn.ResumeLayout(false);
+            this.cad1Pn.PerformLayout();
+            this.cad1LocalizarPn.ResumeLayout(false);
+            this.cad1LocalizarPn.PerformLayout();
             this.cad1TopPn.ResumeLayout(false);
             this.cad1TopPn.PerformLayout();
             this.setPn.ResumeLayout(false);
@@ -573,6 +809,27 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label usuXLb;
+        private System.Windows.Forms.ComboBox cad1PrivilegiosCb;
+        private System.Windows.Forms.TextBox cad1NomeTb;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label cad1IdLb;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel cad1LocalizarPn;
+        private System.Windows.Forms.TextBox cad1LocalizarTb;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label cad1LocXLb;
+        private System.Windows.Forms.Label cad1LocalizarLb;
+        private System.Windows.Forms.TextBox cad1LoginTb;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox cad1Pass2Tb;
+        private System.Windows.Forms.TextBox cad1Pass1Tb;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label cad1LpLb;
     }
 }
 

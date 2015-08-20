@@ -501,9 +501,15 @@ namespace Services
 
         public static Dictionary<string, string> sqlite_tables = new Dictionary<string, string>(){
             {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
-            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'permissao' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
+            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'privilegio' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
             {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
         };
+        public static Dictionary<string, string> sqlite_FirstInsert = new Dictionary<string, string>(){
+            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
+            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'privilegio' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
+            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
+        };
+
         /*
          * user
          * id

@@ -15,11 +15,11 @@ namespace Services
             //set { id = value; }
         }
 
-        private Permissao permissao;
-        public Permissao Permissao
+        private Privilegio privilegio;
+        public Privilegio Privilegio
         {
-            get { return permissao; }
-            set { permissao = value; }
+            get { return privilegio; }
+            set { privilegio = value; }
         }
 
         private string login;
@@ -69,7 +69,7 @@ namespace Services
                         u.nome = dt.Rows[0]["nome"].ToString();
                         u.login = dt.Rows[0]["login"].ToString();
                         u.pass = dt.Rows[0]["senha"].ToString();
-                        u.Permissao = new Permissao(int.Parse(dt.Rows[0]["permissao"].ToString()));
+                        u.privilegio = new Privilegio(int.Parse(dt.Rows[0]["privilegio"].ToString()));
                         u.conexao = con;
                         if (DateTime.TryParse(dt.Rows[0]["ultimoAcesso"].ToString(), out auxDt))
                             u.ultimoAcesso = auxDt;
@@ -102,9 +102,9 @@ namespace Services
                         if (dt != null)
                             next = int.Parse(dt.Rows[0]["id"].ToString());
                         next++;
-                        query = "INSERT INTO user (id,permissao,login,pass,nome,ultimoAcesso) VALUES(" +
+                        query = "INSERT INTO user (id,privilegio,login,pass,nome,ultimoAcesso) VALUES(" +
                             next.ToString() + "," +
-                            this.Permissao.id.ToString() + ",'" +
+                            this.privilegio.id.ToString() + ",'" +
                             this.login + "','" +
                             this.pass + "','" +
                             this.nome + "','" +
@@ -143,9 +143,9 @@ namespace Services
                         System.Data.DataTable dt = conexao.Query(query);
                         if (dt==null)
                         {//novo
-                            query = "INSERT INTO user (id,permissao,login,pass,nome,ultimoAcesso) VALUES("+
+                            query = "INSERT INTO user (id,privilegio,login,pass,nome,ultimoAcesso) VALUES("+
                                 this.id.ToString()+","+
-                                this.Permissao.id.ToString()+",'"+
+                                this.privilegio.id.ToString()+",'"+
                                 this.login+"','"+
                                 this.pass+"','"+
                                 this.nome+"','"+
@@ -159,12 +159,16 @@ namespace Services
                         {//update
                             query = "UPDATE user SET " +
                                 "id=" + this.id.ToString() +
-                            ",permisao=" + this.permissao.id.ToString() +
+                            ",privilegio=" + this.privilegio.id.ToString() +
                             ",login='" + this.ToString() +
                             "',pass='" + this.pass +
                             "',nome='" + this.nome +
                             "',ultimoAcesso='" + this.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") +
                             "' WHERE id=" + this.id;
+                            if (conexao.Comando(query) != "")
+                                return false;
+                            else
+                                return true;
                         }
 
                     }
@@ -186,12 +190,12 @@ namespace Services
 
 
 
-    struct Permissao : User
+    struct Privilegio
     {
         public int id;
         public string nome;
 
-        public Permissao(int nivel)
+        public Privilegio(int nivel)
         {
             id = nivel;
             switch (nivel)
@@ -212,17 +216,41 @@ namespace Services
             }
         }
 
-        public static int Administrador
+        public static List<Privilegio> All = new List<Privilegio>() 
         {
-            get { return 0; }
+            Privilegio.Administrador, Privilegio.Avançado, Privilegio.Comum 
+        };
+
+
+        public static Privilegio Administrador
+        {
+            get 
+            {
+                Privilegio p =  new Privilegio();
+                p.id =0;
+                p.nome = "Adminstrador";
+                return p; 
+            }
         }
-        public static int Avançado
+        public static Privilegio Avançado
         {
-            get { return 1; }
+            get 
+            {
+                Privilegio p =  new Privilegio();
+                p.id =1;
+                p.nome = "Avançado";
+                return p; 
+            }
         }
-        public static int Comum
+        public static Privilegio Comum
         {
-            get { return 2; }
+            get 
+            {
+                Privilegio p =  new Privilegio();
+                p.id =2;
+                p.nome = "Comum";
+                return p; 
+            }
         }
 
         

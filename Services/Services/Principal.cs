@@ -11,16 +11,16 @@ using System.Data.SQLite;
 
 namespace Services
 {
-    public partial class Principal : Form
+    public partial class PrincipalForm : Form
     {
 
         private Conexao conexao;
-        private SQLiteConnection sqliteCon;
+
         private Panel[] panels;
 
-        private bool noServerDatabase = true;
+        private User activeUser;
 
-        public Principal()
+        public PrincipalForm()
         {
             InitializeComponent();
             List<Panel> p = new List<Panel>();
@@ -47,13 +47,20 @@ namespace Services
         {
             try
             {
-                if (noServerDatabase)
+                if (Conexao.noServerDatabase)
                 {//usar sqlite
                     conexao = new Conexao();
                     if (conexao.getLastLoadState())
                     {
                         if (conexao.Check())
-                            habilitaControles(true);
+                        {
+                            if (activeUser == null)
+                            {
+                                usuTrocaPn.Show();
+                            }
+                            else
+                                habilitaControles(true);
+                        }
                         else
                             habilitaControles(false);
 
@@ -142,10 +149,7 @@ namespace Services
         private void usuTrocaPn_VisibleChanged(object sender, EventArgs e)
         {
             if (usuTrocaPn.Visible)
-            {
-                Point loc = new Point(usuTrocaPn.Parent.Width / 2 - usuTrocaPn.Width / 2, usuTrocaPn.Parent.Height / 2 - usuTrocaPn.Height / 2);
-                usuTrocaPn.Location = loc;
-            }
+                centralizarControl(usuTrocaPn);
         }
 
         private void usuXLb_Click(object sender, EventArgs e)
@@ -172,7 +176,59 @@ namespace Services
         private void conPn_VisibleChanged(object sender, EventArgs e)
         {
             if (conPn.Visible)
-                conPn.Location = new Point(conPn.Parent.Width / 2 - conPn.Width / 2, conPn.Parent.Height / 2 - conPn.Height / 2);
+                centralizarControl(conPn);
+        }
+
+        private void cad1Pn_VisibleChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cad1PrivilegiosCb.Items.Count == 0)
+                    foreach (Privilegio p in Privilegio.All)
+                        cad1PrivilegiosCb.Items.Add(p.nome);
+
+            }
+            catch { }
+        }
+
+        private void cad1LocalizarTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+            }
+        }
+
+        private void cad1LocXLb_Click(object sender, EventArgs e)
+        {
+            cad1LocalizarPn.Hide();
+            cad1LocalizarTb.Clear();
+        }
+
+        private void cad1LocalizarLb_Click(object sender, EventArgs e)
+        {
+            cad1LocalizarPn.Show();
+        }
+
+        private void cad1LocalizarPn_VisibleChanged(object sender, EventArgs e)
+        {
+            if (cad1LocalizarPn.Visible)
+                centralizarControl(cad1LocalizarPn);
+        }
+        private void centralizarControl(Control c)
+        {
+            c.Location = new Point(c.Parent.Width / 2 - c.Width / 2, c.Parent.Height / 2 - c.Height / 2);
+        }
+
+        private void cad1LpLb_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void limpaCad1()
+        {
+            cad1IdLb.Text = "";
+            cad1NomeTb.Clear();
+            cad1Pass1Tb.Clear();
+            cad1Pass2Tb.Clear();
         }
     }
 }
