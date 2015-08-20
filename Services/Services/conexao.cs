@@ -469,6 +469,11 @@ namespace Services
                                     erro = Comando(pair.Value);
                                     if (erro != "")
                                         System.Windows.Forms.MessageBox.Show(erro);
+                                    else
+                                        if (DataBaseCheck.sqlite_FirstInsert[pair.Key]!="")
+                                            if (Comando(DataBaseCheck.sqlite_FirstInsert[pair.Key]) != "")
+                                                System.Windows.Forms.MessageBox.Show(erro);
+                                        
                                 }
                             }
                         }
@@ -478,6 +483,10 @@ namespace Services
                                 erro = Comando(pair.Value);
                                 if (erro != "")
                                     System.Windows.Forms.MessageBox.Show(erro);
+                                else
+                                    if (DataBaseCheck.sqlite_FirstInsert[pair.Key] != "")
+                                        if (Comando(DataBaseCheck.sqlite_FirstInsert[pair.Key]) != "")
+                                            System.Windows.Forms.MessageBox.Show(erro);
                             }
                     }
                     else
@@ -497,25 +506,30 @@ namespace Services
     }
     class DataBaseCheck
     {
-        private string dataBaseName;
-
         public static Dictionary<string, string> sqlite_tables = new Dictionary<string, string>(){
-            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
-            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'privilegio' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
-            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
-        };
-        public static Dictionary<string, string> sqlite_FirstInsert = new Dictionary<string, string>(){
-            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
-            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY NOT NULL, 'privilegio' INTEGER,'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
-            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
+            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
+            {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'privilegio' INTEGER, 'setor' INTEGER, 'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
+            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
         };
 
+        public static Dictionary<string, string> sqlite_FirstInsert = new Dictionary<string, string>(){
+            {"service",""},
+            {"user","INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES (NULL,0,0,'admin','admin','Administrador',NULL)"},
+            {"setor","INSERT INTO setor (nome) VALUES('Escritorio')"}
+        };
+
+        public static Dictionary<string, string> mysql_tables = new Dictionary<string, string>(){
+            {"service",""},
+            {"user","INSERT INTO user (privilegio,login,pass,nome) VALUES(1,'admin','admin','Admnistrador')"},
+            {"setor",""}
+        };
         /*
          * user
          * id
-         * permissao
+         * privilegio
+         * setor
          * login 
-         * senha
+         * pass
          * nome
          * ultimoAcesso
          * 
@@ -524,11 +538,6 @@ namespace Services
          * nome
          * 
          */
-        public static Dictionary<string, string> mysql_tables = new Dictionary<string, string>(){
-            {"service","CREATE TABLE `service` (`id` INT NOT NULL,`type` TINYINT NULL,`prioridade` TINYINT NULL,`hoje` DATETIME NULL,'prazo` DATETIME NULL,`status` TINYINT NULL,`conteudo` TEXT NULL,`recebido` TINYINT NULL, PRIMARY KEY (`id`))"},
-            {"user",""},
-            {"setor",""}
-        };
 
         public DataBaseCheck()
         {

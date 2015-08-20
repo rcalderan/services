@@ -98,7 +98,6 @@ namespace Services
                     if (dt != null)
                     {
                         DateTime auxDt;
-                        int aux;
                         Service s = new Service();
                         s.id = int.Parse(dt.Rows[0]["id"].ToString());
                         s.type = int.Parse(dt.Rows[0]["type"].ToString());
@@ -204,6 +203,65 @@ namespace Services
         }
     }
 
+    struct TipoDeOrdem
+    {
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private string nome;
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+        public TipoDeOrdem(int ID)
+        {
+            this.id = ID;
+            switch(ID)
+            {
+                case 0:
+                    this.nome = "Descritiva";
+                    break;
+                case 1:
+                    this.nome = "Manutenção de Equipamento";
+                    break;
+                default:
+                    this.id = 0;
+                    this.nome = "Descritiva";
+                    break;
+            }
+        }
+        public static TipoDeOrdem Descritiva
+        {
+            get
+            {
+                TipoDeOrdem p = new TipoDeOrdem();
+                p.id = 0;
+                p.nome = "Descritiva";
+                return p;
+            }
+        }
+
+        public static TipoDeOrdem Manutencao
+        {
+            get
+            {
+                TipoDeOrdem p = new TipoDeOrdem();
+                p.id = 1;
+                p.nome = "Manutenção de Equipamento";
+                return p;
+            }
+        }
+        public static List<TipoDeOrdem> All = new List<TipoDeOrdem>() 
+        {
+            TipoDeOrdem.Descritiva, TipoDeOrdem.Manutencao 
+        };
+    }
+
     struct Status
     {
         private int id;
@@ -217,66 +275,121 @@ namespace Services
         {
             get { return id; }
         }
-
-        public Status(int Id)
+        
+        public Status(int ID)
         {
-            switch (Id)
+            this.id = ID;
+            switch (ID)
             {
+                case -1:
+                    nome = "Desconhecido";
+                    break;
                 case 0:
-                    id = Pendente;
                     nome = "Pendente";
                     break;
                 case 1:
-                    id = Completo;
                     nome = "Completo";
                     break;
                 case 2:
-                    id = EmTransito;
                     nome = "EmTransito";
                     break;
                 case 3:
-                    id = Negado;
                     nome = "Negado";
                     break;
                 case 4:
-                    id = Resolvido;
                     nome = "Resolvido";
                     break;
+                case 5:
+                    nome = "Aguardando Terceiros";
+                    break;
                 default:
-                    id = NA;
-                    nome = "N/A";
+                    id = -1;
+                    nome = "Desconhecido";
                     break;
             }
 
         }
-        public static int Desconhecido
-        {
-            get { return -1; }
-        }
-        public static int Pendente
-        {
-            get { return 0; }
-        }
-        public static int Completo
-        {
-            get { return 1; }
-        }
-        public static int EmTransito
-        {
-            get { return 2; }
-        }
-        public static int Negado
-        {
-            get { return 3; }
-        }
-        public static int Resolvido
-        {
-            get { return 4; }
-        }
-        public static int NA
-        {
-            get { return -1; }
-        }
 
+        public static List<Status> All = new List<Status>() 
+        {
+            Status.Pendente , 
+            Status.Completo,
+            Status.EmTransito,
+            Status.Negado,
+            Status.Resolvido,
+            Status.AguardandoTerceiros,
+            Status.Desconhecido
+        };
+        public static Status Desconhecido
+        {
+            get 
+            {
+                Status s = new Status();
+                s.id = -1;
+                s.nome = "Desconhecido";
+                return s; 
+            }
+        }
+        public static Status Pendente
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 0;
+                s.nome = "Pendente";
+                return s;
+            }
+        }
+        public static Status Completo
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 1;
+                s.nome = "Completo";
+                return s;
+            }
+        }
+        public static Status EmTransito
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 2;
+                s.nome = "EmTransito";
+                return s;
+            }
+        }
+        public static Status Negado
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 3;
+                s.nome = "Negado";
+                return s;
+            }
+        }
+        public static Status Resolvido
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 4;
+                s.nome = "Resolvido";
+                return s;
+            }
+        }
+        public static Status AguardandoTerceiros
+        {
+            get
+            {
+                Status s = new Status();
+                s.id = 5;
+                s.nome = "Aguardando Terceiros";
+                return s;
+            }
+        }
+        
     }
 }

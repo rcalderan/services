@@ -41,24 +41,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.pessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.passarOrdemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.estatísticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.cad1Mi = new System.Windows.Forms.ToolStripMenuItem();
+            this.locaisMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.setoresMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicosMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.emitirOrdemMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.statMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.appMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.confMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreMi = new System.Windows.Forms.ToolStripMenuItem();
             this.cad1Pn = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cad1ExcluirBt = new System.Windows.Forms.Button();
+            this.cad1SaveBt = new System.Windows.Forms.Button();
             this.cad1LocalizarPn = new System.Windows.Forms.Panel();
             this.cad1LocalizarTb = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cad1LocXLb = new System.Windows.Forms.Label();
+            this.cad1SetorCb = new System.Windows.Forms.ComboBox();
             this.cad1PrivilegiosCb = new System.Windows.Forms.ComboBox();
             this.cad1Pass2Tb = new System.Windows.Forms.TextBox();
             this.cad1Pass1Tb = new System.Windows.Forms.TextBox();
@@ -67,6 +68,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.cad1IdLb = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -79,17 +81,41 @@
             this.setPn = new System.Windows.Forms.Panel();
             this.setTopPn = new System.Windows.Forms.Panel();
             this.setXLb = new System.Windows.Forms.Label();
-            this.ordPn = new System.Windows.Forms.Panel();
+            this.emiPn = new System.Windows.Forms.Panel();
             this.ordTopPn = new System.Windows.Forms.Panel();
             this.ordXLb = new System.Windows.Forms.Label();
             this.usuTrocaPn = new System.Windows.Forms.Panel();
-            this.usuSenhaTb = new System.Windows.Forms.TextBox();
+            this.usuPassTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.usuUserTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.usuXLb = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.setIdLb = new System.Windows.Forms.Label();
+            this.setNomeTb = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.setCb = new System.Windows.Forms.ComboBox();
+            this.setSaveBt = new System.Windows.Forms.Button();
+            this.setExcluiBt = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.emiTipoCb = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.emiStatusBb = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.emiSetorTb = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.emiPrioridadeCb = new System.Windows.Forms.ComboBox();
+            this.emiPrazoDtp = new System.Windows.Forms.DateTimePicker();
+            this.label28 = new System.Windows.Forms.Label();
+            this.emiSolicitanteLb = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.conPn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
@@ -98,7 +124,7 @@
             this.cad1TopPn.SuspendLayout();
             this.setPn.SuspendLayout();
             this.setTopPn.SuspendLayout();
-            this.ordPn.SuspendLayout();
+            this.emiPn.SuspendLayout();
             this.ordTopPn.SuspendLayout();
             this.usuTrocaPn.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -243,102 +269,108 @@
             // 
             this.menuPrincipal.Enabled = false;
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pessoasToolStripMenuItem,
-            this.setoresToolStripMenuItem,
-            this.serviçosToolStripMenuItem,
-            this.estatísticaToolStripMenuItem,
-            this.sobreToolStripMenuItem});
+            this.pessMi,
+            this.locaisMi,
+            this.servicosMi,
+            this.statMi,
+            this.appMi});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipal.Name = "menuPrincipal";
-            this.menuPrincipal.Size = new System.Drawing.Size(792, 24);
+            this.menuPrincipal.Size = new System.Drawing.Size(893, 24);
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
-            // pessoasToolStripMenuItem
+            // pessMi
             // 
-            this.pessoasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuarioToolStripMenuItem,
-            this.cadastroToolStripMenuItem});
-            this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
-            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.pessoasToolStripMenuItem.Text = "Pessoas";
+            this.pessMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuMi,
+            this.cad1Mi});
+            this.pessMi.Name = "pessMi";
+            this.pessMi.Size = new System.Drawing.Size(58, 20);
+            this.pessMi.Text = "Pessoas";
             // 
-            // usuarioToolStripMenuItem
+            // usuMi
             // 
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.usuarioToolStripMenuItem.Text = "Usuario (Troca)";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            this.usuMi.Name = "usuMi";
+            this.usuMi.Size = new System.Drawing.Size(148, 22);
+            this.usuMi.Text = "Usuario (Troca)";
+            this.usuMi.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
-            // cadastroToolStripMenuItem
+            // cad1Mi
             // 
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            this.cadastroToolStripMenuItem.Visible = false;
+            this.cad1Mi.Name = "cad1Mi";
+            this.cad1Mi.Size = new System.Drawing.Size(148, 22);
+            this.cad1Mi.Text = "Cadastro";
+            this.cad1Mi.Visible = false;
+            this.cad1Mi.Click += new System.EventHandler(this.cad1Mi_Click);
             // 
-            // setoresToolStripMenuItem
+            // locaisMi
             // 
-            this.setoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setoresToolStripMenuItem1});
-            this.setoresToolStripMenuItem.Name = "setoresToolStripMenuItem";
-            this.setoresToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.setoresToolStripMenuItem.Text = "Locais";
+            this.locaisMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setoresMi});
+            this.locaisMi.Name = "locaisMi";
+            this.locaisMi.Size = new System.Drawing.Size(48, 20);
+            this.locaisMi.Text = "Locais";
             // 
-            // setoresToolStripMenuItem1
+            // setoresMi
             // 
-            this.setoresToolStripMenuItem1.Name = "setoresToolStripMenuItem1";
-            this.setoresToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
-            this.setoresToolStripMenuItem1.Text = "Setores";
-            this.setoresToolStripMenuItem1.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
+            this.setoresMi.Name = "setoresMi";
+            this.setoresMi.Size = new System.Drawing.Size(111, 22);
+            this.setoresMi.Text = "Setores";
+            this.setoresMi.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
             // 
-            // serviçosToolStripMenuItem
+            // servicosMi
             // 
-            this.serviçosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.passarOrdemToolStripMenuItem});
-            this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.serviçosToolStripMenuItem.Text = "Serviços";
+            this.servicosMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emitirOrdemMi});
+            this.servicosMi.Name = "servicosMi";
+            this.servicosMi.Size = new System.Drawing.Size(59, 20);
+            this.servicosMi.Text = "Serviços";
             // 
-            // passarOrdemToolStripMenuItem
+            // emitirOrdemMi
             // 
-            this.passarOrdemToolStripMenuItem.Name = "passarOrdemToolStripMenuItem";
-            this.passarOrdemToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.passarOrdemToolStripMenuItem.Text = "Passar Ordem";
-            this.passarOrdemToolStripMenuItem.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
+            this.emitirOrdemMi.Name = "emitirOrdemMi";
+            this.emitirOrdemMi.Size = new System.Drawing.Size(152, 22);
+            this.emitirOrdemMi.Text = "Emitir Ordem";
+            this.emitirOrdemMi.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
             // 
-            // estatísticaToolStripMenuItem
+            // statMi
             // 
-            this.estatísticaToolStripMenuItem.Name = "estatísticaToolStripMenuItem";
-            this.estatísticaToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.estatísticaToolStripMenuItem.Text = "Estatística";
+            this.statMi.Name = "statMi";
+            this.statMi.Size = new System.Drawing.Size(68, 20);
+            this.statMi.Text = "Estatística";
+            this.statMi.Click += new System.EventHandler(this.statMi_Click);
             // 
-            // sobreToolStripMenuItem
+            // appMi
             // 
-            this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.configuraçõesToolStripMenuItem,
-            this.sobreToolStripMenuItem1});
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.sobreToolStripMenuItem.Text = "Aplicativo";
+            this.appMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.confMi,
+            this.sobreMi});
+            this.appMi.Name = "appMi";
+            this.appMi.Size = new System.Drawing.Size(65, 20);
+            this.appMi.Text = "Aplicativo";
             // 
-            // configuraçõesToolStripMenuItem
+            // confMi
             // 
-            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
-            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            this.confMi.Name = "confMi";
+            this.confMi.Size = new System.Drawing.Size(143, 22);
+            this.confMi.Text = "Configurações";
+            this.confMi.Click += new System.EventHandler(this.confMi_Click);
             // 
-            // sobreToolStripMenuItem1
+            // sobreMi
             // 
-            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
-            this.sobreToolStripMenuItem1.Text = "Sobre";
+            this.sobreMi.Name = "sobreMi";
+            this.sobreMi.Size = new System.Drawing.Size(143, 22);
+            this.sobreMi.Text = "Sobre";
+            this.sobreMi.Click += new System.EventHandler(this.sobreMi_Click);
             // 
             // cad1Pn
             // 
-            this.cad1Pn.Controls.Add(this.button2);
-            this.cad1Pn.Controls.Add(this.button1);
+            this.cad1Pn.BackColor = System.Drawing.Color.Silver;
+            this.cad1Pn.Controls.Add(this.cad1ExcluirBt);
+            this.cad1Pn.Controls.Add(this.cad1SaveBt);
             this.cad1Pn.Controls.Add(this.cad1LocalizarPn);
+            this.cad1Pn.Controls.Add(this.cad1SetorCb);
             this.cad1Pn.Controls.Add(this.cad1PrivilegiosCb);
             this.cad1Pn.Controls.Add(this.cad1Pass2Tb);
             this.cad1Pn.Controls.Add(this.cad1Pass1Tb);
@@ -347,36 +379,39 @@
             this.cad1Pn.Controls.Add(this.label16);
             this.cad1Pn.Controls.Add(this.label10);
             this.cad1Pn.Controls.Add(this.label14);
+            this.cad1Pn.Controls.Add(this.label17);
             this.cad1Pn.Controls.Add(this.cad1IdLb);
             this.cad1Pn.Controls.Add(this.label15);
             this.cad1Pn.Controls.Add(this.label11);
             this.cad1Pn.Controls.Add(this.cad1LocalizarLb);
             this.cad1Pn.Controls.Add(this.label6);
             this.cad1Pn.Controls.Add(this.cad1TopPn);
-            this.cad1Pn.Location = new System.Drawing.Point(0, 24);
+            this.cad1Pn.Location = new System.Drawing.Point(31, 48);
             this.cad1Pn.Name = "cad1Pn";
-            this.cad1Pn.Size = new System.Drawing.Size(585, 320);
+            this.cad1Pn.Size = new System.Drawing.Size(585, 404);
             this.cad1Pn.TabIndex = 2;
             this.cad1Pn.Visible = false;
             this.cad1Pn.VisibleChanged += new System.EventHandler(this.cad1Pn_VisibleChanged);
             // 
-            // button2
+            // cad1ExcluirBt
             // 
-            this.button2.Location = new System.Drawing.Point(530, 284);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Excluir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cad1ExcluirBt.Location = new System.Drawing.Point(471, 327);
+            this.cad1ExcluirBt.Name = "cad1ExcluirBt";
+            this.cad1ExcluirBt.Size = new System.Drawing.Size(52, 30);
+            this.cad1ExcluirBt.TabIndex = 6;
+            this.cad1ExcluirBt.Text = "Excluir";
+            this.cad1ExcluirBt.UseVisualStyleBackColor = true;
+            this.cad1ExcluirBt.Click += new System.EventHandler(this.cad1ExcluirBt_Click);
             // 
-            // button1
+            // cad1SaveBt
             // 
-            this.button1.Location = new System.Drawing.Point(402, 213);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 61);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cad1SaveBt.Location = new System.Drawing.Point(61, 296);
+            this.cad1SaveBt.Name = "cad1SaveBt";
+            this.cad1SaveBt.Size = new System.Drawing.Size(121, 61);
+            this.cad1SaveBt.TabIndex = 6;
+            this.cad1SaveBt.Text = "Salvar";
+            this.cad1SaveBt.UseVisualStyleBackColor = true;
+            this.cad1SaveBt.Click += new System.EventHandler(this.cad1SaveBt_Click);
             // 
             // cad1LocalizarPn
             // 
@@ -388,6 +423,7 @@
             this.cad1LocalizarPn.Name = "cad1LocalizarPn";
             this.cad1LocalizarPn.Size = new System.Drawing.Size(404, 45);
             this.cad1LocalizarPn.TabIndex = 5;
+            this.cad1LocalizarPn.Visible = false;
             this.cad1LocalizarPn.VisibleChanged += new System.EventHandler(this.cad1LocalizarPn_VisibleChanged);
             // 
             // cad1LocalizarTb
@@ -417,13 +453,22 @@
             this.cad1LocXLb.Text = "X";
             this.cad1LocXLb.Click += new System.EventHandler(this.cad1LocXLb_Click);
             // 
+            // cad1SetorCb
+            // 
+            this.cad1SetorCb.FormattingEnabled = true;
+            this.cad1SetorCb.Location = new System.Drawing.Point(402, 169);
+            this.cad1SetorCb.Name = "cad1SetorCb";
+            this.cad1SetorCb.Size = new System.Drawing.Size(121, 21);
+            this.cad1SetorCb.TabIndex = 4;
+            // 
             // cad1PrivilegiosCb
             // 
             this.cad1PrivilegiosCb.FormattingEnabled = true;
-            this.cad1PrivilegiosCb.Location = new System.Drawing.Point(402, 169);
+            this.cad1PrivilegiosCb.Location = new System.Drawing.Point(402, 253);
             this.cad1PrivilegiosCb.Name = "cad1PrivilegiosCb";
             this.cad1PrivilegiosCb.Size = new System.Drawing.Size(121, 21);
             this.cad1PrivilegiosCb.TabIndex = 4;
+            this.cad1PrivilegiosCb.SelectedIndexChanged += new System.EventHandler(this.cad1PrivilegiosCb_SelectedIndexChanged);
             // 
             // cad1Pass2Tb
             // 
@@ -486,6 +531,15 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Senha";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(399, 153);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(32, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Setor";
+            // 
             // cad1IdLb
             // 
             this.cad1IdLb.AutoSize = true;
@@ -498,7 +552,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(399, 153);
+            this.label15.Location = new System.Drawing.Point(399, 237);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(54, 13);
             this.label15.TabIndex = 2;
@@ -579,20 +633,32 @@
             // 
             // setPn
             // 
+            this.setPn.BackColor = System.Drawing.Color.Silver;
+            this.setPn.Controls.Add(this.setExcluiBt);
+            this.setPn.Controls.Add(this.setSaveBt);
             this.setPn.Controls.Add(this.setTopPn);
-            this.setPn.Location = new System.Drawing.Point(0, 139);
+            this.setPn.Controls.Add(this.setIdLb);
+            this.setPn.Controls.Add(this.label20);
+            this.setPn.Controls.Add(this.setCb);
+            this.setPn.Controls.Add(this.label19);
+            this.setPn.Controls.Add(this.setNomeTb);
+            this.setPn.Controls.Add(this.label21);
+            this.setPn.Location = new System.Drawing.Point(14, 34);
             this.setPn.Name = "setPn";
-            this.setPn.Size = new System.Drawing.Size(792, 109);
+            this.setPn.Size = new System.Drawing.Size(485, 147);
             this.setPn.TabIndex = 2;
             this.setPn.Visible = false;
+            this.setPn.VisibleChanged += new System.EventHandler(this.setPn_VisibleChanged);
             // 
             // setTopPn
             // 
+            this.setTopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.setTopPn.Controls.Add(this.setXLb);
+            this.setTopPn.Controls.Add(this.label18);
             this.setTopPn.Dock = System.Windows.Forms.DockStyle.Top;
             this.setTopPn.Location = new System.Drawing.Point(0, 0);
             this.setTopPn.Name = "setTopPn";
-            this.setTopPn.Size = new System.Drawing.Size(792, 24);
+            this.setTopPn.Size = new System.Drawing.Size(485, 24);
             this.setTopPn.TabIndex = 1;
             // 
             // setXLb
@@ -600,29 +666,46 @@
             this.setXLb.AutoSize = true;
             this.setXLb.Dock = System.Windows.Forms.DockStyle.Right;
             this.setXLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setXLb.Location = new System.Drawing.Point(774, 0);
+            this.setXLb.Location = new System.Drawing.Point(467, 0);
             this.setXLb.Name = "setXLb";
             this.setXLb.Size = new System.Drawing.Size(18, 17);
             this.setXLb.TabIndex = 0;
             this.setXLb.Text = "X";
             this.setXLb.Click += new System.EventHandler(this.setXLb_Click);
             // 
-            // ordPn
+            // emiPn
             // 
-            this.ordPn.Controls.Add(this.ordTopPn);
-            this.ordPn.Location = new System.Drawing.Point(0, 351);
-            this.ordPn.Name = "ordPn";
-            this.ordPn.Size = new System.Drawing.Size(792, 109);
-            this.ordPn.TabIndex = 2;
-            this.ordPn.Visible = false;
+            this.emiPn.BackColor = System.Drawing.Color.Silver;
+            this.emiPn.Controls.Add(this.emiPrazoDtp);
+            this.emiPn.Controls.Add(this.textBox1);
+            this.emiPn.Controls.Add(this.emiPrioridadeCb);
+            this.emiPn.Controls.Add(this.emiSetorTb);
+            this.emiPn.Controls.Add(this.emiStatusBb);
+            this.emiPn.Controls.Add(this.label29);
+            this.emiPn.Controls.Add(this.label27);
+            this.emiPn.Controls.Add(this.label26);
+            this.emiPn.Controls.Add(this.label28);
+            this.emiPn.Controls.Add(this.emiSolicitanteLb);
+            this.emiPn.Controls.Add(this.label25);
+            this.emiPn.Controls.Add(this.emiTipoCb);
+            this.emiPn.Controls.Add(this.label24);
+            this.emiPn.Controls.Add(this.ordTopPn);
+            this.emiPn.Controls.Add(this.label23);
+            this.emiPn.Location = new System.Drawing.Point(21, 26);
+            this.emiPn.Name = "emiPn";
+            this.emiPn.Size = new System.Drawing.Size(860, 451);
+            this.emiPn.TabIndex = 2;
+            this.emiPn.Visible = false;
             // 
             // ordTopPn
             // 
+            this.ordTopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ordTopPn.Controls.Add(this.ordXLb);
+            this.ordTopPn.Controls.Add(this.label22);
             this.ordTopPn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ordTopPn.Location = new System.Drawing.Point(0, 0);
             this.ordTopPn.Name = "ordTopPn";
-            this.ordTopPn.Size = new System.Drawing.Size(792, 24);
+            this.ordTopPn.Size = new System.Drawing.Size(860, 24);
             this.ordTopPn.TabIndex = 1;
             // 
             // ordXLb
@@ -630,7 +713,7 @@
             this.ordXLb.AutoSize = true;
             this.ordXLb.Dock = System.Windows.Forms.DockStyle.Right;
             this.ordXLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ordXLb.Location = new System.Drawing.Point(774, 0);
+            this.ordXLb.Location = new System.Drawing.Point(842, 0);
             this.ordXLb.Name = "ordXLb";
             this.ordXLb.Size = new System.Drawing.Size(18, 17);
             this.ordXLb.TabIndex = 0;
@@ -639,8 +722,8 @@
             // 
             // usuTrocaPn
             // 
-            this.usuTrocaPn.BackColor = System.Drawing.Color.PowderBlue;
-            this.usuTrocaPn.Controls.Add(this.usuSenhaTb);
+            this.usuTrocaPn.BackColor = System.Drawing.Color.Silver;
+            this.usuTrocaPn.Controls.Add(this.usuPassTb);
             this.usuTrocaPn.Controls.Add(this.label9);
             this.usuTrocaPn.Controls.Add(this.usuUserTb);
             this.usuTrocaPn.Controls.Add(this.label7);
@@ -652,16 +735,16 @@
             this.usuTrocaPn.Visible = false;
             this.usuTrocaPn.VisibleChanged += new System.EventHandler(this.usuTrocaPn_VisibleChanged);
             // 
-            // usuSenhaTb
+            // usuPassTb
             // 
-            this.usuSenhaTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuSenhaTb.Location = new System.Drawing.Point(0, 81);
-            this.usuSenhaTb.Name = "usuSenhaTb";
-            this.usuSenhaTb.PasswordChar = '*';
-            this.usuSenhaTb.Size = new System.Drawing.Size(183, 26);
-            this.usuSenhaTb.TabIndex = 2;
-            this.usuSenhaTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.usuSenhaTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuSenhaTb_KeyDown);
+            this.usuPassTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuPassTb.Location = new System.Drawing.Point(0, 81);
+            this.usuPassTb.Name = "usuPassTb";
+            this.usuPassTb.PasswordChar = '*';
+            this.usuPassTb.Size = new System.Drawing.Size(183, 26);
+            this.usuPassTb.TabIndex = 2;
+            this.usuPassTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.usuPassTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuPassTb_KeyDown);
             // 
             // label9
             // 
@@ -694,7 +777,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.usuXLb);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -726,17 +809,232 @@
             this.usuXLb.Text = "X";
             this.usuXLb.Click += new System.EventHandler(this.usuXLb_Click);
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Setores";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(14, 41);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(16, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Id";
+            // 
+            // setIdLb
+            // 
+            this.setIdLb.AutoSize = true;
+            this.setIdLb.Location = new System.Drawing.Point(36, 41);
+            this.setIdLb.Name = "setIdLb";
+            this.setIdLb.Size = new System.Drawing.Size(15, 13);
+            this.setIdLb.TabIndex = 2;
+            this.setIdLb.Text = "id";
+            // 
+            // setNomeTb
+            // 
+            this.setNomeTb.Location = new System.Drawing.Point(17, 85);
+            this.setNomeTb.MaxLength = 255;
+            this.setNomeTb.Name = "setNomeTb";
+            this.setNomeTb.Size = new System.Drawing.Size(340, 20);
+            this.setNomeTb.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 70);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Nome";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(358, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Setores";
+            // 
+            // setCb
+            // 
+            this.setCb.FormattingEnabled = true;
+            this.setCb.Location = new System.Drawing.Point(361, 44);
+            this.setCb.Name = "setCb";
+            this.setCb.Size = new System.Drawing.Size(121, 21);
+            this.setCb.TabIndex = 4;
+            this.setCb.SelectedIndexChanged += new System.EventHandler(this.setCb_SelectedIndexChanged);
+            // 
+            // setSaveBt
+            // 
+            this.setSaveBt.Location = new System.Drawing.Point(17, 111);
+            this.setSaveBt.Name = "setSaveBt";
+            this.setSaveBt.Size = new System.Drawing.Size(75, 23);
+            this.setSaveBt.TabIndex = 5;
+            this.setSaveBt.Text = "Salvar";
+            this.setSaveBt.UseVisualStyleBackColor = true;
+            this.setSaveBt.Click += new System.EventHandler(this.setSaveBt_Click);
+            // 
+            // setExcluiBt
+            // 
+            this.setExcluiBt.Location = new System.Drawing.Point(282, 111);
+            this.setExcluiBt.Name = "setExcluiBt";
+            this.setExcluiBt.Size = new System.Drawing.Size(75, 23);
+            this.setExcluiBt.TabIndex = 5;
+            this.setExcluiBt.Text = "Excluir";
+            this.setExcluiBt.UseVisualStyleBackColor = true;
+            this.setExcluiBt.Click += new System.EventHandler(this.setExcluiBt_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(3, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(101, 20);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Emitir Ordem";
+            // 
+            // emiTipoCb
+            // 
+            this.emiTipoCb.FormattingEnabled = true;
+            this.emiTipoCb.Location = new System.Drawing.Point(533, 92);
+            this.emiTipoCb.Name = "emiTipoCb";
+            this.emiTipoCb.Size = new System.Drawing.Size(149, 21);
+            this.emiTipoCb.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(530, 77);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(77, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Tipo de Ordem";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(699, 77);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(37, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Status";
+            // 
+            // emiStatusBb
+            // 
+            this.emiStatusBb.FormattingEnabled = true;
+            this.emiStatusBb.Location = new System.Drawing.Point(702, 92);
+            this.emiStatusBb.Name = "emiStatusBb";
+            this.emiStatusBb.Size = new System.Drawing.Size(149, 21);
+            this.emiStatusBb.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(13, 36);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(59, 13);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Solicitante:";
+            // 
+            // emiSetorTb
+            // 
+            this.emiSetorTb.FormattingEnabled = true;
+            this.emiSetorTb.Location = new System.Drawing.Point(361, 92);
+            this.emiSetorTb.Name = "emiSetorTb";
+            this.emiSetorTb.Size = new System.Drawing.Size(149, 21);
+            this.emiSetorTb.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 191);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(835, 177);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(17, 175);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Descrição";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(358, 123);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 13);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Prioridade";
+            // 
+            // emiPrioridadeCb
+            // 
+            this.emiPrioridadeCb.FormattingEnabled = true;
+            this.emiPrioridadeCb.Location = new System.Drawing.Point(361, 138);
+            this.emiPrioridadeCb.Name = "emiPrioridadeCb";
+            this.emiPrioridadeCb.Size = new System.Drawing.Size(149, 21);
+            this.emiPrioridadeCb.TabIndex = 2;
+            // 
+            // emiPrazoDtp
+            // 
+            this.emiPrazoDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emiPrazoDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.emiPrazoDtp.Location = new System.Drawing.Point(533, 134);
+            this.emiPrazoDtp.Name = "emiPrazoDtp";
+            this.emiPrazoDtp.Size = new System.Drawing.Size(120, 26);
+            this.emiPrazoDtp.TabIndex = 4;
+            this.emiPrazoDtp.Value = new System.DateTime(2015, 8, 20, 19, 14, 7, 0);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(533, 118);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(67, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Definir Prazo";
+            // 
+            // emiSolicitanteLb
+            // 
+            this.emiSolicitanteLb.AutoSize = true;
+            this.emiSolicitanteLb.Location = new System.Drawing.Point(75, 36);
+            this.emiSolicitanteLb.Name = "emiSolicitanteLb";
+            this.emiSolicitanteLb.Size = new System.Drawing.Size(35, 13);
+            this.emiSolicitanteLb.TabIndex = 2;
+            this.emiSolicitanteLb.Text = "Nome";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(358, 78);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(43, 13);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "Destino";
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 573);
-            this.Controls.Add(this.cad1Pn);
-            this.Controls.Add(this.usuTrocaPn);
-            this.Controls.Add(this.ordPn);
+            this.ClientSize = new System.Drawing.Size(893, 573);
+            this.Controls.Add(this.emiPn);
             this.Controls.Add(this.setPn);
+            this.Controls.Add(this.cad1Pn);
             this.Controls.Add(this.conPn);
             this.Controls.Add(this.menuPrincipal);
+            this.Controls.Add(this.usuTrocaPn);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "PrincipalForm";
             this.Text = "Services";
@@ -752,9 +1050,11 @@
             this.cad1TopPn.ResumeLayout(false);
             this.cad1TopPn.PerformLayout();
             this.setPn.ResumeLayout(false);
+            this.setPn.PerformLayout();
             this.setTopPn.ResumeLayout(false);
             this.setTopPn.PerformLayout();
-            this.ordPn.ResumeLayout(false);
+            this.emiPn.ResumeLayout(false);
+            this.emiPn.PerformLayout();
             this.ordTopPn.ResumeLayout(false);
             this.ordTopPn.PerformLayout();
             this.usuTrocaPn.ResumeLayout(false);
@@ -781,28 +1081,28 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem pessoasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem passarOrdemToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setoresToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pessMi;
+        private System.Windows.Forms.ToolStripMenuItem usuMi;
+        private System.Windows.Forms.ToolStripMenuItem servicosMi;
+        private System.Windows.Forms.ToolStripMenuItem emitirOrdemMi;
+        private System.Windows.Forms.ToolStripMenuItem locaisMi;
+        private System.Windows.Forms.ToolStripMenuItem setoresMi;
+        private System.Windows.Forms.ToolStripMenuItem appMi;
+        private System.Windows.Forms.ToolStripMenuItem confMi;
+        private System.Windows.Forms.ToolStripMenuItem sobreMi;
         private System.Windows.Forms.Panel cad1Pn;
         private System.Windows.Forms.Label cad1XLb;
         private System.Windows.Forms.Panel cad1TopPn;
         private System.Windows.Forms.Panel setPn;
         private System.Windows.Forms.Panel setTopPn;
         private System.Windows.Forms.Label setXLb;
-        private System.Windows.Forms.Panel ordPn;
+        private System.Windows.Forms.Panel emiPn;
         private System.Windows.Forms.Panel ordTopPn;
         private System.Windows.Forms.Label ordXLb;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem estatísticaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cad1Mi;
+        private System.Windows.Forms.ToolStripMenuItem statMi;
         private System.Windows.Forms.Panel usuTrocaPn;
-        private System.Windows.Forms.TextBox usuSenhaTb;
+        private System.Windows.Forms.TextBox usuPassTb;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox usuUserTb;
         private System.Windows.Forms.Label label7;
@@ -821,8 +1121,8 @@
         private System.Windows.Forms.Label cad1LocalizarLb;
         private System.Windows.Forms.TextBox cad1LoginTb;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cad1ExcluirBt;
+        private System.Windows.Forms.Button cad1SaveBt;
         private System.Windows.Forms.TextBox cad1Pass2Tb;
         private System.Windows.Forms.TextBox cad1Pass1Tb;
         private System.Windows.Forms.Label label16;
@@ -830,6 +1130,32 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label cad1LpLb;
+        private System.Windows.Forms.ComboBox cad1SetorCb;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label setIdLb;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox setCb;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox setNomeTb;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button setSaveBt;
+        private System.Windows.Forms.Button setExcluiBt;
+        private System.Windows.Forms.ComboBox emiTipoCb;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox emiSetorTb;
+        private System.Windows.Forms.ComboBox emiStatusBb;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker emiPrazoDtp;
+        private System.Windows.Forms.ComboBox emiPrioridadeCb;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label emiSolicitanteLb;
+        private System.Windows.Forms.Label label29;
     }
 }
 

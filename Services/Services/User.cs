@@ -12,7 +12,7 @@ namespace Services
         public int Id
         {
             get { return id; }
-            //set { id = value; }
+            set { id = value; }
         }
 
         private Privilegio privilegio;
@@ -20,6 +20,12 @@ namespace Services
         {
             get { return privilegio; }
             set { privilegio = value; }
+        }
+        private int setor;
+        public int Setor
+        {
+            get { return setor; }
+            set { setor = value; }
         }
 
         private string login;
@@ -29,7 +35,7 @@ namespace Services
             set { login = value; }
         }
         private string pass;
-        public string Senha
+        public string Pass
         {
             get { return pass; }
             set { pass = value; }
@@ -49,9 +55,9 @@ namespace Services
 
         private Conexao conexao;
 
-        public User()
+        public User(Conexao con)
         {
-
+            conexao = con;
         }
         public static User Load(int id)
         {
@@ -60,7 +66,7 @@ namespace Services
                 Conexao con = new Conexao();
                 if (con.getLastLoadState())
                 {
-                    User u = new User();
+                    User u = new User(con);
                     System.Data.DataTable dt = con.Query("SELECT * FROM user where id=" + id.ToString());
                     if (dt != null)
                     {
@@ -68,6 +74,7 @@ namespace Services
                         u.id = id;
                         u.nome = dt.Rows[0]["nome"].ToString();
                         u.login = dt.Rows[0]["login"].ToString();
+                        u.setor = int.Parse(dt.Rows[0]["setor"].ToString());
                         u.pass = dt.Rows[0]["senha"].ToString();
                         u.privilegio = new Privilegio(int.Parse(dt.Rows[0]["privilegio"].ToString()));
                         u.conexao = con;
@@ -102,9 +109,10 @@ namespace Services
                         if (dt != null)
                             next = int.Parse(dt.Rows[0]["id"].ToString());
                         next++;
-                        query = "INSERT INTO user (id,privilegio,login,pass,nome,ultimoAcesso) VALUES(" +
+                        query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES(" +
                             next.ToString() + "," +
-                            this.privilegio.id.ToString() + ",'" +
+                            this.privilegio.id.ToString() + "," +
+                            this.setor + ",'" +
                             this.login + "','" +
                             this.pass + "','" +
                             this.nome + "','" +
@@ -131,6 +139,50 @@ namespace Services
 
         }
 
+        public bool Update(User Novo)
+        {
+            try
+            {
+                if (conexao.getLastLoadState())
+                {
+                    if (Conexao.noServerDatabase)
+                    {//sqlite
+                        {//update
+                            string query = "UPDATE user SET id="+this.id.ToString();
+
+                            if (this.privilegio.id != Novo.privilegio.id)
+                                query += ",privilegio=" + Novo.privilegio.id.ToString();
+                            if (login != Novo.login)
+                                query += ",login='" + Novo.ToString() + "'";
+                            if (pass != Novo.pass)
+                                query += ",pass='" + Novo.pass + "'";
+                            if (nome != Novo.nome)
+                                query += "',nome='" + Novo.nome + "'";
+                            if (setor != Novo.setor)
+                                query += "',setor='" + Novo.setor + "'";
+                            if (ultimoAcesso != Novo.ultimoAcesso)
+                                query += "',ultimoAcesso='" + Novo.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                            query+="' WHERE id=" + this.id;
+                            if (conexao.Comando(query) != "")
+                                return false;
+                        }
+                    }
+                    else
+                    {//mysql
+
+                    }
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception es)
+            {
+                string s = es.Message;
+                return false;
+            }
+        }
+
         public bool Save()
         {
             try
@@ -143,9 +195,10 @@ namespace Services
                         System.Data.DataTable dt = conexao.Query(query);
                         if (dt==null)
                         {//novo
-                            query = "INSERT INTO user (id,privilegio,login,pass,nome,ultimoAcesso) VALUES("+
+                            query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES("+
                                 this.id.ToString()+","+
-                                this.privilegio.id.ToString()+",'"+
+                                this.privilegio.id.ToString()+","+
+                                this.setor.ToString()+",'"+
                                 this.login+"','"+
                                 this.pass+"','"+
                                 this.nome+"','"+
@@ -160,15 +213,14 @@ namespace Services
                             query = "UPDATE user SET " +
                                 "id=" + this.id.ToString() +
                             ",privilegio=" + this.privilegio.id.ToString() +
-                            ",login='" + this.ToString() +
+                            ",setor=" + this.setor +
+                            ",login='" + this.login +
                             "',pass='" + this.pass +
                             "',nome='" + this.nome +
                             "',ultimoAcesso='" + this.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") +
                             "' WHERE id=" + this.id;
                             if (conexao.Comando(query) != "")
                                 return false;
-                            else
-                                return true;
                         }
 
                     }
@@ -181,8 +233,9 @@ namespace Services
                 else
                     return false;
             }
-            catch
+            catch(Exception es)
             {
+                string s = es.Message;
                 return false;
             }
         }
@@ -215,6 +268,7 @@ namespace Services
                     break;
             }
         }
+        
 
         public static List<Privilegio> All = new List<Privilegio>() 
         {
