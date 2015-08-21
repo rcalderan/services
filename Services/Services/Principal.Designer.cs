@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint30 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 45D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint31 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 37D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint32 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint33 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint34 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint35 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint36 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 21D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint37 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 27D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint38 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 31D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint39 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint40 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 35D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint41 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 50D);
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint42 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 40D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint43 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 36D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint44 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 25D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint45 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint46 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint47 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint48 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 18D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint49 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 25D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint50 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 28D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint51 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 30D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint52 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 33D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint53 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 45D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint54 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(50D, 75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint55 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint56 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint57 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 75D);
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint58 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 21D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint204 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 45D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint205 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 37D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint206 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint207 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint208 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint209 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint210 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 21D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint211 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 27D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint212 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 31D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint213 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint214 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 35D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint215 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint216 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint217 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 36D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint218 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 25D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint219 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint220 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint221 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint222 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 18D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint223 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 25D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint224 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 28D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint225 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint226 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 33D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint227 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 45D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint228 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(50D, 75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint229 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint230 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint231 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint232 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 21D);
             this.conPn = new System.Windows.Forms.Panel();
             this.conConectaBt = new System.Windows.Forms.Button();
             this.conPass2Tb = new System.Windows.Forms.TextBox();
@@ -83,10 +83,15 @@
             this.pessMi = new System.Windows.Forms.ToolStripMenuItem();
             this.usuMi = new System.Windows.Forms.ToolStripMenuItem();
             this.cad1Mi = new System.Windows.Forms.ToolStripMenuItem();
+            this.EquipMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.aceMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.modeloMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.pecasMi = new System.Windows.Forms.ToolStripMenuItem();
             this.locaisMi = new System.Windows.Forms.ToolStripMenuItem();
             this.setoresMi = new System.Windows.Forms.ToolStripMenuItem();
             this.servicosMi = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirOrdemMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordSetMi = new System.Windows.Forms.ToolStripMenuItem();
             this.statMi = new System.Windows.Forms.ToolStripMenuItem();
             this.statOrdMi = new System.Windows.Forms.ToolStripMenuItem();
             this.appMi = new System.Windows.Forms.ToolStripMenuItem();
@@ -131,19 +136,46 @@
             this.setNomeTb = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.emiPn = new System.Windows.Forms.Panel();
+            this.emiaddPn = new System.Windows.Forms.Panel();
+            this.emiAddBt = new System.Windows.Forms.Button();
+            this.emiAddItNup = new System.Windows.Forms.NumericUpDown();
+            this.emiAddModeloTb = new System.Windows.Forms.TextBox();
+            this.emiAddMarcaTb = new System.Windows.Forms.TextBox();
+            this.emiAddDescTb = new System.Windows.Forms.TextBox();
+            this.emiAddXLb = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.emiAddIdLb = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.emiFinTotalTb = new System.Windows.Forms.TextBox();
+            this.emiItemLv = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.emiFimDg = new System.Windows.Forms.DataGridView();
+            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emiFinCh = new System.Windows.Forms.CheckBox();
+            this.emiEmiBt = new System.Windows.Forms.Button();
             this.emiPrazoDtp = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.emiProbTb = new System.Windows.Forms.TextBox();
             this.emiPrioridadeCb = new System.Windows.Forms.ComboBox();
-            this.emiSetorTb = new System.Windows.Forms.ComboBox();
-            this.emiStatusBb = new System.Windows.Forms.ComboBox();
+            this.emiSetorCb = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.emiAddLb = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.emiSolicitanteLb = new System.Windows.Forms.Label();
+            this.emiSetorSolLb = new System.Windows.Forms.Label();
+            this.emiUsuSolLb = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.emiTipoCb = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.ordTopPn = new System.Windows.Forms.Panel();
             this.ordXLb = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -157,25 +189,37 @@
             this.label8 = new System.Windows.Forms.Label();
             this.usuXLb = new System.Windows.Forms.Label();
             this.statOrdPn = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.statOrdXLb = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.statOrdFillPn = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Ordens = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label30 = new System.Windows.Forms.Label();
             this.statOrdTopPn = new System.Windows.Forms.Panel();
-            this.statOrdFillPn = new System.Windows.Forms.Panel();
+            this.statOrdAteDtp = new System.Windows.Forms.DateTimePicker();
+            this.statOrdDeDtp = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.statOrdDeDtp = new System.Windows.Forms.DateTimePicker();
-            this.statOrdAteDtp = new System.Windows.Forms.DateTimePicker();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.statOrdXLb = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.servPn = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.servLv = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.conPn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
@@ -185,22 +229,27 @@
             this.setPn.SuspendLayout();
             this.setTopPn.SuspendLayout();
             this.emiPn.SuspendLayout();
+            this.emiaddPn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emiAddItNup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emiFimDg)).BeginInit();
             this.ordTopPn.SuspendLayout();
             this.usuTrocaPn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.statOrdPn.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.statOrdFillPn.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Ordens.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.statOrdTopPn.SuspendLayout();
-            this.statOrdFillPn.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.servPn.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // conPn
@@ -342,9 +391,10 @@
             // 
             this.menuPrincipal.Enabled = false;
             this.menuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pessMi,
-            this.locaisMi,
             this.servicosMi,
+            this.pessMi,
+            this.EquipMi,
+            this.locaisMi,
             this.statMi,
             this.appMi});
             this.menuPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -377,6 +427,34 @@
             this.cad1Mi.Visible = false;
             this.cad1Mi.Click += new System.EventHandler(this.cad1Mi_Click);
             // 
+            // EquipMi
+            // 
+            this.EquipMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aceMi,
+            this.modeloMi,
+            this.pecasMi});
+            this.EquipMi.Name = "EquipMi";
+            this.EquipMi.Size = new System.Drawing.Size(86, 20);
+            this.EquipMi.Text = "Equipamentos";
+            // 
+            // aceMi
+            // 
+            this.aceMi.Name = "aceMi";
+            this.aceMi.Size = new System.Drawing.Size(125, 22);
+            this.aceMi.Text = "Acessórios";
+            // 
+            // modeloMi
+            // 
+            this.modeloMi.Name = "modeloMi";
+            this.modeloMi.Size = new System.Drawing.Size(125, 22);
+            this.modeloMi.Text = "Modelos";
+            // 
+            // pecasMi
+            // 
+            this.pecasMi.Name = "pecasMi";
+            this.pecasMi.Size = new System.Drawing.Size(125, 22);
+            this.pecasMi.Text = "Peças";
+            // 
             // locaisMi
             // 
             this.locaisMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -388,14 +466,15 @@
             // setoresMi
             // 
             this.setoresMi.Name = "setoresMi";
-            this.setoresMi.Size = new System.Drawing.Size(152, 22);
+            this.setoresMi.Size = new System.Drawing.Size(111, 22);
             this.setoresMi.Text = "Setores";
             this.setoresMi.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
             // 
             // servicosMi
             // 
             this.servicosMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emitirOrdemMi});
+            this.emitirOrdemMi,
+            this.ordSetMi});
             this.servicosMi.Name = "servicosMi";
             this.servicosMi.Size = new System.Drawing.Size(59, 20);
             this.servicosMi.Text = "Serviços";
@@ -406,6 +485,13 @@
             this.emitirOrdemMi.Size = new System.Drawing.Size(152, 22);
             this.emitirOrdemMi.Text = "Emitir Ordem";
             this.emitirOrdemMi.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
+            // 
+            // ordSetMi
+            // 
+            this.ordSetMi.Name = "ordSetMi";
+            this.ordSetMi.Size = new System.Drawing.Size(152, 22);
+            this.ordSetMi.Text = "Ordens";
+            this.ordSetMi.Click += new System.EventHandler(this.ordSetMi_Click);
             // 
             // statMi
             // 
@@ -841,73 +927,331 @@
             // emiPn
             // 
             this.emiPn.BackColor = System.Drawing.Color.Silver;
+            this.emiPn.Controls.Add(this.emiaddPn);
+            this.emiPn.Controls.Add(this.emiFinTotalTb);
+            this.emiPn.Controls.Add(this.emiItemLv);
+            this.emiPn.Controls.Add(this.emiFimDg);
+            this.emiPn.Controls.Add(this.emiFinCh);
+            this.emiPn.Controls.Add(this.emiEmiBt);
             this.emiPn.Controls.Add(this.emiPrazoDtp);
-            this.emiPn.Controls.Add(this.textBox1);
+            this.emiPn.Controls.Add(this.emiProbTb);
             this.emiPn.Controls.Add(this.emiPrioridadeCb);
-            this.emiPn.Controls.Add(this.emiSetorTb);
-            this.emiPn.Controls.Add(this.emiStatusBb);
+            this.emiPn.Controls.Add(this.emiSetorCb);
+            this.emiPn.Controls.Add(this.label24);
+            this.emiPn.Controls.Add(this.emiAddLb);
             this.emiPn.Controls.Add(this.label29);
             this.emiPn.Controls.Add(this.label27);
             this.emiPn.Controls.Add(this.label26);
             this.emiPn.Controls.Add(this.label28);
-            this.emiPn.Controls.Add(this.emiSolicitanteLb);
+            this.emiPn.Controls.Add(this.emiSetorSolLb);
+            this.emiPn.Controls.Add(this.emiUsuSolLb);
+            this.emiPn.Controls.Add(this.label39);
             this.emiPn.Controls.Add(this.label25);
             this.emiPn.Controls.Add(this.emiTipoCb);
-            this.emiPn.Controls.Add(this.label24);
             this.emiPn.Controls.Add(this.ordTopPn);
             this.emiPn.Controls.Add(this.label23);
             this.emiPn.Location = new System.Drawing.Point(21, 26);
             this.emiPn.Name = "emiPn";
-            this.emiPn.Size = new System.Drawing.Size(860, 451);
+            this.emiPn.Size = new System.Drawing.Size(860, 545);
             this.emiPn.TabIndex = 2;
             this.emiPn.Visible = false;
+            this.emiPn.VisibleChanged += new System.EventHandler(this.emiPn_VisibleChanged);
+            // 
+            // emiaddPn
+            // 
+            this.emiaddPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.emiaddPn.Controls.Add(this.emiAddBt);
+            this.emiaddPn.Controls.Add(this.emiAddItNup);
+            this.emiaddPn.Controls.Add(this.emiAddModeloTb);
+            this.emiaddPn.Controls.Add(this.emiAddMarcaTb);
+            this.emiaddPn.Controls.Add(this.emiAddDescTb);
+            this.emiaddPn.Controls.Add(this.emiAddXLb);
+            this.emiaddPn.Controls.Add(this.label37);
+            this.emiaddPn.Controls.Add(this.label36);
+            this.emiaddPn.Controls.Add(this.label35);
+            this.emiaddPn.Controls.Add(this.emiAddIdLb);
+            this.emiaddPn.Controls.Add(this.label38);
+            this.emiaddPn.Controls.Add(this.label34);
+            this.emiaddPn.Location = new System.Drawing.Point(7, 182);
+            this.emiaddPn.Name = "emiaddPn";
+            this.emiaddPn.Size = new System.Drawing.Size(654, 87);
+            this.emiaddPn.TabIndex = 11;
+            this.emiaddPn.Visible = false;
+            // 
+            // emiAddBt
+            // 
+            this.emiAddBt.Location = new System.Drawing.Point(15, 53);
+            this.emiAddBt.Name = "emiAddBt";
+            this.emiAddBt.Size = new System.Drawing.Size(635, 22);
+            this.emiAddBt.TabIndex = 5;
+            this.emiAddBt.Text = "Adicionar";
+            this.emiAddBt.UseVisualStyleBackColor = true;
+            this.emiAddBt.Click += new System.EventHandler(this.emiAddBt_Click);
+            // 
+            // emiAddItNup
+            // 
+            this.emiAddItNup.Location = new System.Drawing.Point(32, 27);
+            this.emiAddItNup.Name = "emiAddItNup";
+            this.emiAddItNup.Size = new System.Drawing.Size(70, 20);
+            this.emiAddItNup.TabIndex = 4;
+            this.emiAddItNup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // emiAddModeloTb
+            // 
+            this.emiAddModeloTb.Location = new System.Drawing.Point(533, 27);
+            this.emiAddModeloTb.MaxLength = 255;
+            this.emiAddModeloTb.Name = "emiAddModeloTb";
+            this.emiAddModeloTb.Size = new System.Drawing.Size(117, 20);
+            this.emiAddModeloTb.TabIndex = 3;
+            // 
+            // emiAddMarcaTb
+            // 
+            this.emiAddMarcaTb.Location = new System.Drawing.Point(397, 27);
+            this.emiAddMarcaTb.MaxLength = 255;
+            this.emiAddMarcaTb.Name = "emiAddMarcaTb";
+            this.emiAddMarcaTb.Size = new System.Drawing.Size(133, 20);
+            this.emiAddMarcaTb.TabIndex = 3;
+            // 
+            // emiAddDescTb
+            // 
+            this.emiAddDescTb.Location = new System.Drawing.Point(109, 27);
+            this.emiAddDescTb.MaxLength = 255;
+            this.emiAddDescTb.Name = "emiAddDescTb";
+            this.emiAddDescTb.Size = new System.Drawing.Size(282, 20);
+            this.emiAddDescTb.TabIndex = 3;
+            // 
+            // emiAddXLb
+            // 
+            this.emiAddXLb.AutoSize = true;
+            this.emiAddXLb.Location = new System.Drawing.Point(640, 0);
+            this.emiAddXLb.Name = "emiAddXLb";
+            this.emiAddXLb.Size = new System.Drawing.Size(14, 13);
+            this.emiAddXLb.TabIndex = 2;
+            this.emiAddXLb.Text = "X";
+            this.emiAddXLb.Click += new System.EventHandler(this.emiAddXLb_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(533, 12);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(42, 13);
+            this.label37.TabIndex = 2;
+            this.label37.Text = "Modelo";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(394, 13);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(37, 13);
+            this.label36.TabIndex = 2;
+            this.label36.Text = "Marca";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(106, 13);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(55, 13);
+            this.label35.TabIndex = 2;
+            this.label35.Text = "Descrição";
+            // 
+            // emiAddIdLb
+            // 
+            this.emiAddIdLb.AutoSize = true;
+            this.emiAddIdLb.Location = new System.Drawing.Point(2, 29);
+            this.emiAddIdLb.Name = "emiAddIdLb";
+            this.emiAddIdLb.Size = new System.Drawing.Size(18, 13);
+            this.emiAddIdLb.TabIndex = 2;
+            this.emiAddIdLb.Text = "ID";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(2, 13);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(18, 13);
+            this.label38.TabIndex = 2;
+            this.label38.Text = "ID";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(32, 13);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(62, 13);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "Quantidade";
+            // 
+            // emiFinTotalTb
+            // 
+            this.emiFinTotalTb.Enabled = false;
+            this.emiFinTotalTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emiFinTotalTb.Location = new System.Drawing.Point(756, 509);
+            this.emiFinTotalTb.Name = "emiFinTotalTb";
+            this.emiFinTotalTb.Size = new System.Drawing.Size(94, 26);
+            this.emiFinTotalTb.TabIndex = 10;
+            this.emiFinTotalTb.Text = "9999999,99";
+            this.emiFinTotalTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // emiItemLv
+            // 
+            this.emiItemLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.emiItemLv.FullRowSelect = true;
+            this.emiItemLv.GridLines = true;
+            this.emiItemLv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.emiItemLv.Location = new System.Drawing.Point(13, 127);
+            this.emiItemLv.MultiSelect = false;
+            this.emiItemLv.Name = "emiItemLv";
+            this.emiItemLv.Size = new System.Drawing.Size(511, 185);
+            this.emiItemLv.TabIndex = 9;
+            this.emiItemLv.UseCompatibleStateImageBehavior = false;
+            this.emiItemLv.View = System.Windows.Forms.View.Details;
+            this.emiItemLv.SelectedIndexChanged += new System.EventHandler(this.emiItemLv_SelectedIndexChanged);
+            this.emiItemLv.Click += new System.EventHandler(this.emiItemLv_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 25;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Quant.";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 50;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Descrição";
+            this.columnHeader3.Width = 255;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Marca";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 82;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Modelo";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 95;
+            // 
+            // emiFimDg
+            // 
+            this.emiFimDg.BackgroundColor = System.Drawing.Color.Silver;
+            this.emiFimDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.emiFimDg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colItem,
+            this.colVal});
+            this.emiFimDg.Enabled = false;
+            this.emiFimDg.Location = new System.Drawing.Point(12, 344);
+            this.emiFimDg.Name = "emiFimDg";
+            this.emiFimDg.Size = new System.Drawing.Size(838, 156);
+            this.emiFimDg.TabIndex = 8;
+            this.emiFimDg.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.emiFimDg_CellEndEdit);
+            // 
+            // colItem
+            // 
+            this.colItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colItem.HeaderText = "Item";
+            this.colItem.MaxInputLength = 255;
+            this.colItem.Name = "colItem";
+            // 
+            // colVal
+            // 
+            this.colVal.HeaderText = "Valor (R$)";
+            this.colVal.MaxInputLength = 8;
+            this.colVal.Name = "colVal";
+            this.colVal.Width = 200;
+            // 
+            // emiFinCh
+            // 
+            this.emiFinCh.AutoSize = true;
+            this.emiFinCh.Location = new System.Drawing.Point(13, 327);
+            this.emiFinCh.Name = "emiFinCh";
+            this.emiFinCh.Size = new System.Drawing.Size(89, 17);
+            this.emiFinCh.TabIndex = 7;
+            this.emiFinCh.Text = "Incluir Custos";
+            this.emiFinCh.UseVisualStyleBackColor = true;
+            this.emiFinCh.CheckedChanged += new System.EventHandler(this.emiFinCh_CheckedChanged);
+            // 
+            // emiEmiBt
+            // 
+            this.emiEmiBt.Location = new System.Drawing.Point(12, 503);
+            this.emiEmiBt.Name = "emiEmiBt";
+            this.emiEmiBt.Size = new System.Drawing.Size(218, 32);
+            this.emiEmiBt.TabIndex = 5;
+            this.emiEmiBt.Text = "Emitir";
+            this.emiEmiBt.UseVisualStyleBackColor = true;
+            this.emiEmiBt.Click += new System.EventHandler(this.emiEmiBt_Click);
             // 
             // emiPrazoDtp
             // 
             this.emiPrazoDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emiPrazoDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.emiPrazoDtp.Location = new System.Drawing.Point(533, 134);
+            this.emiPrazoDtp.Location = new System.Drawing.Point(541, 68);
             this.emiPrazoDtp.Name = "emiPrazoDtp";
             this.emiPrazoDtp.Size = new System.Drawing.Size(120, 26);
             this.emiPrazoDtp.TabIndex = 4;
             this.emiPrazoDtp.Value = new System.DateTime(2015, 8, 20, 19, 14, 7, 0);
             // 
-            // textBox1
+            // emiProbTb
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 191);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(835, 177);
-            this.textBox1.TabIndex = 3;
+            this.emiProbTb.Location = new System.Drawing.Point(529, 140);
+            this.emiProbTb.Multiline = true;
+            this.emiProbTb.Name = "emiProbTb";
+            this.emiProbTb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.emiProbTb.Size = new System.Drawing.Size(317, 172);
+            this.emiProbTb.TabIndex = 3;
             // 
             // emiPrioridadeCb
             // 
             this.emiPrioridadeCb.FormattingEnabled = true;
-            this.emiPrioridadeCb.Location = new System.Drawing.Point(361, 138);
+            this.emiPrioridadeCb.Location = new System.Drawing.Point(374, 73);
             this.emiPrioridadeCb.Name = "emiPrioridadeCb";
             this.emiPrioridadeCb.Size = new System.Drawing.Size(149, 21);
             this.emiPrioridadeCb.TabIndex = 2;
             // 
-            // emiSetorTb
+            // emiSetorCb
             // 
-            this.emiSetorTb.FormattingEnabled = true;
-            this.emiSetorTb.Location = new System.Drawing.Point(361, 92);
-            this.emiSetorTb.Name = "emiSetorTb";
-            this.emiSetorTb.Size = new System.Drawing.Size(149, 21);
-            this.emiSetorTb.TabIndex = 2;
+            this.emiSetorCb.FormattingEnabled = true;
+            this.emiSetorCb.Location = new System.Drawing.Point(179, 74);
+            this.emiSetorCb.Name = "emiSetorCb";
+            this.emiSetorCb.Size = new System.Drawing.Size(149, 21);
+            this.emiSetorCb.TabIndex = 2;
             // 
-            // emiStatusBb
+            // label24
             // 
-            this.emiStatusBb.FormattingEnabled = true;
-            this.emiStatusBb.Location = new System.Drawing.Point(702, 92);
-            this.emiStatusBb.Name = "emiStatusBb";
-            this.emiStatusBb.Size = new System.Drawing.Size(149, 21);
-            this.emiStatusBb.TabIndex = 2;
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(12, 114);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(182, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Itens (equipamentos, produtos, etc...)";
+            // 
+            // emiAddLb
+            // 
+            this.emiAddLb.AutoSize = true;
+            this.emiAddLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emiAddLb.Location = new System.Drawing.Point(493, 108);
+            this.emiAddLb.Name = "emiAddLb";
+            this.emiAddLb.Size = new System.Drawing.Size(36, 20);
+            this.emiAddLb.TabIndex = 2;
+            this.emiAddLb.Text = "add";
+            this.emiAddLb.Click += new System.EventHandler(this.emiAddItLb_Click);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(358, 78);
+            this.label29.Location = new System.Drawing.Point(176, 60);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(43, 13);
             this.label29.TabIndex = 2;
@@ -916,7 +1260,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(358, 123);
+            this.label27.Location = new System.Drawing.Point(371, 58);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(54, 13);
             this.label27.TabIndex = 2;
@@ -925,34 +1269,52 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(17, 175);
+            this.label26.Location = new System.Drawing.Point(530, 124);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.Size = new System.Drawing.Size(117, 13);
             this.label26.TabIndex = 2;
-            this.label26.Text = "Descrição";
+            this.label26.Text = "Descrição do Problema";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(533, 118);
+            this.label28.Location = new System.Drawing.Point(541, 52);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(67, 13);
+            this.label28.Size = new System.Drawing.Size(82, 13);
             this.label28.TabIndex = 2;
-            this.label28.Text = "Definir Prazo";
+            this.label28.Text = "Prazo Desejado";
             // 
-            // emiSolicitanteLb
+            // emiSetorSolLb
             // 
-            this.emiSolicitanteLb.AutoSize = true;
-            this.emiSolicitanteLb.Location = new System.Drawing.Point(75, 36);
-            this.emiSolicitanteLb.Name = "emiSolicitanteLb";
-            this.emiSolicitanteLb.Size = new System.Drawing.Size(35, 13);
-            this.emiSolicitanteLb.TabIndex = 2;
-            this.emiSolicitanteLb.Text = "Nome";
+            this.emiSetorSolLb.AutoSize = true;
+            this.emiSetorSolLb.Location = new System.Drawing.Point(75, 39);
+            this.emiSetorSolLb.Name = "emiSetorSolLb";
+            this.emiSetorSolLb.Size = new System.Drawing.Size(32, 13);
+            this.emiSetorSolLb.TabIndex = 2;
+            this.emiSetorSolLb.Text = "Setor";
+            // 
+            // emiUsuSolLb
+            // 
+            this.emiUsuSolLb.AutoSize = true;
+            this.emiUsuSolLb.Location = new System.Drawing.Point(75, 26);
+            this.emiUsuSolLb.Name = "emiUsuSolLb";
+            this.emiUsuSolLb.Size = new System.Drawing.Size(35, 13);
+            this.emiUsuSolLb.TabIndex = 2;
+            this.emiUsuSolLb.Text = "Nome";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(13, 39);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(35, 13);
+            this.label39.TabIndex = 2;
+            this.label39.Text = "Setor:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(13, 36);
+            this.label25.Location = new System.Drawing.Point(13, 26);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(59, 13);
             this.label25.TabIndex = 2;
@@ -960,20 +1322,13 @@
             // 
             // emiTipoCb
             // 
+            this.emiTipoCb.Enabled = false;
             this.emiTipoCb.FormattingEnabled = true;
-            this.emiTipoCb.Location = new System.Drawing.Point(533, 92);
+            this.emiTipoCb.Location = new System.Drawing.Point(16, 74);
             this.emiTipoCb.Name = "emiTipoCb";
             this.emiTipoCb.Size = new System.Drawing.Size(149, 21);
             this.emiTipoCb.TabIndex = 2;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(699, 77);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Status";
+            this.emiTipoCb.Text = "Manutenção";
             // 
             // ordTopPn
             // 
@@ -1011,7 +1366,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(530, 77);
+            this.label23.Location = new System.Drawing.Point(13, 59);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(77, 13);
             this.label23.TabIndex = 2;
@@ -1119,6 +1474,272 @@
             this.statOrdPn.Visible = false;
             this.statOrdPn.VisibleChanged += new System.EventHandler(this.statOrdPn_VisibleChanged);
             // 
+            // statOrdFillPn
+            // 
+            this.statOrdFillPn.Controls.Add(this.tabControl1);
+            this.statOrdFillPn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statOrdFillPn.Location = new System.Drawing.Point(0, 86);
+            this.statOrdFillPn.Name = "statOrdFillPn";
+            this.statOrdFillPn.Size = new System.Drawing.Size(812, 418);
+            this.statOrdFillPn.TabIndex = 3;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.Ordens);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(812, 418);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // Ordens
+            // 
+            this.Ordens.BackColor = System.Drawing.Color.Transparent;
+            this.Ordens.Controls.Add(this.chart1);
+            this.Ordens.Location = new System.Drawing.Point(4, 22);
+            this.Ordens.Name = "Ordens";
+            this.Ordens.Padding = new System.Windows.Forms.Padding(3);
+            this.Ordens.Size = new System.Drawing.Size(804, 392);
+            this.Ordens.TabIndex = 0;
+            this.Ordens.Text = "Ordens emitidas por Mês";
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            chartArea22.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea22);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend22.Name = "Legend1";
+            this.chart1.Legends.Add(legend22);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series29.ChartArea = "ChartArea1";
+            series29.Legend = "Legend1";
+            series29.Name = "Por Mês";
+            dataPoint204.IsValueShownAsLabel = true;
+            dataPoint204.Label = "";
+            dataPoint205.IsValueShownAsLabel = true;
+            dataPoint206.IsValueShownAsLabel = true;
+            dataPoint207.IsValueShownAsLabel = true;
+            dataPoint208.IsValueShownAsLabel = true;
+            dataPoint209.IsValueShownAsLabel = true;
+            dataPoint210.IsValueShownAsLabel = true;
+            dataPoint211.IsValueShownAsLabel = true;
+            dataPoint212.IsValueShownAsLabel = true;
+            dataPoint213.IsValueShownAsLabel = true;
+            dataPoint214.IsValueShownAsLabel = true;
+            dataPoint215.IsValueShownAsLabel = true;
+            series29.Points.Add(dataPoint204);
+            series29.Points.Add(dataPoint205);
+            series29.Points.Add(dataPoint206);
+            series29.Points.Add(dataPoint207);
+            series29.Points.Add(dataPoint208);
+            series29.Points.Add(dataPoint209);
+            series29.Points.Add(dataPoint210);
+            series29.Points.Add(dataPoint211);
+            series29.Points.Add(dataPoint212);
+            series29.Points.Add(dataPoint213);
+            series29.Points.Add(dataPoint214);
+            series29.Points.Add(dataPoint215);
+            series30.ChartArea = "ChartArea1";
+            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series30.Legend = "Legend1";
+            series30.Name = "Prazo Cumprido";
+            dataPoint216.IsValueShownAsLabel = true;
+            dataPoint217.IsValueShownAsLabel = true;
+            dataPoint218.IsValueShownAsLabel = true;
+            dataPoint219.IsValueShownAsLabel = true;
+            dataPoint220.IsValueShownAsLabel = true;
+            dataPoint221.IsValueShownAsLabel = true;
+            dataPoint222.IsValueShownAsLabel = true;
+            dataPoint223.IsValueShownAsLabel = true;
+            dataPoint224.IsValueShownAsLabel = true;
+            dataPoint225.IsValueShownAsLabel = true;
+            dataPoint226.IsValueShownAsLabel = true;
+            dataPoint227.IsValueShownAsLabel = true;
+            series30.Points.Add(dataPoint216);
+            series30.Points.Add(dataPoint217);
+            series30.Points.Add(dataPoint218);
+            series30.Points.Add(dataPoint219);
+            series30.Points.Add(dataPoint220);
+            series30.Points.Add(dataPoint221);
+            series30.Points.Add(dataPoint222);
+            series30.Points.Add(dataPoint223);
+            series30.Points.Add(dataPoint224);
+            series30.Points.Add(dataPoint225);
+            series30.Points.Add(dataPoint226);
+            series30.Points.Add(dataPoint227);
+            this.chart1.Series.Add(series29);
+            this.chart1.Series.Add(series30);
+            this.chart1.Size = new System.Drawing.Size(798, 386);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.chart2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(804, 392);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Por Status";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            chartArea23.BackColor = System.Drawing.Color.Transparent;
+            chartArea23.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea23);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend23.Name = "Legend1";
+            this.chart2.Legends.Add(legend23);
+            this.chart2.Location = new System.Drawing.Point(3, 3);
+            this.chart2.Name = "chart2";
+            series31.ChartArea = "ChartArea1";
+            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series31.Legend = "Legend1";
+            series31.Name = "Pendente";
+            dataPoint228.IsValueShownAsLabel = true;
+            dataPoint228.Label = "Resolvido";
+            dataPoint229.IsValueShownAsLabel = true;
+            dataPoint229.Label = "Pendente";
+            dataPoint230.IsValueShownAsLabel = true;
+            dataPoint230.Label = "Negado";
+            series31.Points.Add(dataPoint228);
+            series31.Points.Add(dataPoint229);
+            series31.Points.Add(dataPoint230);
+            this.chart2.Series.Add(series31);
+            this.chart2.Size = new System.Drawing.Size(798, 386);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart2";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.chart3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(804, 392);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Por Prazo de Entrega";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chart3
+            // 
+            this.chart3.BackColor = System.Drawing.Color.Transparent;
+            chartArea24.BackColor = System.Drawing.Color.Transparent;
+            chartArea24.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea24);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend24.Name = "Legend1";
+            this.chart3.Legends.Add(legend24);
+            this.chart3.Location = new System.Drawing.Point(0, 0);
+            this.chart3.Name = "chart3";
+            series32.ChartArea = "ChartArea1";
+            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series32.Legend = "Legend1";
+            series32.Name = "Series1";
+            dataPoint231.Label = "No Prazo";
+            dataPoint232.Label = "Atrasadas";
+            series32.Points.Add(dataPoint231);
+            series32.Points.Add(dataPoint232);
+            this.chart3.Series.Add(series32);
+            this.chart3.Size = new System.Drawing.Size(804, 392);
+            this.chart3.TabIndex = 0;
+            this.chart3.Text = "chart3";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(804, 392);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "outros...";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(0, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(804, 392);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Mais sujestões aqui";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // statOrdTopPn
+            // 
+            this.statOrdTopPn.Controls.Add(this.statOrdAteDtp);
+            this.statOrdTopPn.Controls.Add(this.statOrdDeDtp);
+            this.statOrdTopPn.Controls.Add(this.panel2);
+            this.statOrdTopPn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statOrdTopPn.Location = new System.Drawing.Point(0, 24);
+            this.statOrdTopPn.Name = "statOrdTopPn";
+            this.statOrdTopPn.Size = new System.Drawing.Size(812, 62);
+            this.statOrdTopPn.TabIndex = 3;
+            // 
+            // statOrdAteDtp
+            // 
+            this.statOrdAteDtp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.statOrdAteDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statOrdAteDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.statOrdAteDtp.Location = new System.Drawing.Point(679, 22);
+            this.statOrdAteDtp.Name = "statOrdAteDtp";
+            this.statOrdAteDtp.Size = new System.Drawing.Size(133, 32);
+            this.statOrdAteDtp.TabIndex = 3;
+            this.statOrdAteDtp.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
+            // 
+            // statOrdDeDtp
+            // 
+            this.statOrdDeDtp.Dock = System.Windows.Forms.DockStyle.Left;
+            this.statOrdDeDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statOrdDeDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.statOrdDeDtp.Location = new System.Drawing.Point(0, 22);
+            this.statOrdDeDtp.Name = "statOrdDeDtp";
+            this.statOrdDeDtp.Size = new System.Drawing.Size(133, 32);
+            this.statOrdDeDtp.TabIndex = 3;
+            this.statOrdDeDtp.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(812, 22);
+            this.panel2.TabIndex = 2;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(0, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(70, 17);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "A parir de";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(783, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(29, 17);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Até";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -1152,284 +1773,128 @@
             this.label31.TabIndex = 2;
             this.label31.Text = "Estatística";
             // 
-            // tabControl1
+            // servPn
             // 
-            this.tabControl1.Controls.Add(this.Ordens);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 418);
-            this.tabControl1.TabIndex = 2;
+            this.servPn.BackColor = System.Drawing.Color.Silver;
+            this.servPn.Controls.Add(this.servLv);
+            this.servPn.Controls.Add(this.panel6);
+            this.servPn.Location = new System.Drawing.Point(0, 253);
+            this.servPn.Name = "servPn";
+            this.servPn.Size = new System.Drawing.Size(893, 262);
+            this.servPn.TabIndex = 2;
+            this.servPn.Visible = false;
+            this.servPn.VisibleChanged += new System.EventHandler(this.servPn_VisibleChanged);
             // 
-            // Ordens
+            // panel6
             // 
-            this.Ordens.BackColor = System.Drawing.Color.Transparent;
-            this.Ordens.Controls.Add(this.chart1);
-            this.Ordens.Location = new System.Drawing.Point(4, 22);
-            this.Ordens.Name = "Ordens";
-            this.Ordens.Padding = new System.Windows.Forms.Padding(3);
-            this.Ordens.Size = new System.Drawing.Size(804, 392);
-            this.Ordens.TabIndex = 0;
-            this.Ordens.Text = "Ordens emitidas por Mês";
+            this.panel6.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel6.Controls.Add(this.label40);
+            this.panel6.Controls.Add(this.label41);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(893, 24);
+            this.panel6.TabIndex = 1;
             // 
-            // tabPage2
+            // label40
             // 
-            this.tabPage2.Controls.Add(this.chart2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(864, 397);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Por Status";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.label40.AutoSize = true;
+            this.label40.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(875, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(18, 17);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "X";
+            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
-            // chart1
+            // label41
             // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(3, 3);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Por Mês";
-            dataPoint30.IsValueShownAsLabel = true;
-            dataPoint30.Label = "";
-            dataPoint31.IsValueShownAsLabel = true;
-            dataPoint32.IsValueShownAsLabel = true;
-            dataPoint33.IsValueShownAsLabel = true;
-            dataPoint34.IsValueShownAsLabel = true;
-            dataPoint35.IsValueShownAsLabel = true;
-            dataPoint36.IsValueShownAsLabel = true;
-            dataPoint37.IsValueShownAsLabel = true;
-            dataPoint38.IsValueShownAsLabel = true;
-            dataPoint39.IsValueShownAsLabel = true;
-            dataPoint40.IsValueShownAsLabel = true;
-            dataPoint41.IsValueShownAsLabel = true;
-            series5.Points.Add(dataPoint30);
-            series5.Points.Add(dataPoint31);
-            series5.Points.Add(dataPoint32);
-            series5.Points.Add(dataPoint33);
-            series5.Points.Add(dataPoint34);
-            series5.Points.Add(dataPoint35);
-            series5.Points.Add(dataPoint36);
-            series5.Points.Add(dataPoint37);
-            series5.Points.Add(dataPoint38);
-            series5.Points.Add(dataPoint39);
-            series5.Points.Add(dataPoint40);
-            series5.Points.Add(dataPoint41);
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "Prazo Cumprido";
-            dataPoint42.IsValueShownAsLabel = true;
-            dataPoint43.IsValueShownAsLabel = true;
-            dataPoint44.IsValueShownAsLabel = true;
-            dataPoint45.IsValueShownAsLabel = true;
-            dataPoint46.IsValueShownAsLabel = true;
-            dataPoint47.IsValueShownAsLabel = true;
-            dataPoint48.IsValueShownAsLabel = true;
-            dataPoint49.IsValueShownAsLabel = true;
-            dataPoint50.IsValueShownAsLabel = true;
-            dataPoint51.IsValueShownAsLabel = true;
-            dataPoint52.IsValueShownAsLabel = true;
-            dataPoint53.IsValueShownAsLabel = true;
-            series6.Points.Add(dataPoint42);
-            series6.Points.Add(dataPoint43);
-            series6.Points.Add(dataPoint44);
-            series6.Points.Add(dataPoint45);
-            series6.Points.Add(dataPoint46);
-            series6.Points.Add(dataPoint47);
-            series6.Points.Add(dataPoint48);
-            series6.Points.Add(dataPoint49);
-            series6.Points.Add(dataPoint50);
-            series6.Points.Add(dataPoint51);
-            series6.Points.Add(dataPoint52);
-            series6.Points.Add(dataPoint53);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
-            this.chart1.Size = new System.Drawing.Size(798, 386);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(3, 3);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(183, 20);
+            this.label41.TabIndex = 2;
+            this.label41.Text = "Serviços para este Setor";
             // 
-            // chart2
+            // servLv
             // 
-            this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.BackColor = System.Drawing.Color.Transparent;
-            chartArea5.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea5);
-            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "Legend1";
-            this.chart2.Legends.Add(legend5);
-            this.chart2.Location = new System.Drawing.Point(3, 3);
-            this.chart2.Name = "chart2";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "Pendente";
-            dataPoint54.IsValueShownAsLabel = true;
-            dataPoint54.Label = "Resolvido";
-            dataPoint55.IsValueShownAsLabel = true;
-            dataPoint55.Label = "Pendente";
-            dataPoint56.IsValueShownAsLabel = true;
-            dataPoint56.Label = "Negado";
-            series7.Points.Add(dataPoint54);
-            series7.Points.Add(dataPoint55);
-            series7.Points.Add(dataPoint56);
-            this.chart2.Series.Add(series7);
-            this.chart2.Size = new System.Drawing.Size(858, 391);
-            this.chart2.TabIndex = 0;
-            this.chart2.Text = "chart2";
+            this.servLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader6,
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.servLv.FullRowSelect = true;
+            this.servLv.GridLines = true;
+            this.servLv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.servLv.Location = new System.Drawing.Point(12, 63);
+            this.servLv.MultiSelect = false;
+            this.servLv.Name = "servLv";
+            this.servLv.Size = new System.Drawing.Size(869, 179);
+            this.servLv.TabIndex = 2;
+            this.servLv.UseCompatibleStateImageBehavior = false;
+            this.servLv.View = System.Windows.Forms.View.Details;
             // 
-            // tabPage1
+            // ID
             // 
-            this.tabPage1.Controls.Add(this.chart3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(864, 397);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Por Prazo de Entrega";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.ID.Text = "ID";
+            this.ID.Width = 50;
             // 
-            // tabPage3
+            // columnHeader7
             // 
-            this.tabPage3.Controls.Add(this.label30);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(864, 397);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "outros...";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.columnHeader7.Text = "Solicitante";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 90;
             // 
-            // label30
+            // columnHeader8
             // 
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(0, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(864, 397);
-            this.label30.TabIndex = 2;
-            this.label30.Text = "Mais sujestões aqui";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.columnHeader8.Text = "Setor";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 90;
             // 
-            // statOrdTopPn
+            // columnHeader9
             // 
-            this.statOrdTopPn.Controls.Add(this.statOrdAteDtp);
-            this.statOrdTopPn.Controls.Add(this.statOrdDeDtp);
-            this.statOrdTopPn.Controls.Add(this.panel2);
-            this.statOrdTopPn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.statOrdTopPn.Location = new System.Drawing.Point(0, 24);
-            this.statOrdTopPn.Name = "statOrdTopPn";
-            this.statOrdTopPn.Size = new System.Drawing.Size(812, 62);
-            this.statOrdTopPn.TabIndex = 3;
+            this.columnHeader9.DisplayIndex = 3;
+            this.columnHeader9.Text = "Data";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 110;
             // 
-            // statOrdFillPn
+            // columnHeader6
             // 
-            this.statOrdFillPn.Controls.Add(this.tabControl1);
-            this.statOrdFillPn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statOrdFillPn.Location = new System.Drawing.Point(0, 86);
-            this.statOrdFillPn.Name = "statOrdFillPn";
-            this.statOrdFillPn.Size = new System.Drawing.Size(812, 418);
-            this.statOrdFillPn.TabIndex = 3;
+            this.columnHeader6.DisplayIndex = 4;
+            this.columnHeader6.Text = "Problema";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 361;
             // 
-            // label32
+            // columnHeader11
             // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(0, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(70, 17);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "A parir de";
+            this.columnHeader11.Text = "Prioridade";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 80;
             // 
-            // label33
+            // columnHeader12
             // 
-            this.label33.AutoSize = true;
-            this.label33.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(783, 0);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(29, 17);
-            this.label33.TabIndex = 1;
-            this.label33.Text = "Até";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label32);
-            this.panel2.Controls.Add(this.label33);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(812, 22);
-            this.panel2.TabIndex = 2;
-            // 
-            // statOrdDeDtp
-            // 
-            this.statOrdDeDtp.Dock = System.Windows.Forms.DockStyle.Left;
-            this.statOrdDeDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statOrdDeDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.statOrdDeDtp.Location = new System.Drawing.Point(0, 22);
-            this.statOrdDeDtp.Name = "statOrdDeDtp";
-            this.statOrdDeDtp.Size = new System.Drawing.Size(133, 32);
-            this.statOrdDeDtp.TabIndex = 3;
-            this.statOrdDeDtp.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            // 
-            // statOrdAteDtp
-            // 
-            this.statOrdAteDtp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.statOrdAteDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statOrdAteDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.statOrdAteDtp.Location = new System.Drawing.Point(679, 22);
-            this.statOrdAteDtp.Name = "statOrdAteDtp";
-            this.statOrdAteDtp.Size = new System.Drawing.Size(133, 32);
-            this.statOrdAteDtp.TabIndex = 3;
-            this.statOrdAteDtp.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            // 
-            // chart3
-            // 
-            this.chart3.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.BackColor = System.Drawing.Color.Transparent;
-            chartArea6.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea6);
-            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "Legend1";
-            this.chart3.Legends.Add(legend6);
-            this.chart3.Location = new System.Drawing.Point(0, 0);
-            this.chart3.Name = "chart3";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            dataPoint57.Label = "No Prazo";
-            dataPoint58.Label = "Atrasadas";
-            series8.Points.Add(dataPoint57);
-            series8.Points.Add(dataPoint58);
-            this.chart3.Series.Add(series8);
-            this.chart3.Size = new System.Drawing.Size(864, 397);
-            this.chart3.TabIndex = 0;
-            this.chart3.Text = "chart3";
+            this.columnHeader12.Text = "Status";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 84;
             // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 573);
+            this.Controls.Add(this.menuPrincipal);
+            this.Controls.Add(this.servPn);
+            this.Controls.Add(this.usuTrocaPn);
+            this.Controls.Add(this.statOrdPn);
             this.Controls.Add(this.setPn);
             this.Controls.Add(this.cad1Pn);
             this.Controls.Add(this.conPn);
-            this.Controls.Add(this.menuPrincipal);
-            this.Controls.Add(this.usuTrocaPn);
             this.Controls.Add(this.emiPn);
-            this.Controls.Add(this.statOrdPn);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "PrincipalForm";
             this.Text = "Services";
@@ -1450,6 +1915,10 @@
             this.setTopPn.PerformLayout();
             this.emiPn.ResumeLayout(false);
             this.emiPn.PerformLayout();
+            this.emiaddPn.ResumeLayout(false);
+            this.emiaddPn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emiAddItNup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emiFimDg)).EndInit();
             this.ordTopPn.ResumeLayout(false);
             this.ordTopPn.PerformLayout();
             this.usuTrocaPn.ResumeLayout(false);
@@ -1457,20 +1926,23 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.statOrdPn.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.statOrdFillPn.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.Ordens.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.statOrdTopPn.ResumeLayout(false);
-            this.statOrdFillPn.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.servPn.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1554,17 +2026,15 @@
         private System.Windows.Forms.ComboBox emiTipoCb;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox emiSetorTb;
-        private System.Windows.Forms.ComboBox emiStatusBb;
+        private System.Windows.Forms.TextBox emiProbTb;
+        private System.Windows.Forms.ComboBox emiSetorCb;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DateTimePicker emiPrazoDtp;
         private System.Windows.Forms.ComboBox emiPrioridadeCb;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label emiSolicitanteLb;
+        private System.Windows.Forms.Label emiUsuSolLb;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ToolStripMenuItem statOrdMi;
         private System.Windows.Forms.Panel statOrdPn;
@@ -1587,6 +2057,52 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ToolStripMenuItem EquipMi;
+        private System.Windows.Forms.ToolStripMenuItem aceMi;
+        private System.Windows.Forms.ToolStripMenuItem modeloMi;
+        private System.Windows.Forms.ToolStripMenuItem pecasMi;
+        private System.Windows.Forms.DataGridView emiFimDg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVal;
+        private System.Windows.Forms.CheckBox emiFinCh;
+        private System.Windows.Forms.Button emiEmiBt;
+        private System.Windows.Forms.ToolStripMenuItem ordSetMi;
+        private System.Windows.Forms.TextBox emiFinTotalTb;
+        private System.Windows.Forms.ListView emiItemLv;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label emiAddLb;
+        private System.Windows.Forms.Panel emiaddPn;
+        private System.Windows.Forms.Label emiAddXLb;
+        private System.Windows.Forms.Button emiAddBt;
+        private System.Windows.Forms.NumericUpDown emiAddItNup;
+        private System.Windows.Forms.TextBox emiAddModeloTb;
+        private System.Windows.Forms.TextBox emiAddMarcaTb;
+        private System.Windows.Forms.TextBox emiAddDescTb;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label emiAddIdLb;
+        private System.Windows.Forms.Label emiSetorSolLb;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Panel servPn;
+        private System.Windows.Forms.ListView servLv;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
     }
 }
 

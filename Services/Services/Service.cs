@@ -11,15 +11,34 @@ namespace Services
     {
         private int id;
         private int type;
-        private int prioridade;
-        private Status status;
+        private Prioridade prioridade;
         private DateTime hoje;
         private DateTime prazo;
-        private string[] conteudo;
-        private bool recebido;
+        private Status status;
+        private string[] declarado;
+        private string[] encontrado;
+        private string[] solucao;
+        private int usuSol;
+        private int setorSol;
+        private int usuResp;
+        private int setorResp;
         private Conexao conexao;
 
-
+        /*
+         * id
+         * type
+         * prioridade
+         * hoje
+         * prazo
+         * status
+         * declarado
+         * encontrado
+         * solucao
+         * usuSol
+         * setorSol
+         * usuResp
+         * setorResp
+         */
         public Service()
         {
 
@@ -58,32 +77,36 @@ namespace Services
             return res;
         }
 
-        public static Service New(int type,int prioridade,DateTime hoje,DateTime prazo,Status status,string[] conteudo)
+        public static bool New(int type, int prioridade, DateTime hoje, DateTime prazo, Status status, 
+            string[] declarado, string[] encontrado, string[] solucao, int usuSol, int setorSol, int usuResp, int setorResp)
         {
             try
             {
                 Conexao con = new Conexao();
                 if (con.getLastLoadState())
                 {
-                    string joined = Join(conteudo,"<*>");
+                    string declaradoJoined = Join(declarado, "<*>"),
+                        encontradoJoined = Join(declarado, "<*>"),
+                        solucaoJoined = Join(declarado, "<*>");
                     int nextId = 0;
                     DataTable dt = con.Query("Select id from service order by id limit 1");
                     if (dt != null)
                         if (int.TryParse(dt.Rows[0]["id"].ToString(), out nextId))
                             nextId++;
-                    if ("" != con.Comando("INSERT INTO service values("+nextId+","+type.ToString()+","+prioridade.ToString()+",'"+hoje.ToString("yyyy-MM-dd-HH-mm-ss")+"','"+prazo.ToString("yyyy-MM-dd-HH-mm-ss")+"',"+status.Id.ToString()+",'"+joined +"',0)"))
-                        return null;
+                    if ("" != con.Comando("INSERT INTO service values(" + nextId + "," + type.ToString() + "," + prioridade.ToString() + ",'" + hoje.ToString("yyyy-MM-dd HH:mm:ss") + "','" + prazo.ToString("yyyy-MM-dd HH:mm:ss") + "'," + status.Id.ToString() + ",'"
+                        + declaradoJoined + "','" + encontradoJoined + "','" + solucaoJoined + "'," + usuSol.ToString()+","+setorSol.ToString() + "," + usuResp.ToString() + "," + setorResp.ToString() + ")"))
+                        return false;
                     else
                     {
-                        return Load(nextId);
+                        return true;
                     }
                 }
                 else
-                    return null;
+                    return false;
             }
             catch
             {
-                return null;
+                return false;
             }
         }
 
@@ -105,14 +128,16 @@ namespace Services
                             s.hoje = auxDt;
                         if (DateTime.TryParse(dt.Rows[0]["prazo"].ToString(),out auxDt))
                             s.prazo = auxDt;
-                        s.conteudo = Split(dt.Rows[0]["conteudo"].ToString(), "<*>");
-                        s.prioridade = int.Parse(dt.Rows[0]["prioridade"].ToString());
+                        s.declarado = Split(dt.Rows[0]["declarado"].ToString(), "<*>");
+                        s.encontrado = Split(dt.Rows[0]["encontrado"].ToString(), "<*>");
+                        s.solucao = Split(dt.Rows[0]["solucao"].ToString(), "<*>");
+                        s.prioridade = new Prioridade(int.Parse(dt.Rows[0]["prioridade"].ToString()));
                         s.status = new Status(int.Parse(dt.Rows[0]["status"].ToString()));
+                        s.usuSol = int.Parse(dt.Rows[0]["usuSol"].ToString());
+                        s.setorSol = int.Parse(dt.Rows[0]["setorSol"].ToString());
+                        s.usuResp = int.Parse(dt.Rows[0]["usuResp"].ToString());
+                        s.setorResp = int.Parse(dt.Rows[0]["setorResp"].ToString());
                         s.conexao = con;
-                        if (dt.Rows[0]["recebido"].ToString() == "1")
-                            s.recebido = true;
-                        else
-                            s.recebido = false;
                         return s;
                     }
                     else
@@ -137,13 +162,15 @@ namespace Services
                     string query = "UPDATE service SET type=" + this.type.ToString() +
                         ",hoje='" + this.hoje.ToString("yyyy-MM-DD HH:mm:ss") +
                         "',prazo='" + this.prazo.ToString("yyyy-MM-DD HH:mm:ss") +
-                        "',conteudo='" + Join(this.conteudo, "<*>") +
-                        "',prioridade=" + this.prioridade.ToString() +
-                        ",status=" + status.Id.ToString();
-                    if (this.recebido)
-                        query += ",recebido=1";
-                    else
-                        query += ",recebido=0";
+                        "',declarado='" + Join(this.declarado, "<*>") +
+                        "',encontrado='" + Join(this.encontrado, "<*>") +
+                        "',solucao='" + Join(this.solucao, "<*>") +
+                        "',prioridade=" + this.prioridade.Id.ToString() +
+                        ",status=" + status.Id.ToString()+
+                        ",usuSol=" + this.usuSol.ToString() +
+                        ",setorSol=" + this.setorSol.ToString() +
+                        ",usuResp=" + this.usuResp.ToString() +
+                        ",setorResp=" + this.setorResp.ToString();
                     query += " WHERE id=" + this.id.ToString();
 
                     if ("" != conexao.Comando(query))
@@ -173,19 +200,26 @@ namespace Services
                         query += ",hoje='" + NewOne.hoje.ToString("yyyy-MM-DD HH:mm:ss") + "'";
                     if (this.prazo != NewOne.prazo)
                         query += ",prazo='" + NewOne.prazo.ToString("yyyy-MM-DD HH:mm:ss") + "'";
-                    if (this.conteudo != NewOne.conteudo)
-                        query += ",conteudo='" + Join(NewOne.conteudo, "<*>")+"'";
-                    if (this.prioridade != NewOne.prioridade)
-                        query += ",prioridade=" + NewOne.prioridade.ToString();
+                    if (this.declarado != NewOne.declarado)
+                        query += ",declarado='" + Join(NewOne.declarado, "<*>") + "'";
+                    if (this.encontrado != NewOne.encontrado)
+                        query += ",encontrado='" + Join(NewOne.encontrado, "<*>") + "'";
+                    if (this.solucao != NewOne.solucao)
+                        query += ",solucao='" + Join(NewOne.solucao, "<*>") + "'";
+                    if (this.prioridade.Id != NewOne.prioridade.Id)
+                        query += ",prioridade=" + NewOne.prioridade.Id.ToString();
+                    if (this.usuSol != NewOne.usuSol)
+                        query += ",usuSol=" + NewOne.usuSol.ToString();
+                    if (this.setorSol != NewOne.setorSol)
+                        query += ",setorSol=" + NewOne.setorSol.ToString();
+                    if (this.usuResp != NewOne.usuResp)
+                        query += ",usuResp=" + NewOne.usuResp.ToString();
+                    if (this.setorResp != NewOne.setorResp)
+                        query += ",setorResp=" + NewOne.setorResp.ToString();
 
                     if (this.status.Id != NewOne.status.Id)
                         query += ",status=" + NewOne.status.Id.ToString();
 
-                    if (this.recebido!=NewOne.recebido)
-                        if (NewOne.recebido)
-                            query += ",recebido=1";
-                        else
-                            query += ",recebido=0";
                     query += " WHERE id=" + this.id.ToString();
 
                     if ("" != conexao.Comando(query))
@@ -203,7 +237,96 @@ namespace Services
         }
     }
 
-    struct TipoDeOrdem
+    public struct Prioridade
+    {
+        private int id;
+        public int Id
+        {
+            get { return id; }
+        }
+
+        private string nome;
+        public string Nome
+        {
+            get{return nome;}
+        }
+        
+        public Prioridade(int ID)
+        {
+            this.id = ID;
+            switch (ID)
+            {
+                case 0:
+                    nome = "Baixa";
+                    break;
+                case 1:
+                    nome = "Media";
+                    break;
+                case 2:
+                    nome = "Alta";
+                    break;
+                case 3:
+                    nome = "Urgente";
+                    break;
+                default:
+                    id = 0;
+                    nome = "Baixa";
+                    break;
+            }
+
+        }
+
+        public static List<Prioridade> All = new List<Prioridade>() 
+        {
+            Prioridade.Baixa , 
+            Prioridade.Media,
+            Prioridade.Alta,
+            Prioridade.Urgente
+        };
+
+        public static Prioridade Baixa
+        {
+            get 
+            {
+                Prioridade s = new Prioridade();
+                s.id = 0;
+                s.nome = "Baixa";
+                return s; 
+            }
+        }
+        public static Prioridade Media
+        {
+            get
+            {
+                Prioridade s = new Prioridade();
+                s.id = 1;
+                s.nome = "Media";
+                return s;
+            }
+        }
+        public static Prioridade Alta
+        {
+            get
+            {
+                Prioridade s = new Prioridade();
+                s.id = 2;
+                s.nome = "Alta";
+                return s;
+            }
+        }
+        public static Prioridade Urgente
+        {
+            get
+            {
+                Prioridade s = new Prioridade();
+                s.id = 3;
+                s.nome = "Urgente";
+                return s;
+            }
+        }
+    }
+
+    public struct TipoDeOrdem
     {
         private int id;
         public int Id
@@ -262,7 +385,7 @@ namespace Services
         };
     }
 
-    struct Status
+    public struct Status
     {
         private int id;
         private string nome;
@@ -300,7 +423,7 @@ namespace Services
                     nome = "Resolvido";
                     break;
                 case 5:
-                    nome = "Aguardando Terceiros";
+                    nome = "Em Andamento";
                     break;
                 default:
                     id = -1;
@@ -317,7 +440,7 @@ namespace Services
             Status.EmTransito,
             Status.Negado,
             Status.Resolvido,
-            Status.AguardandoTerceiros,
+            Status.EmAndamento,
             Status.Desconhecido
         };
         public static Status Desconhecido
@@ -380,13 +503,13 @@ namespace Services
                 return s;
             }
         }
-        public static Status AguardandoTerceiros
+        public static Status EmAndamento
         {
             get
             {
                 Status s = new Status();
                 s.id = 5;
-                s.nome = "Aguardando Terceiros";
+                s.nome = "Em Andamento";
                 return s;
             }
         }

@@ -507,14 +507,14 @@ namespace Services
     class DataBaseCheck
     {
         public static Dictionary<string, string> sqlite_tables = new Dictionary<string, string>(){
-            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'conteudo' TEXT, 'resposta' TEXT, 'recebido' BOOLEAN)"},
+            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'declarado' TEXT, 'encontrado' TEXT, 'solucao' TEXT, 'usuSol' INT, 'setorSol' INT, 'usuResp' INT, 'setorResp' INT)"},
             {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'privilegio' INTEGER, 'setor' INTEGER, 'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
             {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
         };
 
         public static Dictionary<string, string> sqlite_FirstInsert = new Dictionary<string, string>(){
             {"service",""},
-            {"user","INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES (NULL,0,0,'admin','admin','Administrador',NULL)"},
+            {"user","INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES (NULL,0,1,'admin','admin','Administrador',NULL)"},
             {"setor","INSERT INTO setor (nome) VALUES('Escritorio')"}
         };
 
@@ -523,7 +523,24 @@ namespace Services
             {"user","INSERT INTO user (privilegio,login,pass,nome) VALUES(1,'admin','admin','Admnistrador')"},
             {"setor",""}
         };
-        /*
+        /* service
+         * id
+         * type
+         * prioridade
+         * hoje
+         * prazo
+         * status
+         * declarado
+         * encontrado
+         * solucao
+         * usuSol
+         * setorSol
+         * usuResp
+         * setorResp
+         * 
+         * itens??
+         * fin???
+         * 
          * user
          * id
          * privilegio
@@ -537,6 +554,7 @@ namespace Services
          * id
          * nome
          * 
+         *
          */
 
         public DataBaseCheck()

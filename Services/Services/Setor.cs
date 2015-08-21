@@ -23,26 +23,60 @@ namespace Services
             get { return nome; }
             set { nome = value; }
         }
-
-        public Setor(Conexao conexao)
-        {
-            con = conexao;
-        }
-
-        public string New()
+        public Setor(int id)
         {
             try
             {
+                Conexao conexao = new Conexao();
+                if (conexao.getLastLoadState())
+                {
+                    System.Data.DataTable dt = conexao.Query("select * from setor where id="+id.ToString());
+                    if (dt!=null)
+                    {
+                        this.con = conexao;
+                        this.id = int.Parse(dt.Rows[0]["id"].ToString());
+                        this.nome = dt.Rows[0]["nome"].ToString();
+                    }
+                }
+
+            }
+            catch
+            {
+            }
+        }
+        
+        public static Setor Load(int id)
+        {
+            try
+            {
+                Setor s = new Setor(id);
+                if (s.id == null)
+                    return null;
+                else
+                    return s;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        public static string New(string nome)
+        {
+            try
+            {
+                Conexao con = new Conexao();
                 if (con.getLastLoadState())
                 {
                     if (Conexao.noServerDatabase)
                     {
                         string query;
-                        System.Data.DataTable dt = con.Query("select * from setor where nome='" + this.nome + "'");
+                        System.Data.DataTable dt = con.Query("select * from setor where nome='" + nome + "'");
                         if (dt == null)
                         {
                             query = "INSERT INTO setor (id,nome) VALUES(null,'" +
-                                this.nome + "')";
+                                nome + "')";
                             if (con.Comando(query) != "")
                                 return "Não foi possível adicionar novo setor";
                         }

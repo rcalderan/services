@@ -21,8 +21,8 @@ namespace Services
             get { return privilegio; }
             set { privilegio = value; }
         }
-        private int setor;
-        public int Setor
+        private Setor setor;
+        public Setor Setor
         {
             get { return setor; }
             set { setor = value; }
@@ -74,7 +74,7 @@ namespace Services
                         u.id = id;
                         u.nome = dt.Rows[0]["nome"].ToString();
                         u.login = dt.Rows[0]["login"].ToString();
-                        u.setor = int.Parse(dt.Rows[0]["setor"].ToString());
+                        u.setor = new Setor(int.Parse(dt.Rows[0]["setor"].ToString()));
                         u.pass = dt.Rows[0]["senha"].ToString();
                         u.privilegio = new Privilegio(int.Parse(dt.Rows[0]["privilegio"].ToString()));
                         u.conexao = con;
@@ -112,7 +112,7 @@ namespace Services
                         query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES(" +
                             next.ToString() + "," +
                             this.privilegio.id.ToString() + "," +
-                            this.setor + ",'" +
+                            this.setor.Id.ToString() + ",'" +
                             this.login + "','" +
                             this.pass + "','" +
                             this.nome + "','" +
@@ -159,7 +159,7 @@ namespace Services
                             if (nome != Novo.nome)
                                 query += "',nome='" + Novo.nome + "'";
                             if (setor != Novo.setor)
-                                query += "',setor='" + Novo.setor + "'";
+                                query += "',setor='" + Novo.setor.Id.ToString() + "'";
                             if (ultimoAcesso != Novo.ultimoAcesso)
                                 query += "',ultimoAcesso='" + Novo.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") + "'";
                             query+="' WHERE id=" + this.id;
@@ -198,7 +198,7 @@ namespace Services
                             query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES("+
                                 this.id.ToString()+","+
                                 this.privilegio.id.ToString()+","+
-                                this.setor.ToString()+",'"+
+                                this.setor.Id.ToString()+",'"+
                                 this.login+"','"+
                                 this.pass+"','"+
                                 this.nome+"','"+
@@ -213,7 +213,7 @@ namespace Services
                             query = "UPDATE user SET " +
                                 "id=" + this.id.ToString() +
                             ",privilegio=" + this.privilegio.id.ToString() +
-                            ",setor=" + this.setor +
+                            ",setor=" + this.setor.Id.ToString() +
                             ",login='" + this.login +
                             "',pass='" + this.pass +
                             "',nome='" + this.nome +
