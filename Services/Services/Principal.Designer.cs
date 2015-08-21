@@ -28,6 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint30 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 45D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint31 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 37D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint32 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint33 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint34 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint35 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint36 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 21D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint37 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 27D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint38 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 31D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint39 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint40 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 35D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint41 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 50D);
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint42 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, 40D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint43 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(2D, 36D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint44 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(3D, 25D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint45 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(4D, 12D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint46 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(5D, 17D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint47 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(6D, 20D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint48 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(7D, 18D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint49 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(8D, 25D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint50 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(9D, 28D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint51 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(10D, 30D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint52 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(11D, 33D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint53 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(12D, 45D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint54 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(50D, 75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint55 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 10D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint56 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 2D);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint57 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 75D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint58 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 21D);
             this.conPn = new System.Windows.Forms.Panel();
             this.conConectaBt = new System.Windows.Forms.Button();
             this.conPass2Tb = new System.Windows.Forms.TextBox();
@@ -49,6 +88,7 @@
             this.servicosMi = new System.Windows.Forms.ToolStripMenuItem();
             this.emitirOrdemMi = new System.Windows.Forms.ToolStripMenuItem();
             this.statMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.statOrdMi = new System.Windows.Forms.ToolStripMenuItem();
             this.appMi = new System.Windows.Forms.ToolStripMenuItem();
             this.confMi = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreMi = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,11 +119,35 @@
             this.cad1XLb = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.setPn = new System.Windows.Forms.Panel();
+            this.setExcluiBt = new System.Windows.Forms.Button();
+            this.setSaveBt = new System.Windows.Forms.Button();
             this.setTopPn = new System.Windows.Forms.Panel();
             this.setXLb = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.setIdLb = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.setCb = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.setNomeTb = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.emiPn = new System.Windows.Forms.Panel();
+            this.emiPrazoDtp = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.emiPrioridadeCb = new System.Windows.Forms.ComboBox();
+            this.emiSetorTb = new System.Windows.Forms.ComboBox();
+            this.emiStatusBb = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.emiSolicitanteLb = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.emiTipoCb = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.ordTopPn = new System.Windows.Forms.Panel();
             this.ordXLb = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.usuTrocaPn = new System.Windows.Forms.Panel();
             this.usuPassTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -92,30 +156,26 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.usuXLb = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.setIdLb = new System.Windows.Forms.Label();
-            this.setNomeTb = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.setCb = new System.Windows.Forms.ComboBox();
-            this.setSaveBt = new System.Windows.Forms.Button();
-            this.setExcluiBt = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.emiTipoCb = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.emiStatusBb = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.emiSetorTb = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.emiPrioridadeCb = new System.Windows.Forms.ComboBox();
-            this.emiPrazoDtp = new System.Windows.Forms.DateTimePicker();
-            this.label28 = new System.Windows.Forms.Label();
-            this.emiSolicitanteLb = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.statOrdPn = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.statOrdXLb = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Ordens = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.statOrdTopPn = new System.Windows.Forms.Panel();
+            this.statOrdFillPn = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.statOrdDeDtp = new System.Windows.Forms.DateTimePicker();
+            this.statOrdAteDtp = new System.Windows.Forms.DateTimePicker();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.conPn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
@@ -128,6 +188,19 @@
             this.ordTopPn.SuspendLayout();
             this.usuTrocaPn.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.statOrdPn.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.Ordens.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.statOrdTopPn.SuspendLayout();
+            this.statOrdFillPn.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.SuspendLayout();
             // 
             // conPn
@@ -315,7 +388,7 @@
             // setoresMi
             // 
             this.setoresMi.Name = "setoresMi";
-            this.setoresMi.Size = new System.Drawing.Size(111, 22);
+            this.setoresMi.Size = new System.Drawing.Size(152, 22);
             this.setoresMi.Text = "Setores";
             this.setoresMi.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
             // 
@@ -336,10 +409,19 @@
             // 
             // statMi
             // 
+            this.statMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statOrdMi});
             this.statMi.Name = "statMi";
             this.statMi.Size = new System.Drawing.Size(68, 20);
             this.statMi.Text = "Estatística";
             this.statMi.Click += new System.EventHandler(this.statMi_Click);
+            // 
+            // statOrdMi
+            // 
+            this.statOrdMi.Name = "statOrdMi";
+            this.statOrdMi.Size = new System.Drawing.Size(162, 22);
+            this.statOrdMi.Text = "Ordens de Serviço";
+            this.statOrdMi.Click += new System.EventHandler(this.statOrdMi_Click);
             // 
             // appMi
             // 
@@ -650,6 +732,26 @@
             this.setPn.Visible = false;
             this.setPn.VisibleChanged += new System.EventHandler(this.setPn_VisibleChanged);
             // 
+            // setExcluiBt
+            // 
+            this.setExcluiBt.Location = new System.Drawing.Point(282, 111);
+            this.setExcluiBt.Name = "setExcluiBt";
+            this.setExcluiBt.Size = new System.Drawing.Size(75, 23);
+            this.setExcluiBt.TabIndex = 5;
+            this.setExcluiBt.Text = "Excluir";
+            this.setExcluiBt.UseVisualStyleBackColor = true;
+            this.setExcluiBt.Click += new System.EventHandler(this.setExcluiBt_Click);
+            // 
+            // setSaveBt
+            // 
+            this.setSaveBt.Location = new System.Drawing.Point(17, 111);
+            this.setSaveBt.Name = "setSaveBt";
+            this.setSaveBt.Size = new System.Drawing.Size(75, 23);
+            this.setSaveBt.TabIndex = 5;
+            this.setSaveBt.Text = "Salvar";
+            this.setSaveBt.UseVisualStyleBackColor = true;
+            this.setSaveBt.Click += new System.EventHandler(this.setSaveBt_Click);
+            // 
             // setTopPn
             // 
             this.setTopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -672,6 +774,69 @@
             this.setXLb.TabIndex = 0;
             this.setXLb.Text = "X";
             this.setXLb.Click += new System.EventHandler(this.setXLb_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(65, 20);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Setores";
+            // 
+            // setIdLb
+            // 
+            this.setIdLb.AutoSize = true;
+            this.setIdLb.Location = new System.Drawing.Point(36, 41);
+            this.setIdLb.Name = "setIdLb";
+            this.setIdLb.Size = new System.Drawing.Size(15, 13);
+            this.setIdLb.TabIndex = 2;
+            this.setIdLb.Text = "id";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 70);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Nome";
+            // 
+            // setCb
+            // 
+            this.setCb.FormattingEnabled = true;
+            this.setCb.Location = new System.Drawing.Point(361, 44);
+            this.setCb.Name = "setCb";
+            this.setCb.Size = new System.Drawing.Size(121, 21);
+            this.setCb.TabIndex = 4;
+            this.setCb.SelectedIndexChanged += new System.EventHandler(this.setCb_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(14, 41);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(16, 13);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Id";
+            // 
+            // setNomeTb
+            // 
+            this.setNomeTb.Location = new System.Drawing.Point(17, 85);
+            this.setNomeTb.MaxLength = 255;
+            this.setNomeTb.Name = "setNomeTb";
+            this.setNomeTb.Size = new System.Drawing.Size(340, 20);
+            this.setNomeTb.TabIndex = 3;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(358, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(43, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Setores";
             // 
             // emiPn
             // 
@@ -697,6 +862,119 @@
             this.emiPn.TabIndex = 2;
             this.emiPn.Visible = false;
             // 
+            // emiPrazoDtp
+            // 
+            this.emiPrazoDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emiPrazoDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.emiPrazoDtp.Location = new System.Drawing.Point(533, 134);
+            this.emiPrazoDtp.Name = "emiPrazoDtp";
+            this.emiPrazoDtp.Size = new System.Drawing.Size(120, 26);
+            this.emiPrazoDtp.TabIndex = 4;
+            this.emiPrazoDtp.Value = new System.DateTime(2015, 8, 20, 19, 14, 7, 0);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 191);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(835, 177);
+            this.textBox1.TabIndex = 3;
+            // 
+            // emiPrioridadeCb
+            // 
+            this.emiPrioridadeCb.FormattingEnabled = true;
+            this.emiPrioridadeCb.Location = new System.Drawing.Point(361, 138);
+            this.emiPrioridadeCb.Name = "emiPrioridadeCb";
+            this.emiPrioridadeCb.Size = new System.Drawing.Size(149, 21);
+            this.emiPrioridadeCb.TabIndex = 2;
+            // 
+            // emiSetorTb
+            // 
+            this.emiSetorTb.FormattingEnabled = true;
+            this.emiSetorTb.Location = new System.Drawing.Point(361, 92);
+            this.emiSetorTb.Name = "emiSetorTb";
+            this.emiSetorTb.Size = new System.Drawing.Size(149, 21);
+            this.emiSetorTb.TabIndex = 2;
+            // 
+            // emiStatusBb
+            // 
+            this.emiStatusBb.FormattingEnabled = true;
+            this.emiStatusBb.Location = new System.Drawing.Point(702, 92);
+            this.emiStatusBb.Name = "emiStatusBb";
+            this.emiStatusBb.Size = new System.Drawing.Size(149, 21);
+            this.emiStatusBb.TabIndex = 2;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(358, 78);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(43, 13);
+            this.label29.TabIndex = 2;
+            this.label29.Text = "Destino";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(358, 123);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 13);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Prioridade";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(17, 175);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Descrição";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(533, 118);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(67, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Definir Prazo";
+            // 
+            // emiSolicitanteLb
+            // 
+            this.emiSolicitanteLb.AutoSize = true;
+            this.emiSolicitanteLb.Location = new System.Drawing.Point(75, 36);
+            this.emiSolicitanteLb.Name = "emiSolicitanteLb";
+            this.emiSolicitanteLb.Size = new System.Drawing.Size(35, 13);
+            this.emiSolicitanteLb.TabIndex = 2;
+            this.emiSolicitanteLb.Text = "Nome";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(13, 36);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(59, 13);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Solicitante:";
+            // 
+            // emiTipoCb
+            // 
+            this.emiTipoCb.FormattingEnabled = true;
+            this.emiTipoCb.Location = new System.Drawing.Point(533, 92);
+            this.emiTipoCb.Name = "emiTipoCb";
+            this.emiTipoCb.Size = new System.Drawing.Size(149, 21);
+            this.emiTipoCb.TabIndex = 2;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(699, 77);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(37, 13);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Status";
+            // 
             // ordTopPn
             // 
             this.ordTopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -719,6 +997,25 @@
             this.ordXLb.TabIndex = 0;
             this.ordXLb.Text = "X";
             this.ordXLb.Click += new System.EventHandler(this.ordXLb_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(3, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(101, 20);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Emitir Ordem";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(530, 77);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(77, 13);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Tipo de Ordem";
             // 
             // usuTrocaPn
             // 
@@ -809,232 +1106,330 @@
             this.usuXLb.Text = "X";
             this.usuXLb.Click += new System.EventHandler(this.usuXLb_Click);
             // 
-            // label18
+            // statOrdPn
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(65, 20);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Setores";
+            this.statOrdPn.BackColor = System.Drawing.Color.Transparent;
+            this.statOrdPn.Controls.Add(this.statOrdFillPn);
+            this.statOrdPn.Controls.Add(this.statOrdTopPn);
+            this.statOrdPn.Controls.Add(this.panel4);
+            this.statOrdPn.Location = new System.Drawing.Point(9, 29);
+            this.statOrdPn.Name = "statOrdPn";
+            this.statOrdPn.Size = new System.Drawing.Size(812, 504);
+            this.statOrdPn.TabIndex = 2;
+            this.statOrdPn.Visible = false;
+            this.statOrdPn.VisibleChanged += new System.EventHandler(this.statOrdPn_VisibleChanged);
             // 
-            // label19
+            // panel4
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(14, 41);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(16, 13);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Id";
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel4.Controls.Add(this.statOrdXLb);
+            this.panel4.Controls.Add(this.label31);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(812, 24);
+            this.panel4.TabIndex = 1;
             // 
-            // setIdLb
+            // statOrdXLb
             // 
-            this.setIdLb.AutoSize = true;
-            this.setIdLb.Location = new System.Drawing.Point(36, 41);
-            this.setIdLb.Name = "setIdLb";
-            this.setIdLb.Size = new System.Drawing.Size(15, 13);
-            this.setIdLb.TabIndex = 2;
-            this.setIdLb.Text = "id";
+            this.statOrdXLb.AutoSize = true;
+            this.statOrdXLb.Dock = System.Windows.Forms.DockStyle.Right;
+            this.statOrdXLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statOrdXLb.Location = new System.Drawing.Point(794, 0);
+            this.statOrdXLb.Name = "statOrdXLb";
+            this.statOrdXLb.Size = new System.Drawing.Size(18, 17);
+            this.statOrdXLb.TabIndex = 0;
+            this.statOrdXLb.Text = "X";
+            this.statOrdXLb.Click += new System.EventHandler(this.pnXLb_Click);
             // 
-            // setNomeTb
+            // label31
             // 
-            this.setNomeTb.Location = new System.Drawing.Point(17, 85);
-            this.setNomeTb.MaxLength = 255;
-            this.setNomeTb.Name = "setNomeTb";
-            this.setNomeTb.Size = new System.Drawing.Size(340, 20);
-            this.setNomeTb.TabIndex = 3;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(3, 3);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(83, 20);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Estatística";
             // 
-            // label20
+            // tabControl1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 70);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 13);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Nome";
+            this.tabControl1.Controls.Add(this.Ordens);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(812, 418);
+            this.tabControl1.TabIndex = 2;
             // 
-            // label21
+            // Ordens
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(358, 28);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(43, 13);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Setores";
+            this.Ordens.BackColor = System.Drawing.Color.Transparent;
+            this.Ordens.Controls.Add(this.chart1);
+            this.Ordens.Location = new System.Drawing.Point(4, 22);
+            this.Ordens.Name = "Ordens";
+            this.Ordens.Padding = new System.Windows.Forms.Padding(3);
+            this.Ordens.Size = new System.Drawing.Size(804, 392);
+            this.Ordens.TabIndex = 0;
+            this.Ordens.Text = "Ordens emitidas por Mês";
             // 
-            // setCb
+            // tabPage2
             // 
-            this.setCb.FormattingEnabled = true;
-            this.setCb.Location = new System.Drawing.Point(361, 44);
-            this.setCb.Name = "setCb";
-            this.setCb.Size = new System.Drawing.Size(121, 21);
-            this.setCb.TabIndex = 4;
-            this.setCb.SelectedIndexChanged += new System.EventHandler(this.setCb_SelectedIndexChanged);
+            this.tabPage2.Controls.Add(this.chart2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(864, 397);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Por Status";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // setSaveBt
+            // chart1
             // 
-            this.setSaveBt.Location = new System.Drawing.Point(17, 111);
-            this.setSaveBt.Name = "setSaveBt";
-            this.setSaveBt.Size = new System.Drawing.Size(75, 23);
-            this.setSaveBt.TabIndex = 5;
-            this.setSaveBt.Text = "Salvar";
-            this.setSaveBt.UseVisualStyleBackColor = true;
-            this.setSaveBt.Click += new System.EventHandler(this.setSaveBt_Click);
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Por Mês";
+            dataPoint30.IsValueShownAsLabel = true;
+            dataPoint30.Label = "";
+            dataPoint31.IsValueShownAsLabel = true;
+            dataPoint32.IsValueShownAsLabel = true;
+            dataPoint33.IsValueShownAsLabel = true;
+            dataPoint34.IsValueShownAsLabel = true;
+            dataPoint35.IsValueShownAsLabel = true;
+            dataPoint36.IsValueShownAsLabel = true;
+            dataPoint37.IsValueShownAsLabel = true;
+            dataPoint38.IsValueShownAsLabel = true;
+            dataPoint39.IsValueShownAsLabel = true;
+            dataPoint40.IsValueShownAsLabel = true;
+            dataPoint41.IsValueShownAsLabel = true;
+            series5.Points.Add(dataPoint30);
+            series5.Points.Add(dataPoint31);
+            series5.Points.Add(dataPoint32);
+            series5.Points.Add(dataPoint33);
+            series5.Points.Add(dataPoint34);
+            series5.Points.Add(dataPoint35);
+            series5.Points.Add(dataPoint36);
+            series5.Points.Add(dataPoint37);
+            series5.Points.Add(dataPoint38);
+            series5.Points.Add(dataPoint39);
+            series5.Points.Add(dataPoint40);
+            series5.Points.Add(dataPoint41);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.Name = "Prazo Cumprido";
+            dataPoint42.IsValueShownAsLabel = true;
+            dataPoint43.IsValueShownAsLabel = true;
+            dataPoint44.IsValueShownAsLabel = true;
+            dataPoint45.IsValueShownAsLabel = true;
+            dataPoint46.IsValueShownAsLabel = true;
+            dataPoint47.IsValueShownAsLabel = true;
+            dataPoint48.IsValueShownAsLabel = true;
+            dataPoint49.IsValueShownAsLabel = true;
+            dataPoint50.IsValueShownAsLabel = true;
+            dataPoint51.IsValueShownAsLabel = true;
+            dataPoint52.IsValueShownAsLabel = true;
+            dataPoint53.IsValueShownAsLabel = true;
+            series6.Points.Add(dataPoint42);
+            series6.Points.Add(dataPoint43);
+            series6.Points.Add(dataPoint44);
+            series6.Points.Add(dataPoint45);
+            series6.Points.Add(dataPoint46);
+            series6.Points.Add(dataPoint47);
+            series6.Points.Add(dataPoint48);
+            series6.Points.Add(dataPoint49);
+            series6.Points.Add(dataPoint50);
+            series6.Points.Add(dataPoint51);
+            series6.Points.Add(dataPoint52);
+            series6.Points.Add(dataPoint53);
+            this.chart1.Series.Add(series5);
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(798, 386);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
             // 
-            // setExcluiBt
+            // chart2
             // 
-            this.setExcluiBt.Location = new System.Drawing.Point(282, 111);
-            this.setExcluiBt.Name = "setExcluiBt";
-            this.setExcluiBt.Size = new System.Drawing.Size(75, 23);
-            this.setExcluiBt.TabIndex = 5;
-            this.setExcluiBt.Text = "Excluir";
-            this.setExcluiBt.UseVisualStyleBackColor = true;
-            this.setExcluiBt.Click += new System.EventHandler(this.setExcluiBt_Click);
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.BackColor = System.Drawing.Color.Transparent;
+            chartArea5.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea5);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend5.Name = "Legend1";
+            this.chart2.Legends.Add(legend5);
+            this.chart2.Location = new System.Drawing.Point(3, 3);
+            this.chart2.Name = "chart2";
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series7.Legend = "Legend1";
+            series7.Name = "Pendente";
+            dataPoint54.IsValueShownAsLabel = true;
+            dataPoint54.Label = "Resolvido";
+            dataPoint55.IsValueShownAsLabel = true;
+            dataPoint55.Label = "Pendente";
+            dataPoint56.IsValueShownAsLabel = true;
+            dataPoint56.Label = "Negado";
+            series7.Points.Add(dataPoint54);
+            series7.Points.Add(dataPoint55);
+            series7.Points.Add(dataPoint56);
+            this.chart2.Series.Add(series7);
+            this.chart2.Size = new System.Drawing.Size(858, 391);
+            this.chart2.TabIndex = 0;
+            this.chart2.Text = "chart2";
             // 
-            // label22
+            // tabPage1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(101, 20);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Emitir Ordem";
+            this.tabPage1.Controls.Add(this.chart3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(864, 397);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Por Prazo de Entrega";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // emiTipoCb
+            // tabPage3
             // 
-            this.emiTipoCb.FormattingEnabled = true;
-            this.emiTipoCb.Location = new System.Drawing.Point(533, 92);
-            this.emiTipoCb.Name = "emiTipoCb";
-            this.emiTipoCb.Size = new System.Drawing.Size(149, 21);
-            this.emiTipoCb.TabIndex = 2;
+            this.tabPage3.Controls.Add(this.label30);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(864, 397);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "outros...";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label23
+            // label30
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(530, 77);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(77, 13);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Tipo de Ordem";
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(0, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(864, 397);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Mais sujestões aqui";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label24
+            // statOrdTopPn
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(699, 77);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(37, 13);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Status";
+            this.statOrdTopPn.Controls.Add(this.statOrdAteDtp);
+            this.statOrdTopPn.Controls.Add(this.statOrdDeDtp);
+            this.statOrdTopPn.Controls.Add(this.panel2);
+            this.statOrdTopPn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statOrdTopPn.Location = new System.Drawing.Point(0, 24);
+            this.statOrdTopPn.Name = "statOrdTopPn";
+            this.statOrdTopPn.Size = new System.Drawing.Size(812, 62);
+            this.statOrdTopPn.TabIndex = 3;
             // 
-            // emiStatusBb
+            // statOrdFillPn
             // 
-            this.emiStatusBb.FormattingEnabled = true;
-            this.emiStatusBb.Location = new System.Drawing.Point(702, 92);
-            this.emiStatusBb.Name = "emiStatusBb";
-            this.emiStatusBb.Size = new System.Drawing.Size(149, 21);
-            this.emiStatusBb.TabIndex = 2;
+            this.statOrdFillPn.Controls.Add(this.tabControl1);
+            this.statOrdFillPn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.statOrdFillPn.Location = new System.Drawing.Point(0, 86);
+            this.statOrdFillPn.Name = "statOrdFillPn";
+            this.statOrdFillPn.Size = new System.Drawing.Size(812, 418);
+            this.statOrdFillPn.TabIndex = 3;
             // 
-            // label25
+            // label32
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(13, 36);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(59, 13);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Solicitante:";
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(0, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(70, 17);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "A parir de";
             // 
-            // emiSetorTb
+            // label33
             // 
-            this.emiSetorTb.FormattingEnabled = true;
-            this.emiSetorTb.Location = new System.Drawing.Point(361, 92);
-            this.emiSetorTb.Name = "emiSetorTb";
-            this.emiSetorTb.Size = new System.Drawing.Size(149, 21);
-            this.emiSetorTb.TabIndex = 2;
+            this.label33.AutoSize = true;
+            this.label33.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(783, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(29, 17);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Até";
             // 
-            // textBox1
+            // panel2
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 191);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(835, 177);
-            this.textBox1.TabIndex = 3;
+            this.panel2.Controls.Add(this.label32);
+            this.panel2.Controls.Add(this.label33);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(812, 22);
+            this.panel2.TabIndex = 2;
             // 
-            // label26
+            // statOrdDeDtp
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(17, 175);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Descrição";
+            this.statOrdDeDtp.Dock = System.Windows.Forms.DockStyle.Left;
+            this.statOrdDeDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statOrdDeDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.statOrdDeDtp.Location = new System.Drawing.Point(0, 22);
+            this.statOrdDeDtp.Name = "statOrdDeDtp";
+            this.statOrdDeDtp.Size = new System.Drawing.Size(133, 32);
+            this.statOrdDeDtp.TabIndex = 3;
+            this.statOrdDeDtp.Value = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
             // 
-            // label27
+            // statOrdAteDtp
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(358, 123);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 13);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "Prioridade";
+            this.statOrdAteDtp.Dock = System.Windows.Forms.DockStyle.Right;
+            this.statOrdAteDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statOrdAteDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.statOrdAteDtp.Location = new System.Drawing.Point(679, 22);
+            this.statOrdAteDtp.Name = "statOrdAteDtp";
+            this.statOrdAteDtp.Size = new System.Drawing.Size(133, 32);
+            this.statOrdAteDtp.TabIndex = 3;
+            this.statOrdAteDtp.Value = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
             // 
-            // emiPrioridadeCb
+            // chart3
             // 
-            this.emiPrioridadeCb.FormattingEnabled = true;
-            this.emiPrioridadeCb.Location = new System.Drawing.Point(361, 138);
-            this.emiPrioridadeCb.Name = "emiPrioridadeCb";
-            this.emiPrioridadeCb.Size = new System.Drawing.Size(149, 21);
-            this.emiPrioridadeCb.TabIndex = 2;
-            // 
-            // emiPrazoDtp
-            // 
-            this.emiPrazoDtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emiPrazoDtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.emiPrazoDtp.Location = new System.Drawing.Point(533, 134);
-            this.emiPrazoDtp.Name = "emiPrazoDtp";
-            this.emiPrazoDtp.Size = new System.Drawing.Size(120, 26);
-            this.emiPrazoDtp.TabIndex = 4;
-            this.emiPrazoDtp.Value = new System.DateTime(2015, 8, 20, 19, 14, 7, 0);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(533, 118);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(67, 13);
-            this.label28.TabIndex = 2;
-            this.label28.Text = "Definir Prazo";
-            // 
-            // emiSolicitanteLb
-            // 
-            this.emiSolicitanteLb.AutoSize = true;
-            this.emiSolicitanteLb.Location = new System.Drawing.Point(75, 36);
-            this.emiSolicitanteLb.Name = "emiSolicitanteLb";
-            this.emiSolicitanteLb.Size = new System.Drawing.Size(35, 13);
-            this.emiSolicitanteLb.TabIndex = 2;
-            this.emiSolicitanteLb.Text = "Nome";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(358, 78);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(43, 13);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "Destino";
+            this.chart3.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea6);
+            this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend6.Name = "Legend1";
+            this.chart3.Legends.Add(legend6);
+            this.chart3.Location = new System.Drawing.Point(0, 0);
+            this.chart3.Name = "chart3";
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            dataPoint57.Label = "No Prazo";
+            dataPoint58.Label = "Atrasadas";
+            series8.Points.Add(dataPoint57);
+            series8.Points.Add(dataPoint58);
+            this.chart3.Series.Add(series8);
+            this.chart3.Size = new System.Drawing.Size(864, 397);
+            this.chart3.TabIndex = 0;
+            this.chart3.Text = "chart3";
             // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 573);
-            this.Controls.Add(this.emiPn);
             this.Controls.Add(this.setPn);
             this.Controls.Add(this.cad1Pn);
             this.Controls.Add(this.conPn);
             this.Controls.Add(this.menuPrincipal);
             this.Controls.Add(this.usuTrocaPn);
+            this.Controls.Add(this.emiPn);
+            this.Controls.Add(this.statOrdPn);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "PrincipalForm";
             this.Text = "Services";
@@ -1061,6 +1456,21 @@
             this.usuTrocaPn.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.statOrdPn.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.Ordens.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.statOrdTopPn.ResumeLayout(false);
+            this.statOrdFillPn.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1156,6 +1566,27 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label emiSolicitanteLb;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ToolStripMenuItem statOrdMi;
+        private System.Windows.Forms.Panel statOrdPn;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label statOrdXLb;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel statOrdFillPn;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Ordens;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel statOrdTopPn;
+        private System.Windows.Forms.DateTimePicker statOrdAteDtp;
+        private System.Windows.Forms.DateTimePicker statOrdDeDtp;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
     }
 }
 

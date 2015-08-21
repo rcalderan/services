@@ -36,8 +36,9 @@ namespace Services
             Dictionary<ToolStripMenuItem, int> menusPorPriv = new Dictionary<ToolStripMenuItem, int>()
             {
                 //Admin
-                {cad1Mi,0},{statMi,0},{confMi,0},
+                {cad1Mi,0},{confMi,0},
                 //Adv
+                {statMi,1},{statOrdMi,1},
                 //comun->todo
                 {pessMi,2},{usuMi,2},{locaisMi,2},{setoresMi,2},{servicosMi,2},{emitirOrdemMi,2},{appMi,2},{sobreMi,2}
             };
@@ -379,7 +380,6 @@ namespace Services
         private void statMi_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Não Implementado...");
         }
 
         private void confMi_Click(object sender, EventArgs e)
@@ -481,6 +481,22 @@ namespace Services
             {
 
             }
+        }
+
+        private void pnXLb_Click(object sender, EventArgs e)
+        {
+            statOrdPn.Hide();
+        }
+
+        private void statOrdMi_Click(object sender, EventArgs e)
+        {
+            mostraPainel(statOrdPn);
+        }
+
+        private void statOrdPn_VisibleChanged(object sender, EventArgs e)
+        {
+            if (statOrdPn.Visible)
+                centralizarControl(statOrdPn);
         }
     }
 }
