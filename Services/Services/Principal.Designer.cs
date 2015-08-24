@@ -80,6 +80,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.servicosMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.emitirOrdemMi = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordSetMi = new System.Windows.Forms.ToolStripMenuItem();
             this.pessMi = new System.Windows.Forms.ToolStripMenuItem();
             this.usuMi = new System.Windows.Forms.ToolStripMenuItem();
             this.cad1Mi = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,9 +92,6 @@
             this.pecasMi = new System.Windows.Forms.ToolStripMenuItem();
             this.locaisMi = new System.Windows.Forms.ToolStripMenuItem();
             this.setoresMi = new System.Windows.Forms.ToolStripMenuItem();
-            this.servicosMi = new System.Windows.Forms.ToolStripMenuItem();
-            this.emitirOrdemMi = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordSetMi = new System.Windows.Forms.ToolStripMenuItem();
             this.statMi = new System.Windows.Forms.ToolStripMenuItem();
             this.statOrdMi = new System.Windows.Forms.ToolStripMenuItem();
             this.appMi = new System.Windows.Forms.ToolStripMenuItem();
@@ -136,6 +136,10 @@
             this.setNomeTb = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.emiPn = new System.Windows.Forms.Panel();
+            this.emiRecePn = new System.Windows.Forms.Panel();
+            this.emiSolucaoTb = new System.Windows.Forms.TextBox();
+            this.emiEncontradoTb = new System.Windows.Forms.TextBox();
+            this.emiFinCh = new System.Windows.Forms.CheckBox();
             this.emiaddPn = new System.Windows.Forms.Panel();
             this.emiAddBt = new System.Windows.Forms.Button();
             this.emiAddItNup = new System.Windows.Forms.NumericUpDown();
@@ -156,10 +160,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.emiFimDg = new System.Windows.Forms.DataGridView();
-            this.colItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emiFinCh = new System.Windows.Forms.CheckBox();
             this.emiEmiBt = new System.Windows.Forms.Button();
             this.emiPrazoDtp = new System.Windows.Forms.DateTimePicker();
             this.emiProbTb = new System.Windows.Forms.TextBox();
@@ -209,17 +209,38 @@
             this.statOrdXLb = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.servPn = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
             this.servLv = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.emiEncontradoCh = new System.Windows.Forms.CheckBox();
+            this.emiSolucaoCh = new System.Windows.Forms.CheckBox();
+            this.emiLimpaLLb = new System.Windows.Forms.Label();
+            this.emiImprimirBt = new System.Windows.Forms.Button();
+            this.emiOrcamentoLv = new System.Windows.Forms.ListView();
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.emiOrcaAddPn = new System.Windows.Forms.Panel();
+            this.emiOrcaAddBt = new System.Windows.Forms.Button();
+            this.emiOrcaNup = new System.Windows.Forms.NumericUpDown();
+            this.emiOrcaValorTb = new System.Windows.Forms.TextBox();
+            this.emiOrcaDescTb = new System.Windows.Forms.TextBox();
+            this.emiOrcaXLb = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.emiOrcaIdLb = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.emiOrcaAddLb = new System.Windows.Forms.Label();
             this.conPn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuPrincipal.SuspendLayout();
@@ -229,9 +250,9 @@
             this.setPn.SuspendLayout();
             this.setTopPn.SuspendLayout();
             this.emiPn.SuspendLayout();
+            this.emiRecePn.SuspendLayout();
             this.emiaddPn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emiAddItNup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emiFimDg)).BeginInit();
             this.ordTopPn.SuspendLayout();
             this.usuTrocaPn.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -250,6 +271,8 @@
             this.panel4.SuspendLayout();
             this.servPn.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.emiOrcaAddPn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emiOrcaNup)).BeginInit();
             this.SuspendLayout();
             // 
             // conPn
@@ -403,6 +426,29 @@
             this.menuPrincipal.TabIndex = 1;
             this.menuPrincipal.Text = "menuStrip1";
             // 
+            // servicosMi
+            // 
+            this.servicosMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emitirOrdemMi,
+            this.ordSetMi});
+            this.servicosMi.Name = "servicosMi";
+            this.servicosMi.Size = new System.Drawing.Size(59, 20);
+            this.servicosMi.Text = "Serviços";
+            // 
+            // emitirOrdemMi
+            // 
+            this.emitirOrdemMi.Name = "emitirOrdemMi";
+            this.emitirOrdemMi.Size = new System.Drawing.Size(152, 22);
+            this.emitirOrdemMi.Text = "Emitir Ordem";
+            this.emitirOrdemMi.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
+            // 
+            // ordSetMi
+            // 
+            this.ordSetMi.Name = "ordSetMi";
+            this.ordSetMi.Size = new System.Drawing.Size(152, 22);
+            this.ordSetMi.Text = "Ordens";
+            this.ordSetMi.Click += new System.EventHandler(this.ordSetMi_Click);
+            // 
             // pessMi
             // 
             this.pessMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -469,29 +515,6 @@
             this.setoresMi.Size = new System.Drawing.Size(111, 22);
             this.setoresMi.Text = "Setores";
             this.setoresMi.Click += new System.EventHandler(this.setoresToolStripMenuItem1_Click);
-            // 
-            // servicosMi
-            // 
-            this.servicosMi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emitirOrdemMi,
-            this.ordSetMi});
-            this.servicosMi.Name = "servicosMi";
-            this.servicosMi.Size = new System.Drawing.Size(59, 20);
-            this.servicosMi.Text = "Serviços";
-            // 
-            // emitirOrdemMi
-            // 
-            this.emitirOrdemMi.Name = "emitirOrdemMi";
-            this.emitirOrdemMi.Size = new System.Drawing.Size(152, 22);
-            this.emitirOrdemMi.Text = "Emitir Ordem";
-            this.emitirOrdemMi.Click += new System.EventHandler(this.passarOrdemToolStripMenuItem_Click);
-            // 
-            // ordSetMi
-            // 
-            this.ordSetMi.Name = "ordSetMi";
-            this.ordSetMi.Size = new System.Drawing.Size(152, 22);
-            this.ordSetMi.Text = "Ordens";
-            this.ordSetMi.Click += new System.EventHandler(this.ordSetMi_Click);
             // 
             // statMi
             // 
@@ -927,11 +950,11 @@
             // emiPn
             // 
             this.emiPn.BackColor = System.Drawing.Color.Silver;
+            this.emiPn.Controls.Add(this.emiRecePn);
             this.emiPn.Controls.Add(this.emiaddPn);
             this.emiPn.Controls.Add(this.emiFinTotalTb);
             this.emiPn.Controls.Add(this.emiItemLv);
-            this.emiPn.Controls.Add(this.emiFimDg);
-            this.emiPn.Controls.Add(this.emiFinCh);
+            this.emiPn.Controls.Add(this.emiImprimirBt);
             this.emiPn.Controls.Add(this.emiEmiBt);
             this.emiPn.Controls.Add(this.emiPrazoDtp);
             this.emiPn.Controls.Add(this.emiProbTb);
@@ -956,6 +979,51 @@
             this.emiPn.TabIndex = 2;
             this.emiPn.Visible = false;
             this.emiPn.VisibleChanged += new System.EventHandler(this.emiPn_VisibleChanged);
+            // 
+            // emiRecePn
+            // 
+            this.emiRecePn.Controls.Add(this.emiOrcaAddPn);
+            this.emiRecePn.Controls.Add(this.emiSolucaoTb);
+            this.emiRecePn.Controls.Add(this.emiOrcamentoLv);
+            this.emiRecePn.Controls.Add(this.emiEncontradoTb);
+            this.emiRecePn.Controls.Add(this.emiEncontradoCh);
+            this.emiRecePn.Controls.Add(this.emiSolucaoCh);
+            this.emiRecePn.Controls.Add(this.emiFinCh);
+            this.emiRecePn.Controls.Add(this.emiOrcaAddLb);
+            this.emiRecePn.Location = new System.Drawing.Point(13, 326);
+            this.emiRecePn.Name = "emiRecePn";
+            this.emiRecePn.Size = new System.Drawing.Size(844, 174);
+            this.emiRecePn.TabIndex = 12;
+            this.emiRecePn.Visible = false;
+            // 
+            // emiSolucaoTb
+            // 
+            this.emiSolucaoTb.Location = new System.Drawing.Point(499, 3);
+            this.emiSolucaoTb.Multiline = true;
+            this.emiSolucaoTb.Name = "emiSolucaoTb";
+            this.emiSolucaoTb.Size = new System.Drawing.Size(334, 139);
+            this.emiSolucaoTb.TabIndex = 9;
+            this.emiSolucaoTb.Visible = false;
+            // 
+            // emiEncontradoTb
+            // 
+            this.emiEncontradoTb.Location = new System.Drawing.Point(130, 3);
+            this.emiEncontradoTb.Multiline = true;
+            this.emiEncontradoTb.Name = "emiEncontradoTb";
+            this.emiEncontradoTb.Size = new System.Drawing.Size(321, 139);
+            this.emiEncontradoTb.TabIndex = 9;
+            this.emiEncontradoTb.Visible = false;
+            // 
+            // emiFinCh
+            // 
+            this.emiFinCh.AutoSize = true;
+            this.emiFinCh.Location = new System.Drawing.Point(4, 6);
+            this.emiFinCh.Name = "emiFinCh";
+            this.emiFinCh.Size = new System.Drawing.Size(78, 17);
+            this.emiFinCh.TabIndex = 7;
+            this.emiFinCh.Text = "Orçamento";
+            this.emiFinCh.UseVisualStyleBackColor = true;
+            this.emiFinCh.CheckedChanged += new System.EventHandler(this.emiFinCh_CheckedChanged);
             // 
             // emiaddPn
             // 
@@ -1088,11 +1156,11 @@
             // 
             this.emiFinTotalTb.Enabled = false;
             this.emiFinTotalTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emiFinTotalTb.Location = new System.Drawing.Point(756, 509);
+            this.emiFinTotalTb.Location = new System.Drawing.Point(760, 516);
             this.emiFinTotalTb.Name = "emiFinTotalTb";
             this.emiFinTotalTb.Size = new System.Drawing.Size(94, 26);
             this.emiFinTotalTb.TabIndex = 10;
-            this.emiFinTotalTb.Text = "9999999,99";
+            this.emiFinTotalTb.Text = "0,00";
             this.emiFinTotalTb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // emiItemLv
@@ -1143,45 +1211,6 @@
             this.columnHeader5.Text = "Modelo";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader5.Width = 95;
-            // 
-            // emiFimDg
-            // 
-            this.emiFimDg.BackgroundColor = System.Drawing.Color.Silver;
-            this.emiFimDg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.emiFimDg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colItem,
-            this.colVal});
-            this.emiFimDg.Enabled = false;
-            this.emiFimDg.Location = new System.Drawing.Point(12, 344);
-            this.emiFimDg.Name = "emiFimDg";
-            this.emiFimDg.Size = new System.Drawing.Size(838, 156);
-            this.emiFimDg.TabIndex = 8;
-            this.emiFimDg.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.emiFimDg_CellEndEdit);
-            // 
-            // colItem
-            // 
-            this.colItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colItem.HeaderText = "Item";
-            this.colItem.MaxInputLength = 255;
-            this.colItem.Name = "colItem";
-            // 
-            // colVal
-            // 
-            this.colVal.HeaderText = "Valor (R$)";
-            this.colVal.MaxInputLength = 8;
-            this.colVal.Name = "colVal";
-            this.colVal.Width = 200;
-            // 
-            // emiFinCh
-            // 
-            this.emiFinCh.AutoSize = true;
-            this.emiFinCh.Location = new System.Drawing.Point(13, 327);
-            this.emiFinCh.Name = "emiFinCh";
-            this.emiFinCh.Size = new System.Drawing.Size(89, 17);
-            this.emiFinCh.TabIndex = 7;
-            this.emiFinCh.Text = "Incluir Custos";
-            this.emiFinCh.UseVisualStyleBackColor = true;
-            this.emiFinCh.CheckedChanged += new System.EventHandler(this.emiFinCh_CheckedChanged);
             // 
             // emiEmiBt
             // 
@@ -1333,8 +1362,9 @@
             // ordTopPn
             // 
             this.ordTopPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ordTopPn.Controls.Add(this.ordXLb);
             this.ordTopPn.Controls.Add(this.label22);
+            this.ordTopPn.Controls.Add(this.emiLimpaLLb);
+            this.ordTopPn.Controls.Add(this.ordXLb);
             this.ordTopPn.Dock = System.Windows.Forms.DockStyle.Top;
             this.ordTopPn.Location = new System.Drawing.Point(0, 0);
             this.ordTopPn.Name = "ordTopPn";
@@ -1349,7 +1379,7 @@
             this.ordXLb.Location = new System.Drawing.Point(842, 0);
             this.ordXLb.Name = "ordXLb";
             this.ordXLb.Size = new System.Drawing.Size(18, 17);
-            this.ordXLb.TabIndex = 0;
+            this.ordXLb.TabIndex = 3;
             this.ordXLb.Text = "X";
             this.ordXLb.Click += new System.EventHandler(this.ordXLb_Click);
             // 
@@ -1785,6 +1815,71 @@
             this.servPn.Visible = false;
             this.servPn.VisibleChanged += new System.EventHandler(this.servPn_VisibleChanged);
             // 
+            // servLv
+            // 
+            this.servLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader6,
+            this.columnHeader9,
+            this.columnHeader11,
+            this.columnHeader12});
+            this.servLv.FullRowSelect = true;
+            this.servLv.GridLines = true;
+            this.servLv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.servLv.Location = new System.Drawing.Point(12, 63);
+            this.servLv.MultiSelect = false;
+            this.servLv.Name = "servLv";
+            this.servLv.Size = new System.Drawing.Size(869, 179);
+            this.servLv.TabIndex = 2;
+            this.servLv.UseCompatibleStateImageBehavior = false;
+            this.servLv.View = System.Windows.Forms.View.Details;
+            this.servLv.Click += new System.EventHandler(this.servLv_Click);
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            this.ID.Width = 50;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Solicitante";
+            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader7.Width = 90;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Setor";
+            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader8.Width = 90;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.DisplayIndex = 4;
+            this.columnHeader6.Text = "Problema";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 361;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.DisplayIndex = 3;
+            this.columnHeader9.Text = "Data";
+            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader9.Width = 110;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Prioridade";
+            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader11.Width = 80;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Status";
+            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader12.Width = 84;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonShadow;
@@ -1818,69 +1913,213 @@
             this.label41.TabIndex = 2;
             this.label41.Text = "Serviços para este Setor";
             // 
-            // servLv
+            // emiEncontradoCh
             // 
-            this.servLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader6,
-            this.columnHeader9,
-            this.columnHeader11,
-            this.columnHeader12});
-            this.servLv.FullRowSelect = true;
-            this.servLv.GridLines = true;
-            this.servLv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.servLv.Location = new System.Drawing.Point(12, 63);
-            this.servLv.MultiSelect = false;
-            this.servLv.Name = "servLv";
-            this.servLv.Size = new System.Drawing.Size(869, 179);
-            this.servLv.TabIndex = 2;
-            this.servLv.UseCompatibleStateImageBehavior = false;
-            this.servLv.View = System.Windows.Forms.View.Details;
+            this.emiEncontradoCh.AutoSize = true;
+            this.emiEncontradoCh.Location = new System.Drawing.Point(115, 5);
+            this.emiEncontradoCh.Name = "emiEncontradoCh";
+            this.emiEncontradoCh.Size = new System.Drawing.Size(127, 17);
+            this.emiEncontradoCh.TabIndex = 10;
+            this.emiEncontradoCh.Text = "Problema encontrado";
+            this.emiEncontradoCh.UseVisualStyleBackColor = true;
+            this.emiEncontradoCh.CheckedChanged += new System.EventHandler(this.emiEncontradoCh_CheckedChanged);
             // 
-            // ID
+            // emiSolucaoCh
             // 
-            this.ID.Text = "ID";
-            this.ID.Width = 50;
+            this.emiSolucaoCh.AutoSize = true;
+            this.emiSolucaoCh.Location = new System.Drawing.Point(484, 5);
+            this.emiSolucaoCh.Name = "emiSolucaoCh";
+            this.emiSolucaoCh.Size = new System.Drawing.Size(65, 17);
+            this.emiSolucaoCh.TabIndex = 10;
+            this.emiSolucaoCh.Text = "Solução";
+            this.emiSolucaoCh.UseVisualStyleBackColor = true;
+            this.emiSolucaoCh.CheckedChanged += new System.EventHandler(this.emiSolucaoCh_CheckedChanged);
             // 
-            // columnHeader7
+            // emiLimpaLLb
             // 
-            this.columnHeader7.Text = "Solicitante";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 90;
+            this.emiLimpaLLb.AutoSize = true;
+            this.emiLimpaLLb.Dock = System.Windows.Forms.DockStyle.Right;
+            this.emiLimpaLLb.Location = new System.Drawing.Point(823, 0);
+            this.emiLimpaLLb.Name = "emiLimpaLLb";
+            this.emiLimpaLLb.Size = new System.Drawing.Size(19, 13);
+            this.emiLimpaLLb.TabIndex = 2;
+            this.emiLimpaLLb.Text = "Lp";
+            this.emiLimpaLLb.Click += new System.EventHandler(this.label42_Click);
             // 
-            // columnHeader8
+            // emiImprimirBt
             // 
-            this.columnHeader8.Text = "Setor";
-            this.columnHeader8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader8.Width = 90;
+            this.emiImprimirBt.Location = new System.Drawing.Point(311, 503);
+            this.emiImprimirBt.Name = "emiImprimirBt";
+            this.emiImprimirBt.Size = new System.Drawing.Size(218, 32);
+            this.emiImprimirBt.TabIndex = 5;
+            this.emiImprimirBt.Text = "Imprimir";
+            this.emiImprimirBt.UseVisualStyleBackColor = true;
+            this.emiImprimirBt.Visible = false;
+            this.emiImprimirBt.Click += new System.EventHandler(this.emiImprimirBt_Click);
             // 
-            // columnHeader9
+            // emiOrcamentoLv
             // 
-            this.columnHeader9.DisplayIndex = 3;
-            this.columnHeader9.Text = "Data";
-            this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader9.Width = 110;
+            this.emiOrcamentoLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader10,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader16});
+            this.emiOrcamentoLv.Enabled = false;
+            this.emiOrcamentoLv.FullRowSelect = true;
+            this.emiOrcamentoLv.GridLines = true;
+            this.emiOrcamentoLv.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.emiOrcamentoLv.Location = new System.Drawing.Point(4, 23);
+            this.emiOrcamentoLv.MultiSelect = false;
+            this.emiOrcamentoLv.Name = "emiOrcamentoLv";
+            this.emiOrcamentoLv.Size = new System.Drawing.Size(829, 148);
+            this.emiOrcamentoLv.TabIndex = 9;
+            this.emiOrcamentoLv.UseCompatibleStateImageBehavior = false;
+            this.emiOrcamentoLv.View = System.Windows.Forms.View.Details;
+            this.emiOrcamentoLv.Click += new System.EventHandler(this.emiItemLv_Click);
             // 
-            // columnHeader6
+            // columnHeader10
             // 
-            this.columnHeader6.DisplayIndex = 4;
-            this.columnHeader6.Text = "Problema";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 361;
+            this.columnHeader10.Text = "ID";
+            this.columnHeader10.Width = 25;
             // 
-            // columnHeader11
+            // columnHeader13
             // 
-            this.columnHeader11.Text = "Prioridade";
-            this.columnHeader11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader11.Width = 80;
+            this.columnHeader13.Text = "Quant.";
+            this.columnHeader13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader13.Width = 50;
             // 
-            // columnHeader12
+            // columnHeader14
             // 
-            this.columnHeader12.Text = "Status";
-            this.columnHeader12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader12.Width = 84;
+            this.columnHeader14.Text = "Descrição";
+            this.columnHeader14.Width = 600;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "Valor (R$)";
+            this.columnHeader16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader16.Width = 151;
+            // 
+            // emiOrcaAddPn
+            // 
+            this.emiOrcaAddPn.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaAddBt);
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaNup);
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaValorTb);
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaDescTb);
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaXLb);
+            this.emiOrcaAddPn.Controls.Add(this.label43);
+            this.emiOrcaAddPn.Controls.Add(this.label45);
+            this.emiOrcaAddPn.Controls.Add(this.emiOrcaIdLb);
+            this.emiOrcaAddPn.Controls.Add(this.label47);
+            this.emiOrcaAddPn.Controls.Add(this.label48);
+            this.emiOrcaAddPn.Location = new System.Drawing.Point(80, 34);
+            this.emiOrcaAddPn.Name = "emiOrcaAddPn";
+            this.emiOrcaAddPn.Size = new System.Drawing.Size(654, 87);
+            this.emiOrcaAddPn.TabIndex = 11;
+            this.emiOrcaAddPn.Visible = false;
+            // 
+            // emiOrcaAddBt
+            // 
+            this.emiOrcaAddBt.Location = new System.Drawing.Point(15, 53);
+            this.emiOrcaAddBt.Name = "emiOrcaAddBt";
+            this.emiOrcaAddBt.Size = new System.Drawing.Size(635, 22);
+            this.emiOrcaAddBt.TabIndex = 5;
+            this.emiOrcaAddBt.Text = "Adicionar";
+            this.emiOrcaAddBt.UseVisualStyleBackColor = true;
+            this.emiOrcaAddBt.Click += new System.EventHandler(this.emiOrcaAddBt_Click);
+            // 
+            // emiOrcaNup
+            // 
+            this.emiOrcaNup.Location = new System.Drawing.Point(32, 27);
+            this.emiOrcaNup.Name = "emiOrcaNup";
+            this.emiOrcaNup.Size = new System.Drawing.Size(70, 20);
+            this.emiOrcaNup.TabIndex = 4;
+            this.emiOrcaNup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // emiOrcaValorTb
+            // 
+            this.emiOrcaValorTb.Location = new System.Drawing.Point(533, 27);
+            this.emiOrcaValorTb.MaxLength = 255;
+            this.emiOrcaValorTb.Name = "emiOrcaValorTb";
+            this.emiOrcaValorTb.Size = new System.Drawing.Size(117, 20);
+            this.emiOrcaValorTb.TabIndex = 3;
+            this.emiOrcaValorTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.emiOrcaValorTb_KeyDown);
+            this.emiOrcaValorTb.Leave += new System.EventHandler(this.emiOrcaValorTb_Leave);
+            // 
+            // emiOrcaDescTb
+            // 
+            this.emiOrcaDescTb.Location = new System.Drawing.Point(109, 27);
+            this.emiOrcaDescTb.MaxLength = 255;
+            this.emiOrcaDescTb.Name = "emiOrcaDescTb";
+            this.emiOrcaDescTb.Size = new System.Drawing.Size(421, 20);
+            this.emiOrcaDescTb.TabIndex = 3;
+            // 
+            // emiOrcaXLb
+            // 
+            this.emiOrcaXLb.AutoSize = true;
+            this.emiOrcaXLb.Location = new System.Drawing.Point(640, 0);
+            this.emiOrcaXLb.Name = "emiOrcaXLb";
+            this.emiOrcaXLb.Size = new System.Drawing.Size(14, 13);
+            this.emiOrcaXLb.TabIndex = 2;
+            this.emiOrcaXLb.Text = "X";
+            this.emiOrcaXLb.Click += new System.EventHandler(this.emiOrcaXLb_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(533, 12);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(42, 13);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "Modelo";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(106, 13);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(55, 13);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "Descrição";
+            // 
+            // emiOrcaIdLb
+            // 
+            this.emiOrcaIdLb.AutoSize = true;
+            this.emiOrcaIdLb.Location = new System.Drawing.Point(2, 29);
+            this.emiOrcaIdLb.Name = "emiOrcaIdLb";
+            this.emiOrcaIdLb.Size = new System.Drawing.Size(18, 13);
+            this.emiOrcaIdLb.TabIndex = 2;
+            this.emiOrcaIdLb.Text = "ID";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(2, 13);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(18, 13);
+            this.label47.TabIndex = 2;
+            this.label47.Text = "ID";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(32, 13);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(62, 13);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "Quantidade";
+            // 
+            // emiOrcaAddLb
+            // 
+            this.emiOrcaAddLb.AutoSize = true;
+            this.emiOrcaAddLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emiOrcaAddLb.Location = new System.Drawing.Point(797, 3);
+            this.emiOrcaAddLb.Name = "emiOrcaAddLb";
+            this.emiOrcaAddLb.Size = new System.Drawing.Size(36, 20);
+            this.emiOrcaAddLb.TabIndex = 2;
+            this.emiOrcaAddLb.Text = "add";
+            this.emiOrcaAddLb.Visible = false;
+            this.emiOrcaAddLb.Click += new System.EventHandler(this.emiOrcaAddItLb_Click);
             // 
             // PrincipalForm
             // 
@@ -1888,16 +2127,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 573);
             this.Controls.Add(this.menuPrincipal);
-            this.Controls.Add(this.servPn);
+            this.Controls.Add(this.emiPn);
             this.Controls.Add(this.usuTrocaPn);
+            this.Controls.Add(this.conPn);
             this.Controls.Add(this.statOrdPn);
             this.Controls.Add(this.setPn);
+            this.Controls.Add(this.servPn);
             this.Controls.Add(this.cad1Pn);
-            this.Controls.Add(this.conPn);
-            this.Controls.Add(this.emiPn);
             this.MainMenuStrip = this.menuPrincipal;
             this.Name = "PrincipalForm";
             this.Text = "Services";
+            this.Resize += new System.EventHandler(this.PrincipalForm_Resize);
             this.conPn.ResumeLayout(false);
             this.conPn.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1915,10 +2155,11 @@
             this.setTopPn.PerformLayout();
             this.emiPn.ResumeLayout(false);
             this.emiPn.PerformLayout();
+            this.emiRecePn.ResumeLayout(false);
+            this.emiRecePn.PerformLayout();
             this.emiaddPn.ResumeLayout(false);
             this.emiaddPn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emiAddItNup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emiFimDg)).EndInit();
             this.ordTopPn.ResumeLayout(false);
             this.ordTopPn.PerformLayout();
             this.usuTrocaPn.ResumeLayout(false);
@@ -1943,6 +2184,9 @@
             this.servPn.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.emiOrcaAddPn.ResumeLayout(false);
+            this.emiOrcaAddPn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emiOrcaNup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2061,9 +2305,6 @@
         private System.Windows.Forms.ToolStripMenuItem aceMi;
         private System.Windows.Forms.ToolStripMenuItem modeloMi;
         private System.Windows.Forms.ToolStripMenuItem pecasMi;
-        private System.Windows.Forms.DataGridView emiFimDg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVal;
         private System.Windows.Forms.CheckBox emiFinCh;
         private System.Windows.Forms.Button emiEmiBt;
         private System.Windows.Forms.ToolStripMenuItem ordSetMi;
@@ -2103,6 +2344,30 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.Panel emiRecePn;
+        private System.Windows.Forms.TextBox emiSolucaoTb;
+        private System.Windows.Forms.TextBox emiEncontradoTb;
+        private System.Windows.Forms.CheckBox emiEncontradoCh;
+        private System.Windows.Forms.CheckBox emiSolucaoCh;
+        private System.Windows.Forms.Label emiLimpaLLb;
+        private System.Windows.Forms.Button emiImprimirBt;
+        private System.Windows.Forms.ListView emiOrcamentoLv;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.Panel emiOrcaAddPn;
+        private System.Windows.Forms.Button emiOrcaAddBt;
+        private System.Windows.Forms.NumericUpDown emiOrcaNup;
+        private System.Windows.Forms.TextBox emiOrcaValorTb;
+        private System.Windows.Forms.TextBox emiOrcaDescTb;
+        private System.Windows.Forms.Label emiOrcaXLb;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label emiOrcaIdLb;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label emiOrcaAddLb;
     }
 }
 

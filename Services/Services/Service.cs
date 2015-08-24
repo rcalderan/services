@@ -9,7 +9,11 @@ namespace Services
 {
     class Service
     {
-        private int id;
+        public int id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         private int type;
         private Prioridade prioridade;
         private DateTime hoje;
@@ -23,6 +27,9 @@ namespace Services
         private int usuResp;
         private int setorResp;
         private Conexao conexao;
+        private System.Windows.Forms.ListViewItem[] items;
+        private System.Windows.Forms.ListViewItem[] orcamento;
+
 
         /*
          * id
@@ -77,8 +84,74 @@ namespace Services
             return res;
         }
 
-        public static bool New(int type, int prioridade, DateTime hoje, DateTime prazo, Status status, 
-            string[] declarado, string[] encontrado, string[] solucao, int usuSol, int setorSol, int usuResp, int setorResp)
+        public static string SerializeItens(System.Windows.Forms.ListViewItem[] items)
+        {
+            try
+            {
+                if (items.Length > 0)
+                {
+                    string serialized = "";
+                    for (int i = 0; i < items.Length; i++)
+                    {
+                        serialized += "[";
+                        for (int j = 0; j < items[i].SubItems.Count; j++)
+                            serialized += "[" + items[i].SubItems[j].Text + "],";
+                        serialized = serialized.Substring(0, serialized.Length - 1);
+                        serialized += "],";
+                    }
+                    serialized = serialized.Substring(0, serialized.Length - 1);
+                    return serialized;
+                }
+                else
+                    return "";
+            }
+            catch
+            { return ""; }
+        }
+
+        private static string[] recursive()
+        {
+
+        }
+        public static System.Windows.Forms.ListViewItem[] UnserializeItens(string serialized)
+        {
+            try
+            {
+                List<System.Windows.Forms.ListViewItem> list = new List<System.Windows.Forms.ListViewItem>();
+                if (serialized.Length > 0)
+                {
+                    string auxS = serialized;
+                    System.Windows.Forms.ListViewItem auxLi;
+                    List<string> subs = new List<string>();
+                    int indexAbre = auxS.IndexOf("["), indexFecha;
+                    while (auxS.IndexOf("[") != -1)
+                    {
+                        if (serialized[indexAbre + 1] == '[')
+                        {//subs
+                            indexAbre++;
+                            indexFecha = auxS.IndexOf("]");
+                            subs.Add(auxS.Substring(indexAbre, indexFecha - indexAbre));
+                            if (auxS[indexFecha + 1] == ',')
+                            {
+                                auxS = auxS.Substring(indexFecha + 1, auxS.Length - (indexFecha + 1));
+                                indexAbre = auxS.IndexOf("[");
+                            }
+                            else
+                                auxLi = new System.Windows.Forms.ListViewItem(subs.ToArray());
+
+                        }
+                    }
+                }
+                else
+                    return null;
+            }
+            catch
+            { return null; }
+        }
+
+        public static Service New(int type, int prioridade, DateTime hoje, DateTime prazo, Status status, 
+            System.Windows.Forms.ListViewItem[] items, System.Windows.Forms.ListViewItem[] orcamento,string[] declarado, string[] encontrado, string[] solucao, 
+            int usuSol, int setorSol, int usuResp, int setorResp)
         {
             try
             {
@@ -87,26 +160,34 @@ namespace Services
                 {
                     string declaradoJoined = Join(declarado, "<*>"),
                         encontradoJoined = Join(declarado, "<*>"),
-                        solucaoJoined = Join(declarado, "<*>");
+                        solucaoJoined = Join(declarado, "<*>"),
+                        its = SerializeItens(items),
+                        orc = SerializeItens(orcamento);
                     int nextId = 0;
+                    
                     DataTable dt = con.Query("Select id from service order by id limit 1");
                     if (dt != null)
                         if (int.TryParse(dt.Rows[0]["id"].ToString(), out nextId))
                             nextId++;
                     if ("" != con.Comando("INSERT INTO service values(" + nextId + "," + type.ToString() + "," + prioridade.ToString() + ",'" + hoje.ToString("yyyy-MM-dd HH:mm:ss") + "','" + prazo.ToString("yyyy-MM-dd HH:mm:ss") + "'," + status.Id.ToString() + ",'"
-                        + declaradoJoined + "','" + encontradoJoined + "','" + solucaoJoined + "'," + usuSol.ToString()+","+setorSol.ToString() + "," + usuResp.ToString() + "," + setorResp.ToString() + ")"))
-                        return false;
+                        + declaradoJoined + "','" + encontradoJoined + "','" + solucaoJoined + "'," + usuSol.ToString()+","+setorSol.ToString() + "," + usuResp.ToString() + "," + setorResp.ToString()+",'" + 
+                        its+"','"+orc+"')"))
+                        return null;
                     else
                     {
-                        return true;
+                        Service s = Service.Load(nextId);
+                        if (s != null)
+                            return s;
+                        else
+                            return null;
                     }
                 }
                 else
-                    return false;
+                    return null;
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
@@ -235,6 +316,43 @@ namespace Services
                 return false;
             }
         }
+    }
+    public class Service_Item
+    {
+        private int id;
+        private int service;
+        private int quant;
+        private string descricao;
+        private string marca;
+        private string modelo;
+
+        public static bool New(int service, int quantidade, string descricao,string marca,string modelo)
+        {
+            try
+            {
+                Conexao con = new Conexao();
+                if (con.getLastLoadState())
+                {
+                    if ("" != con.Comando("INSERT INTO service_item values(null," + quantidade.ToString() + ",'" + descricao + "','" + marca +"','"+modelo+"')"))
+                        return false;
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else
+                    return false;
+
+            }
+            catch { return false; }
+        }
+            /* 
+         * service_item
+         * id
+         * quant
+         * descricao
+         * marca
+         * modelo*/
     }
 
     public struct Prioridade

@@ -507,15 +507,19 @@ namespace Services
     class DataBaseCheck
     {
         public static Dictionary<string, string> sqlite_tables = new Dictionary<string, string>(){
-            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'declarado' TEXT, 'encontrado' TEXT, 'solucao' TEXT, 'usuSol' INT, 'setorSol' INT, 'usuResp' INT, 'setorResp' INT)"},
+            {"service","CREATE TABLE 'service' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'prioridade' INTEGER, 'hoje' DATETIME, 'prazo' DATETIME, 'status' INTEGER, 'declarado' TEXT, 'encontrado' TEXT, 'solucao' TEXT, 'usuSol' INT, 'setorSol' INT, 'usuResp' INT, 'setorResp' INT, 'items' TEXT, 'orcamento' TEXT)"},
             {"user","CREATE TABLE 'user' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'privilegio' INTEGER, 'setor' INTEGER, 'login' TEXT, 'pass' TEXT, 'nome' TEXT, 'ultimoAcesso' DATETIME)"},
-            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'nome' TEXT)"}
+            {"setor","CREATE TABLE 'setor' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'type' INTEGER, 'nome' TEXT)"},
+            {"service_item","CREATE TABLE 'service_item' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'quant' INTEGER, 'descricao' TEXT, 'marca' TEXT, 'modelo' TEXT)"},
+            {"service_orca","CREATE TABLE 'service_orca' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'quant' INTEGER, 'descricao' TEXT, 'valor' FLOAT)"}
         };
 
         public static Dictionary<string, string> sqlite_FirstInsert = new Dictionary<string, string>(){
             {"service",""},
             {"user","INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES (NULL,0,1,'admin','admin','Administrador',NULL)"},
-            {"setor","INSERT INTO setor (nome) VALUES('Escritorio')"}
+            {"setor","INSERT INTO setor (nome) VALUES('Escritorio')"},
+            {"service_item",""},
+            {"service_orca",""}
         };
 
         public static Dictionary<string, string> mysql_tables = new Dictionary<string, string>(){
@@ -523,7 +527,28 @@ namespace Services
             {"user","INSERT INTO user (privilegio,login,pass,nome) VALUES(1,'admin','admin','Admnistrador')"},
             {"setor",""}
         };
-        /* service
+        public static Dictionary<string, string> mysql_FirstInsert = new Dictionary<string, string>(){
+            {"service",""},
+            {"user","INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES (NULL,0,1,'admin','admin','Administrador',NULL)"},
+            {"setor","INSERT INTO setor (nome) VALUES('Escritorio')"},
+            {"service_item",""},
+            {"service_orca",""}
+        };
+        /* 
+         * service_item
+         * id
+         * quant
+         * descricao
+         * marca
+         * modelo
+         * 
+         * service_orca
+         * id
+         * quant
+         * descricao
+         * valor
+         * 
+         * service
          * id
          * type
          * prioridade
@@ -537,6 +562,8 @@ namespace Services
          * setorSol
          * usuResp
          * setorResp
+         * items
+         * orcamento
          * 
          * itens??
          * fin???

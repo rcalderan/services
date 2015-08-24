@@ -248,6 +248,7 @@ namespace Services
                     usuTrocaPn.Hide();
                     usuUserTb.Clear();
                     usuPassTb.Clear();
+                    mostraPainel(servPn);
                 }
                 else
                     MessageBox.Show("Usuario ou senha incorreta.");
@@ -512,34 +513,36 @@ namespace Services
                 centralizarControl(statOrdPn);
         }
 
-        private void emiFimDg_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                float auxF;
-                if (float.TryParse(emiFimDg.Rows[e.RowIndex].Cells["colVal"].Value.ToString(), out auxF))
-                    emiFimDg.Rows[e.RowIndex].Cells[1].Value = auxF.ToString("F2");
-                else
-                    emiFimDg.Rows[e.RowIndex].Cells["colVal"].Value = "0,00";
-            }
-            catch
-            {
-
-            }
-        }
 
         private void emiFinCh_CheckedChanged(object sender, EventArgs e)
         {
-            emiFimDg.Enabled = emiFinCh.Checked;
+            emiOrcamentoLv.Enabled = emiFinCh.Checked;
+            emiOrcaAddLb.Visible = emiFinCh.Checked;
         }
 
         private void emiAddItLb_Click(object sender, EventArgs e)
         {
-            limpaAddItem();
-            emiAddBt.Text = "Adicionar";
-            emiaddPn.Show();
-            emiAddIdLb.Text = (emiItemLv.Items.Count + 1).ToString();
-
+            if (!emiaddPn.Visible)
+            {
+                limpaAddItem();
+                emiAddBt.Text = "Adicionar";
+                emiaddPn.Show();
+                emiAddIdLb.Text = (emiItemLv.Items.Count + 1).ToString();
+            }
+            else
+                emiaddPn.Hide();
+        }
+        private void emiOrcaAddItLb_Click(object sender, EventArgs e)
+        {
+            if (!emiOrcaAddPn.Visible)
+            {
+                limpaOrcaItem();
+                emiOrcaAddBt.Text = "Adicionar";
+                emiOrcaAddPn.Show();
+                emiOrcaIdLb.Text = (emiOrcamentoLv.Items.Count + 1).ToString();
+            }
+            else
+                emiOrcaAddPn.Hide();
         }
 
         private void emiAddBt_Click(object sender, EventArgs e)
@@ -580,6 +583,49 @@ namespace Services
                     MessageBox.Show(erro.Message);
             }
         }
+        private void emiOrcaAddBt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //add ou remover?
+
+                if (emiOrcaAddBt.Text == "Remover")
+                {
+                    emiOrcamentoLv.Items.RemoveAt(emiOrcamentoLv.FocusedItem.Index);
+                    limpaOrcaItem();
+                    emiOrcaAddPn.Hide();
+                    return;
+                }
+                if (emiOrcaNup.Value == 0)
+                {
+                    MessageBox.Show("Informe a quantidade.");
+                    return;
+                }
+                if (string.IsNullOrEmpty(emiOrcaDescTb.Text))
+                {
+                    MessageBox.Show("Adicione algo a \"Descrição\" do item.");
+                    return;
+                }
+                int id = emiItemLv.Items.Count + 1;
+                string[] subs = { id.ToString(), emiOrcaNup.Value.ToString(), emiOrcaDescTb.Text, emiOrcaValorTb.Text };
+                
+                float auxF;
+                if (float.TryParse(emiOrcaValorTb.Text, out auxF))
+                    subs[3] = auxF.ToString("F2");
+                else
+                    subs[3] = "0,00";
+
+                ListViewItem lv = new ListViewItem(subs);
+                emiOrcamentoLv.Items.Add(lv);
+                limpaOrcaItem();
+                emiOrcaAddPn.Hide();
+            }
+            catch (Exception erro)
+            {
+                if (DebuMode)
+                    MessageBox.Show(erro.Message);
+            }
+        }
 
         private void limpaAddItem()
         {
@@ -590,11 +636,26 @@ namespace Services
             emiAddDescTb.Clear();
             emiAddIdLb.Text = "0";
         }
+        private void limpaOrcaItem()
+        {
+            emiOrcaDescTb.Clear();
+            emiOrcaNup.Value = 0;
+            emiOrcaValorTb.Text = "0,00";
+            emiAddModeloTb.Clear();
+            emiAddDescTb.Clear();
+            emiOrcaIdLb.Text = "0";
+        }
 
         private void emiAddXLb_Click(object sender, EventArgs e)
         {
             limpaAddItem();
             emiaddPn.Hide();
+        }
+
+        private void emiOrcaXLb_Click(object sender, EventArgs e)
+        {
+            limpaOrcaItem();
+            emiOrcaAddPn.Hide();
         }
 
         private void emiItemLv_Click(object sender, EventArgs e)
@@ -691,17 +752,27 @@ namespace Services
                 if (DialogResult.Yes == MessageBox.Show("Emitindo Ordem de Serviço de \""+emiTipoCb.Text+"\" para o setor :"+setName+"\n\nDeseja continuar?","Emitir Ordem de Serviço",MessageBoxButtons.YesNo))
                 {
                     string[] aux =new string[0];
-                    if (Service.New(getIdFromString(emiTipoCb.Text),
+                    ListViewItem[] itens;
+                    foreach
+                        emiItemLv.Items
+                    Service newService = Service.New(getIdFromString(emiTipoCb.Text),
                         getIdFromString(emiPrioridadeCb.Text),DateTime.Now,emiPrazoDtp.Value,Status.Pendente,
-                        emiProbTb.Lines,aux,aux,
-                        activeUser.Id,activeUser.Setor.Id,0,getIdFromString(emiSetorCb.Text)))
-                        MessageBox.Show("Ordem de serviço emitida com sucesso!");
+                        emiItemLv.Items,emiProbTb.Lines,aux,aux,
+                        activeUser.Id,activeUser.Setor.Id,0,getIdFromString(emiSetorCb.Text));
+                    if (null != newService)
+                    {
+                        if (DialogResult.Yes == MessageBox.Show("Ordem de serviço emitida com sucesso!\n\nGostaria de imprimir a Ordem de serviço?", "Imprimir?", MessageBoxButtons.YesNo))
+                        {
+                            MessageBox.Show("Não implementado!");
+                        }
+                    }
                     else
                         MessageBox.Show("Não foi possível emitir Ordem.");
 
                 }
 
-            }catch { }
+            }
+            catch (Exception er) { if (DebuMode) MessageBox.Show(er.Message); }
         }
 
         private void servPn_VisibleChanged(object sender, EventArgs e)
@@ -748,6 +819,131 @@ namespace Services
         private void label40_Click(object sender, EventArgs e)
         {
             servPn.Hide();
+        }
+
+        private void PrincipalForm_Resize(object sender, EventArgs e)
+        {
+            foreach(Panel p in panels)
+                if (p.Visible)
+                {
+                    centralizarControl(p);
+                    break;
+                }
+        }
+
+
+        private void servLv_Click(object sender, EventArgs e)
+        {
+            carregaOrdem(servLv.SelectedItems[0]);
+        }
+
+        private void carregaOrdem(ListViewItem lvi)
+        {
+            try
+            {
+                mostraPainel(emiPn);
+                emiRecePn.Show();
+                int id;
+                if (!int.TryParse(lvi.SubItems[0].Text,out id))
+                    MessageBox.Show("Não foi possivel carregar ordem.");
+                else
+                {
+                    Service s = Service.Load(id);
+
+                }
+
+            }
+            catch(Exception e)
+            {
+                if (DebuMode)
+                    MessageBox.Show(e.Message);
+            }
+        }
+
+        private void limpaOrdem()
+        {
+            try
+            {
+                limpaAddItem();
+                emiaddPn.Hide();
+                emiItemLv.Items.Clear();
+                emiOrcamentoLv.Items.Clear();
+                emiProbTb.Clear();
+                emiPrazoDtp.Value = DateTime.Today;
+                emiUsuSolLb.Text = activeUser.Nome;
+                emiSetorSolLb.Text = activeUser.Setor.Nome;
+                emiSolucaoTb.Clear();
+                emiEncontradoTb.Clear();
+                emiSolucaoCh.Checked = false;
+                emiEncontradoCh.Checked = false;
+                emiOrcaAddLb.Visible = false;
+                limpaOrcaItem();
+            }
+            catch(Exception e)
+            {
+                if (DebuMode)
+                    MessageBox.Show(e.Message);
+            }
+        }
+
+        private void emiEncontradoCh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (emiEncontradoCh.Checked)
+                emiEncontradoTb.Show();
+            else
+                emiEncontradoTb.Hide();
+
+        }
+
+        private void emiSolucaoCh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (emiSolucaoCh.Checked)
+                emiSolucaoTb.Show();
+            else
+                emiSolucaoTb.Hide();
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+            limpaOrdem();
+        }
+
+        private void emiImprimirBt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Ainda não implementado.");
+            }
+            catch (Exception er){if (DebuMode) MessageBox.Show(er.Message);}
+        }
+
+        private void emiOrcaValorTb_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                float f;
+                if (float.TryParse(emiOrcaValorTb.Text, out f))
+                    emiOrcaValorTb.Text = f.ToString("F2");
+                else
+                    emiOrcaValorTb.Text = "0,00";
+            }
+            catch (Exception er){if (DebuMode) MessageBox.Show(er.Message);}
+        }
+
+        private void emiOrcaValorTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    float f;
+                    if (float.TryParse(emiOrcaValorTb.Text, out f))
+                        emiOrcaValorTb.Text = f.ToString("F2");
+                    else
+                        emiOrcaValorTb.Text = "0,00";
+                }
+            }
+            catch (Exception er) { if (DebuMode) MessageBox.Show(er.Message); }
         }
     }
 }
