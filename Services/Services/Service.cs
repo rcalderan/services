@@ -109,38 +109,39 @@ namespace Services
             { return ""; }
         }
 
-        private static string[] recursive()
-        {
-
-        }
         public static System.Windows.Forms.ListViewItem[] UnserializeItens(string serialized)
         {
             try
             {
                 List<System.Windows.Forms.ListViewItem> list = new List<System.Windows.Forms.ListViewItem>();
                 if (serialized.Length > 0)
-                {
+                {/*   
+                      *   [[x],[y]], <-lv1 2subs
+                      *   [[e],[d],[g]], <-lv2 3 subs
+                      *   [[a]] <lv3 1 sub 
+                      *  
+                      */
                     string auxS = serialized;
                     System.Windows.Forms.ListViewItem auxLi;
                     List<string> subs = new List<string>();
                     int indexAbre = auxS.IndexOf("["), indexFecha;
                     while (auxS.IndexOf("[") != -1)
                     {
-                        if (serialized[indexAbre + 1] == '[')
+                        if (auxS[indexAbre + 1] == '[')
                         {//subs
                             indexAbre++;
-                            indexFecha = auxS.IndexOf("]");
-                            subs.Add(auxS.Substring(indexAbre, indexFecha - indexAbre));
-                            if (auxS[indexFecha + 1] == ',')
-                            {
-                                auxS = auxS.Substring(indexFecha + 1, auxS.Length - (indexFecha + 1));
-                                indexAbre = auxS.IndexOf("[");
-                            }
-                            else
-                                auxLi = new System.Windows.Forms.ListViewItem(subs.ToArray());
-
                         }
+                        indexFecha = auxS.IndexOf("]");
+                        subs.Add(auxS.Substring(indexAbre, indexFecha - indexAbre));
+                        if (auxS[indexFecha + 1] == ',')
+                        {
+                            auxS = auxS.Substring(indexFecha + 1, auxS.Length - (indexFecha + 1));
+                            indexAbre = auxS.IndexOf("[");
+                        }
+                        else
+                            auxLi = new System.Windows.Forms.ListViewItem(subs.ToArray());
                     }
+                    return list.ToArray();
                 }
                 else
                     return null;

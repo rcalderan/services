@@ -18,3 +18,14 @@ H:\services_repo\Services\Services\obj\Debug\Services.csproj.GenerateResource.Ca
 D:\Services_repo\Services\Services\bin\Debug\System.Data.SQLite.dll
 D:\Services_repo\Services\Services\bin\Debug\System.Data.SQLite.pdb
 D:\Services_repo\Services\Services\obj\Debug\Services.PrincipalForm.resources
+G:\Services_repo\Services\Services\bin\Debug\Services.exe.config
+G:\Services_repo\Services\Services\obj\Debug\Services.exe
+G:\Services_repo\Services\Services\obj\Debug\Services.pdb
+G:\Services_repo\Services\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+G:\Services_repo\Services\Services\obj\Debug\Services.PrincipalForm.resources
+G:\Services_repo\Services\Services\obj\Debug\Services.Properties.Resources.resources
+G:\Services_repo\Services\Services\obj\Debug\Services.csproj.GenerateResource.Cache
+G:\Services_repo\Services\Services\bin\Debug\Services.exe
+G:\Services_repo\Services\Services\bin\Debug\Services.pdb
+G:\Services_repo\Services\Services\bin\Debug\System.Data.SQLite.dll
+G:\Services_repo\Services\Services\bin\Debug\System.Data.SQLite.pdb

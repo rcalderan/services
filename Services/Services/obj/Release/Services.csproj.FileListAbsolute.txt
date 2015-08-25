@@ -1,0 +1,11 @@
+G:\Services_repo\Services\Services\bin\Release\Services.exe.config
+G:\Services_repo\Services\Services\obj\Release\Services.PrincipalForm.resources
+G:\Services_repo\Services\Services\obj\Release\Services.Properties.Resources.resources
+G:\Services_repo\Services\Services\obj\Release\Services.csproj.GenerateResource.Cache
+G:\Services_repo\Services\Services\bin\Release\Services.exe
+G:\Services_repo\Services\Services\bin\Release\Services.pdb
+G:\Services_repo\Services\Services\bin\Release\System.Data.SQLite.dll
+G:\Services_repo\Services\Services\bin\Release\System.Data.SQLite.pdb
+G:\Services_repo\Services\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
+G:\Services_repo\Services\Services\obj\Release\Services.exe
+G:\Services_repo\Services\Services\obj\Release\Services.pdb

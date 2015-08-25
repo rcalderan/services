@@ -13,13 +13,15 @@ namespace Services
 {
     public partial class PrincipalForm : Form
     {
-        private bool DebuMode = true;
+        private bool DebugMode = true;
 
         private Conexao conexao;
 
         private Panel[] panels;
 
         private User activeUser;
+
+        private Service activeService;
 
         public PrincipalForm()
         {
@@ -107,7 +109,8 @@ namespace Services
             }
             catch(Exception e)
             {
-                //MessageBox.Show(e.Message);
+                if (DebugMode)
+                    MessageBox.Show(e.Message);
                 habilitaControles(false);
                 conPn.Show();
             }
@@ -467,7 +470,6 @@ namespace Services
                 int index = setCb.Text.IndexOf(" - ");
                 if (index!=-1)
                 {
-                    string nome = "";
                     setIdLb.Text = setCb.Text.Substring(0, index);
                     if (setCb.Text.Length>4)
                     {
@@ -579,7 +581,7 @@ namespace Services
             }
             catch(Exception erro)
             {
-                if (DebuMode)
+                if (DebugMode)
                     MessageBox.Show(erro.Message);
             }
         }
@@ -622,7 +624,7 @@ namespace Services
             }
             catch (Exception erro)
             {
-                if (DebuMode)
+                if (DebugMode)
                     MessageBox.Show(erro.Message);
             }
         }
@@ -677,7 +679,7 @@ namespace Services
             }
             catch (Exception erro)
             {
-                if (DebuMode)
+                if (DebugMode)
                     MessageBox.Show(erro.Message);
             }
         }
@@ -701,7 +703,11 @@ namespace Services
                 DataTable dt = conexao.Query("select * from setor");
                 if (dt != null)
                     foreach (DataRow r in dt.Rows)
+                    {
                         emiSetorCb.Items.Add(r["id"].ToString() + " - " + r["nome"].ToString());
+                        if (r["id"].ToString() == activeUser.Setor.Id.ToString())
+                            emiSetorCb.Text = r["id"].ToString() + " - " + r["nome"].ToString();
+                    }
                 else
                     emiSetorCb.Enabled = false;
             }
@@ -752,12 +758,21 @@ namespace Services
                 if (DialogResult.Yes == MessageBox.Show("Emitindo Ordem de Serviço de \""+emiTipoCb.Text+"\" para o setor :"+setName+"\n\nDeseja continuar?","Emitir Ordem de Serviço",MessageBoxButtons.YesNo))
                 {
                     string[] aux =new string[0];
-                    ListViewItem[] itens;
-                    foreach
-                        emiItemLv.Items
+                    List<ListViewItem> itens = new List<ListViewItem>(),orca =new List<ListViewItem>();
+                    foreach(ListViewItem lv in emiItemLv.Items)
+                        itens.Add(lv);
+                    foreach (ListViewItem lv in emiOrcamentoLv.Items)
+                        orca.Add(lv);
+
+                    string serialize = Service.SerializeItens(itens.ToArray());
+                    MessageBox.Show(serialize);
+                    ListViewItem[] un = Service.UnserializeItens(serialize);
+                    foreach (ListViewItem lv in un)
+                        MessageBox.Show(lv.SubItems[0].Text);
+                    return;
                     Service newService = Service.New(getIdFromString(emiTipoCb.Text),
                         getIdFromString(emiPrioridadeCb.Text),DateTime.Now,emiPrazoDtp.Value,Status.Pendente,
-                        emiItemLv.Items,emiProbTb.Lines,aux,aux,
+                        itens.ToArray(),orca.ToArray(), emiProbTb.Lines,aux,aux,
                         activeUser.Id,activeUser.Setor.Id,0,getIdFromString(emiSetorCb.Text));
                     if (null != newService)
                     {
@@ -772,7 +787,7 @@ namespace Services
                 }
 
             }
-            catch (Exception er) { if (DebuMode) MessageBox.Show(er.Message); }
+            catch (Exception er) { if (DebugMode) MessageBox.Show(er.Message); }
         }
 
         private void servPn_VisibleChanged(object sender, EventArgs e)
@@ -855,7 +870,7 @@ namespace Services
             }
             catch(Exception e)
             {
-                if (DebuMode)
+                if (DebugMode)
                     MessageBox.Show(e.Message);
             }
         }
@@ -881,7 +896,7 @@ namespace Services
             }
             catch(Exception e)
             {
-                if (DebuMode)
+                if (DebugMode)
                     MessageBox.Show(e.Message);
             }
         }
@@ -913,8 +928,25 @@ namespace Services
             try
             {
                 MessageBox.Show("Ainda não implementado.");
+                PrintPreviewDialog pd = new PrintPreviewDialog();
+                System.Drawing.Printing.PrintDocument doc = new System.Drawing.Printing.PrintDocument();
+                doc.PrintPage += printOrdem_PrintPage;
+                pd.Document = doc;
+                if (pd.DialogResult == DialogResult.Yes)
+                    doc.Print();
             }
-            catch (Exception er){if (DebuMode) MessageBox.Show(er.Message);}
+            catch (Exception er){if (DebugMode) MessageBox.Show(er.Message);}
+        }
+
+        void printOrdem_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                if (activeService == null)
+                    return;
+                e.Graphics.Clear(Color.White);
+            }
+            catch (Exception er) { if (DebugMode) MessageBox.Show(er.Message); }
         }
 
         private void emiOrcaValorTb_Leave(object sender, EventArgs e)
@@ -927,7 +959,7 @@ namespace Services
                 else
                     emiOrcaValorTb.Text = "0,00";
             }
-            catch (Exception er){if (DebuMode) MessageBox.Show(er.Message);}
+            catch (Exception er){if (DebugMode) MessageBox.Show(er.Message);}
         }
 
         private void emiOrcaValorTb_KeyDown(object sender, KeyEventArgs e)
@@ -943,7 +975,7 @@ namespace Services
                         emiOrcaValorTb.Text = "0,00";
                 }
             }
-            catch (Exception er) { if (DebuMode) MessageBox.Show(er.Message); }
+            catch (Exception er) { if (DebugMode) MessageBox.Show(er.Message); }
         }
     }
 }
