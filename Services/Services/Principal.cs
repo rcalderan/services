@@ -215,25 +215,16 @@ namespace Services
                 else
                 {
                     habilitaControles(true);
-                    activeUser = new User(conexao);
-                    activeUser.Id = int.Parse(dt.Rows[0]["id"].ToString());
-                    activeUser.Login = dt.Rows[0]["login"].ToString();
-                    activeUser.Nome = dt.Rows[0]["nome"].ToString();
-                    activeUser.Pass = dt.Rows[0]["pass"].ToString();
-                    activeUser.UltimoAcesso = DateTime.Now;
-                    activeUser.Setor = new Setor(int.Parse(dt.Rows[0]["setor"].ToString()));
-                    activeUser.Privilegio = new Privilegio(int.Parse(dt.Rows[0]["privilegio"].ToString()));
-                    menuAccess(activeUser.Privilegio);
-                    if (activeUser.Save())
+                    activeUser = User.Load(int.Parse(dt.Rows[0]["id"].ToString()));
+                    if (activeUser!=null)
                     {
+                        User.SetLastAcess(activeUser.Id, DateTime.Now);
                         emiUsuSolLb.Text = activeUser.Nome;
+                        menuAccess(activeUser.Privilegio);
                         return true;
                     }
                     else
-                    {
-                        activeUser = null;
                         return false;
-                    }
                 }
             }
             catch
@@ -354,30 +345,39 @@ namespace Services
                     MessageBox.Show("Senhas não conferem. Digite as senhas iguais!");
                     return;
                 }
-                User novo = new User(conexao);
-                novo.Nome = cad1NomeTb.Text;
-                int i,index =cad1PrivilegiosCb.Text.IndexOf(" - ");
-
-                if (index != -1)
+                DataTable dt = conexao.Query("Select * from user where login='"+cad1LoginTb.Text+"'");
+                if (dt != null)
                 {
-                    if (int.TryParse(cad1PrivilegiosCb.Text.Substring(0, index), out i))
-                        novo.Privilegio = new Privilegio(i);
-                }else
+                    MessageBox.Show("Este Login já existe na base de dados. Por favor escolha outro.");
+                    return;
+                }
+                Privilegio pri;
+                Setor setor;
+                int i,privId =getIdFromString(cad1PrivilegiosCb.Text),
+                    setId = getIdFromString(cad1SetorCb.Text);
+                if (privId != -1)
+                    pri = new Privilegio(privId);
+                else
                 {
                     MessageBox.Show("Selecione um privilégio válido.");
                     return;
                 }
-                novo.Login = cad1LoginTb.Text;
-                novo.Pass = cad1Pass1Tb.Text;
-                novo.UltimoAcesso = DateTime.Now;
-                if (novo.Save())
-                    MessageBox.Show("Novo usuario: \"" + novo.Nome + "\" adicionado!");
+                if (setId != -1)
+                    setor = new Setor(setId);
+                else
+                {
+                    MessageBox.Show("Selecione um privilégio válido.");
+                    return;
+                }
+                if (User.New(pri,setor,cad1LoginTb.Text,cad1Pass1Tb.Text,cad1NomeTb.Text))
+                    MessageBox.Show("Novo usuario: \"" + cad1NomeTb.Text + "\" adicionado!");
                 else
                     MessageBox.Show("Não foi possível adicionar usuario.");
             }
-            catch
+            catch(Exception erro)
             {
-
+                if (DebugMode)
+                    MessageBox.Show(erro.Message);
             }
         }
 
@@ -415,16 +415,25 @@ namespace Services
             if (setPn.Visible)
             {
                 centralizarControl(setPn);
-                DataTable dt = conexao.Query("select * from setor");
-                if (dt!=null)
+                carregaSetores();
+            }
+        }
+        private void carregaSetores()
+        {
+            DataTable dt = conexao.Query("select * from setor");
+            if (dt != null)
+            {
+                setCb.Items.Clear();
+                foreach (DataRow r in dt.Rows)
                 {
-                    setCb.Items.Clear();
-                    foreach(DataRow r in dt.Rows)
-                    {
-                        setCb.Items.Add(r["id"].ToString() + " - " + r["nome"].ToString());
-                    }
+                    setCb.Items.Add(r["id"].ToString() + " - " + r["nome"].ToString());
                 }
             }
+        }
+        private void limpaSetores()
+        {
+            setNomeTb.Clear();
+            carregaSetores();
         }
 
         private void setExcluiBt_Click(object sender, EventArgs e)
@@ -440,13 +449,15 @@ namespace Services
                 if (msg == "")
                 {
                     MessageBox.Show("Novo setor adicionado com sucesso");
+                    limpaSetores();
                 }
                 else
                     MessageBox.Show(msg);
             }
-            catch
+            catch(Exception erro)
             {
-
+                if (DebugMode)
+                    MessageBox.Show(erro.Message);
             }
         }
         private void limpaSetor()
@@ -700,6 +711,8 @@ namespace Services
                 emiPrioridadeCb.Items.Clear();
                 foreach (Prioridade p in Prioridade.All)
                     emiPrioridadeCb.Items.Add(p.Id.ToString() + " - " + p.Nome);
+                foreach (Status s in Status.All)
+                    emiStatusCb.Items.Add(s.Id.ToString() + " - " + s.Nome);
                 DataTable dt = conexao.Query("select * from setor");
                 if (dt != null)
                     foreach (DataRow r in dt.Rows)
@@ -758,28 +771,43 @@ namespace Services
                 if (DialogResult.Yes == MessageBox.Show("Emitindo Ordem de Serviço de \""+emiTipoCb.Text+"\" para o setor :"+setName+"\n\nDeseja continuar?","Emitir Ordem de Serviço",MessageBoxButtons.YesNo))
                 {
                     string[] aux =new string[0];
+                    int prio = getIdFromString(emiPrioridadeCb.Text),
+                        tipo = getIdFromString(emiTipoCb.Text),
+                        destino=getIdFromString(emiSetorCb.Text);
+                    if (prio==-1)
+                    {
+                        emiPrioridadeCb.BackColor = Color.Yellow;
+                        MessageBox.Show("Selecione qual urgência para este serviço.");
+                        return;
+                    }
+                    else
+                        emiPrioridadeCb.BackColor = Color.White;
+                    if (tipo == -1)
+                    {
+                        MessageBox.Show("Selecione o tipo de Ordem de Serviço.");
+                        return;
+                    } 
+                    if (destino == -1)
+                    {
+                        MessageBox.Show("Escolha um destino válido");
+                        return;
+                    }
                     List<ListViewItem> itens = new List<ListViewItem>(),orca =new List<ListViewItem>();
                     foreach(ListViewItem lv in emiItemLv.Items)
                         itens.Add(lv);
                     foreach (ListViewItem lv in emiOrcamentoLv.Items)
                         orca.Add(lv);
-
-                    string serialize = Service.SerializeItens(itens.ToArray());
-                    MessageBox.Show(serialize);
-                    ListViewItem[] un = Service.UnserializeItens(serialize);
-                    foreach (ListViewItem lv in un)
-                        MessageBox.Show(lv.SubItems[0].Text);
-                    return;
-                    Service newService = Service.New(getIdFromString(emiTipoCb.Text),
-                        getIdFromString(emiPrioridadeCb.Text),DateTime.Now,emiPrazoDtp.Value,Status.Pendente,
-                        itens.ToArray(),orca.ToArray(), emiProbTb.Lines,aux,aux,
-                        activeUser.Id,activeUser.Setor.Id,0,getIdFromString(emiSetorCb.Text));
-                    if (null != newService)
+                    if (Service.New(tipo,
+                        prio, DateTime.Now, emiPrazoDtp.Value, Status.Pendente,
+                        itens.ToArray(), orca.ToArray(), emiProbTb.Lines, aux, aux,
+                        activeUser.Id, activeUser.Setor.Id, 0, destino))
                     {
                         if (DialogResult.Yes == MessageBox.Show("Ordem de serviço emitida com sucesso!\n\nGostaria de imprimir a Ordem de serviço?", "Imprimir?", MessageBoxButtons.YesNo))
                         {
                             MessageBox.Show("Não implementado!");
                         }
+                        limpaOrdem();
+                        mostraPainel(servPn);
                     }
                     else
                         MessageBox.Show("Não foi possível emitir Ordem.");
@@ -799,11 +827,23 @@ namespace Services
                     centralizarControl(servPn);
                     servLv.Items.Clear();
                     //DataTable dt = conexao.Query("select s.id,u.id as solicitante,s.setorSol,s.hoje,s.prioridade,s.status from service as s inner join user as u where u.id=s.usuSol order by prazo");
-                    DataTable dt = conexao.Query("select * from service order by prazo");
+                    string query;
+                    switch(activeUser.Privilegio.id)
+                    {
+                        case 0:
+                            query = "SELECT * FROM service ORDER BY prazo";
+                            break;
+                        default:
+                            query = "SELECT * FROM service WHERE setorResp=" + activeUser.Setor.Id.ToString() + " ORDER BY prazo";
+                            break;
+                    }
+
+                    DataTable dt = conexao.Query(query);
                     if (dt != null)
                     {
                         ListViewItem lv;
                         string[] subs;
+                        string[] splited;
                         DateTime auxDt;
                         foreach(DataRow r in dt.Rows)
                         {
@@ -812,7 +852,11 @@ namespace Services
                             subs[0] = r["id"].ToString();
                             subs[1] = r["usuSol"].ToString();
                             subs[2] = r["setorSol"].ToString();
-                            subs[3] = Service.Split(r["declarado"].ToString(), "<*>")[0];
+                            splited = Service.Split(r["declarado"].ToString(), "<*>");
+                            if (splited.Length == 0)
+                                subs[3] = "";
+                            else
+                                subs[3] = splited[0];
                             if (DateTime.TryParse(r["hoje"].ToString(), out auxDt))
                                 subs[4] = auxDt.ToString("dd/MM/yyyy HH:mm:ss");
                             subs[5] = new Prioridade(int.Parse(r["prioridade"].ToString())).Nome;
@@ -823,7 +867,8 @@ namespace Services
                         }
                     }
                 }
-            }catch{ }
+            }
+            catch (Exception erro) { if (DebugMode) MessageBox.Show(erro.Message); }
         }
 
         private void ordSetMi_Click(object sender, EventArgs e)
@@ -849,23 +894,35 @@ namespace Services
 
         private void servLv_Click(object sender, EventArgs e)
         {
-            carregaOrdem(servLv.SelectedItems[0]);
+            int id;
+            if (int.TryParse(servLv.SelectedItems[0].Text,out id))
+                carregaOrdem(id);
         }
 
-        private void carregaOrdem(ListViewItem lvi)
+        private void carregaOrdem(int ID)
         {
             try
             {
                 mostraPainel(emiPn);
                 emiRecePn.Show();
-                int id;
-                if (!int.TryParse(lvi.SubItems[0].Text,out id))
-                    MessageBox.Show("Não foi possivel carregar ordem.");
-                else
-                {
-                    Service s = Service.Load(id);
-
-                }
+                activeService = Service.Load(ID);
+                //retornar classe Setor e User e nao int...
+                Setor setorResponsavel = new Setor(activeService.getSetorResp());
+                Setor setorSolicitante = new Setor(activeService.getSetorSol());
+                User solicitante = User.Load(activeService.getUsuSol());
+                //
+                emiProbTb.Lines = activeService.getDeclarado();
+                emiEncontradoTb.Lines = activeService.getEncontrado();
+                emiSolucaoTb.Lines = activeService.getSolucao();
+                emiTipoCb.Text = activeService.getPrioridade().Id.ToString() + " - " + activeService.getPrioridade().Nome;
+                emiSetorCb.Text = setorResponsavel.Id + " - " + setorResponsavel.Nome;
+                emiPrioridadeCb.Text = activeService.getPrioridade().Id + " - " + activeService.getPrioridade().Nome;
+                emiPrazoDtp.Value = activeService.getPrazo();
+                emiUsuSolLb.Text = solicitante.Nome;
+                emiSetorSolLb.Text = setorSolicitante.Nome;
+                emiItemLv.Items.AddRange(activeService.getItems());
+                emiOrcamentoLv.Items.AddRange(activeService.getOrcamento());
+                emiStatusCb.Text = activeService.getStatus().Id.ToString()+" - " +activeService.getStatus().Nome;
 
             }
             catch(Exception e)
@@ -879,6 +936,7 @@ namespace Services
         {
             try
             {
+                activeService = null;
                 limpaAddItem();
                 emiaddPn.Hide();
                 emiItemLv.Items.Clear();
@@ -892,6 +950,7 @@ namespace Services
                 emiSolucaoCh.Checked = false;
                 emiEncontradoCh.Checked = false;
                 emiOrcaAddLb.Visible = false;
+                emiStatusCb.SelectedIndex = 0;
                 limpaOrcaItem();
             }
             catch(Exception e)
@@ -976,6 +1035,23 @@ namespace Services
                 }
             }
             catch (Exception er) { if (DebugMode) MessageBox.Show(er.Message); }
+        }
+
+        private void aceMi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Não Implementado");
+        }
+
+        private void modeloMi_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Não Implementado");
+        }
+
+        private void pecasMi_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Não Implementado");
         }
     }
 }

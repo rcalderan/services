@@ -9,3 +9,13 @@ G:\Services_repo\Services\Services\bin\Release\System.Data.SQLite.pdb
 G:\Services_repo\Services\Services\obj\Release\Services.csprojResolveAssemblyReference.cache
 G:\Services_repo\Services\Services\obj\Release\Services.exe
 G:\Services_repo\Services\Services\obj\Release\Services.pdb
+D:\Services_repo\Services\Services\bin\Release\Services.exe.config
+D:\Services_repo\Services\Services\bin\Release\Services.exe
+D:\Services_repo\Services\Services\bin\Release\Services.pdb
+D:\Services_repo\Services\Services\bin\Release\System.Data.SQLite.dll
+D:\Services_repo\Services\Services\bin\Release\System.Data.SQLite.pdb
+D:\Services_repo\Services\Services\obj\Release\Services.PrincipalForm.resources
+D:\Services_repo\Services\Services\obj\Release\Services.Properties.Resources.resources
+D:\Services_repo\Services\Services\obj\Release\Services.csproj.GenerateResource.Cache
+D:\Services_repo\Services\Services\obj\Release\Services.exe
+D:\Services_repo\Services\Services\obj\Release\Services.pdb

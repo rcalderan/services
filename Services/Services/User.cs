@@ -55,9 +55,8 @@ namespace Services
 
         private Conexao conexao;
 
-        public User(Conexao con)
+        public User()
         {
-            conexao = con;
         }
         public static User Load(int id)
         {
@@ -66,7 +65,8 @@ namespace Services
                 Conexao con = new Conexao();
                 if (con.getLastLoadState())
                 {
-                    User u = new User(con);
+                    User u = new User();
+                    u.conexao = con;
                     System.Data.DataTable dt = con.Query("SELECT * FROM user where id=" + id.ToString());
                     if (dt != null)
                     {
@@ -75,7 +75,7 @@ namespace Services
                         u.nome = dt.Rows[0]["nome"].ToString();
                         u.login = dt.Rows[0]["login"].ToString();
                         u.setor = new Setor(int.Parse(dt.Rows[0]["setor"].ToString()));
-                        u.pass = dt.Rows[0]["senha"].ToString();
+                        u.pass = dt.Rows[0]["pass"].ToString();
                         u.privilegio = new Privilegio(int.Parse(dt.Rows[0]["privilegio"].ToString()));
                         u.conexao = con;
                         if (DateTime.TryParse(dt.Rows[0]["ultimoAcesso"].ToString(), out auxDt))
@@ -95,33 +95,26 @@ namespace Services
             }
         }
 
-        public bool New()
+        public static bool New(Privilegio priv,Setor setor,string login ,string pass,string nome)
         {
             try
             {
-                if (conexao.getLastLoadState())
+                Conexao con = new Conexao();
+                if (con.getLastLoadState())
                 {
                     if (Conexao.noServerDatabase)
                     {//sqlite
                         string query = "SELECT id FROM user ORDER BY id limit 1";
-                        System.Data.DataTable dt = conexao.Query(query);
-                        int next = 0;
-                        if (dt != null)
-                            next = int.Parse(dt.Rows[0]["id"].ToString());
-                        next++;
-                        query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES(" +
-                            next.ToString() + "," +
-                            this.privilegio.id.ToString() + "," +
-                            this.setor.Id.ToString() + ",'" +
-                            this.login + "','" +
-                            this.pass + "','" +
-                            this.nome + "','" +
-                            this.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") + "')";
-                        if (conexao.Comando(query) != "")
+                        System.Data.DataTable dt = con.Query(query);
+                        query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES(null," +
+                            priv.id.ToString() + "," +
+                            setor.Id.ToString() + ",'" +
+                            login + "','" +
+                            pass + "','" +
+                            nome + "','" +
+                            DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+                        if (con.Comando(query) != "")
                             return false;
-                        else
-                            return true;
-
                     }
                     else
                     {//mysql
@@ -138,7 +131,7 @@ namespace Services
             }
 
         }
-
+        /*
         public bool Update(User Novo)
         {
             try
@@ -182,47 +175,24 @@ namespace Services
                 return false;
             }
         }
-
-        public bool Save()
+        */
+        public static bool SetLastAcess(int id, DateTime last)
         {
             try
             {
-                if (conexao.getLastLoadState())
+                Conexao con = new Conexao();
+                if (con.getLastLoadState())
                 {
                     if (Conexao.noServerDatabase)
-                    {//sqlite
-                        string query = "SELECT id FROM user where id=" + this.id.ToString();
-                        System.Data.DataTable dt = conexao.Query(query);
-                        if (dt==null)
-                        {//novo
-                            query = "INSERT INTO user (id,privilegio,setor,login,pass,nome,ultimoAcesso) VALUES("+
-                                this.id.ToString()+","+
-                                this.privilegio.id.ToString()+","+
-                                this.setor.Id.ToString()+",'"+
-                                this.login+"','"+
-                                this.pass+"','"+
-                                this.nome+"','"+
-                                this.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss")+"')";
-                            if (conexao.Comando(query) != "")
+                    {
+                        System.Data.DataTable dt = con.Query("select * from user where id=" + id.ToString());
+                        if (dt != null)
+                        {
+                            if ("" != con.Comando("UPDATE user SET ultimoAcesso='" + last.ToString("yyyy-MM-dd HH:mm:ss")))
                                 return false;
-                            else
-                                return true;
                         }
                         else
-                        {//update
-                            query = "UPDATE user SET " +
-                                "id=" + this.id.ToString() +
-                            ",privilegio=" + this.privilegio.id.ToString() +
-                            ",setor=" + this.setor.Id.ToString() +
-                            ",login='" + this.login +
-                            "',pass='" + this.pass +
-                            "',nome='" + this.nome +
-                            "',ultimoAcesso='" + this.ultimoAcesso.ToString("yyyy-MM-dd HH:mm:ss") +
-                            "' WHERE id=" + this.id;
-                            if (conexao.Comando(query) != "")
-                                return false;
-                        }
-
+                            return false;
                     }
                     else
                     {//mysql
@@ -233,11 +203,7 @@ namespace Services
                 else
                     return false;
             }
-            catch(Exception es)
-            {
-                string s = es.Message;
-                return false;
-            }
+            catch { return false; }
         }
     }
 
